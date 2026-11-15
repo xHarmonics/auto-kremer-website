@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const baseURL = process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:4323';
+
 export default defineConfig({
   testDir: './tests/e2e',
   fullyParallel: false,
@@ -8,7 +10,7 @@ export default defineConfig({
   workers: 1,
   reporter: 'list',
   use: {
-    baseURL: 'http://127.0.0.1:4321',
+    baseURL,
     trace: 'on-first-retry',
   },
   projects: [
@@ -17,11 +19,14 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  webServer: {
-    command:
-      'npm run build && CI=true npx wrangler dev --ip 127.0.0.1 --port 4321 --var DEV_ADMIN_TOKEN:ak-local-e2e-only-token',
-    url: 'http://127.0.0.1:4321/api/health',
-    reuseExistingServer: false,
-    timeout: 90000,
-  },
+  webServer: process.env.PLAYWRIGHT_SKIP_WEBSERVER
+    ? undefined
+    : {
+        command:
+          process.env.PLAYWRIGHT_DEV_COMMAND ??
+          'npm run build && CI=true npx wrangler dev --ip 127.0.0.1 --port 4323 --var DEV_ADMIN_TOKEN:ak-local-e2e-only-token',
+        url: `${baseURL}/api/health`,
+        reuseExistingServer: false,
+        timeout: 90000,
+      },
 });

@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "node ./scripts/ensure-local-db.mjs",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro build && wrangler dev",
@@ -12,6 +13,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
+    "test:e2e:dev": "DEV_ADMIN_TOKEN=ak-local-e2e-only-token PLAYWRIGHT_BASE_URL=http://localhost:4322 PLAYWRIGHT_DEV_COMMAND='npx astro dev --ignore-lock --port 4322' playwright test",
     "db:generate": "drizzle-kit generate",
     "db:migrate:local": "CI=true wrangler d1 migrations apply DB --local",
     "db:seed:local": "CI=true wrangler d1 execute DB --local --file=./drizzle/seed.sql"

@@ -14,6 +14,8 @@ export interface RuntimeEnvVars {
   DB?: D1Database;
 }
 
+declare const __ASTRO_DEV_ADMIN_TOKEN__: string | undefined;
+
 let injectedTestEnv: RuntimeEnvVars | null = null;
 
 export function setTestRuntimeEnv(envObj: RuntimeEnvVars | null): void {
@@ -26,7 +28,16 @@ export async function getRuntimeEnv(): Promise<RuntimeEnvVars> {
   }
   try {
     const { env } = await import('cloudflare:workers');
-    return env as unknown as RuntimeEnvVars;
+    const workerEnv = env as unknown as RuntimeEnvVars;
+    if (
+      import.meta.env.DEV &&
+      !workerEnv.DEV_ADMIN_TOKEN &&
+      typeof __ASTRO_DEV_ADMIN_TOKEN__ === 'string' &&
+      __ASTRO_DEV_ADMIN_TOKEN__.length > 0
+    ) {
+      return { ...workerEnv, DEV_ADMIN_TOKEN: __ASTRO_DEV_ADMIN_TOKEN__ };
+    }
+    return workerEnv;
   } catch {
     return process.env as unknown as RuntimeEnvVars;
   }

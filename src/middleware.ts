@@ -120,12 +120,19 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   const response = await next();
+  if (response.status === 101) {
+    return response;
+  }
+
   const mutableHeaders = new Headers(response.headers);
   mutableHeaders.set('X-Content-Type-Options', 'nosniff');
   mutableHeaders.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   mutableHeaders.set('X-Frame-Options', 'DENY');
 
-  return new Response(response.body, {
+  const isNullBodyStatus =
+    response.status === 204 || response.status === 205 || response.status === 304;
+
+  return new Response(isNullBodyStatus ? null : response.body, {
     status: response.status,
     statusText: response.statusText,
     headers: mutableHeaders,
