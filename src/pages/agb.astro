@@ -1,0 +1,98 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE_CONFIG } from '@/lib/site-config';
+---
+
+<BaseLayout
+  title="Allgemeine Geschäftsbedingungen (AGB) | Auto Kremer Bonn"
+  description="Allgemeine Geschäftsbedingungen (AGB) der Auto Kremer GbR, Bonn für Bestellungen von Original-Ersatzteilen und Zubehör im Ricambi Originali Online-Shop."
+  canonicalPath="/agb"
+>
+  <article class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+    <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+      Vertragsbedingungen · Online-Shop
+    </p>
+    <h1 class="mt-3 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+      Allgemeine Geschäftsbedingungen (AGB)
+    </h1>
+
+    <div class="mt-10 space-y-8 rounded-xl border border-border-subtle bg-surface p-6 text-sm leading-relaxed text-ink-muted sm:p-10">
+      <section aria-labelledby="agb-1">
+        <h2 id="agb-1" class="font-display text-xl font-semibold text-ink">
+          § 1 Geltungsbereich &amp; Vertragspartner
+        </h2>
+        <p class="mt-2">
+          (1) Diese Allgemeinen Geschäftsbedingungen gelten für sämtliche Bestellungen von Kraftfahrzeug-Ersatzteilen und Zubehör über den Online-Shop unter <code>auto-kremer.com/shop</code> gegenüber Verbrauchern (§ 13 BGB) und Unternehmern (§ 14 BGB).
+        </p>
+        <p class="mt-2">
+          (2) Vertragspartner ist die <strong>{SITE_CONFIG.legalName}</strong>, vertreten durch {SITE_CONFIG.owners.join(' und ')}, {SITE_CONFIG.address.street}, {SITE_CONFIG.address.postalCode} {SITE_CONFIG.address.city}, E-Mail: {SITE_CONFIG.contact.email}.
+        </p>
+        <p class="mt-2">
+          (3) Die Präsentation von Kraftfahrzeugen unter <code>/fahrzeuge</code> stellt kein online abschließbares Kaufangebot im Fernabsatz dar, sondern eine unverbindliche Einladung zur Besichtigung und individuellen schriftlichen Vertragsvereinbarung vor Ort oder im Einzelvertrag.
+        </p>
+      </section>
+
+      <section aria-labelledby="agb-2" class="border-t border-border-subtle pt-6">
+        <h2 id="agb-2" class="font-display text-xl font-semibold text-ink">
+          § 2 Vertragsschluss im Online-Shop
+        </h2>
+        <p class="mt-2">
+          Die Darstellung der Ersatzteile im Online-Shop stellt ein verbindliches Angebot zum Abschluss eines Kaufvertrages über die im Lagerbestand verfügbare Stückzahl dar. Durch Anklicken der Schaltfläche zum kostenpflichtigen Bestellabschluss auf der Zahlungsseite von Stripe nehmen Sie dieses Angebot an; unmittelbar danach erhalten Sie eine Bestellbestätigung per E-Mail.
+        </p>
+      </section>
+
+      <section aria-labelledby="agb-3" class="border-t border-border-subtle pt-6">
+        <h2 id="agb-3" class="font-display text-xl font-semibold text-ink">
+          § 3 Preise, Umsatzsteuer &amp; Versandkosten
+        </h2>
+        <p class="mt-2">
+          Alle im Online-Shop genannten Preise sind Gesamtpreise in Euro (EUR) und enthalten die gesetzliche deutsche Umsatzsteuer von derzeit 19 %. Zuzüglich fallen die vor Bestellabschluss ausgewiesenen Versandkosten gemäß unserer Übersicht unter{' '}
+          <a href="/versand" class="text-gold underline">Versand &amp; Zahlung</a> an. Bei Lieferungen in Nicht-EU-Drittländer können zusätzliche Zölle, Einfuhrumsatzsteuern und Abwicklungsgebühren anfallen, die vom Käufer zu tragen sind.
+        </p>
+      </section>
+
+      <section aria-labelledby="agb-4" class="border-t border-border-subtle pt-6">
+        <h2 id="agb-4" class="font-display text-xl font-semibold text-ink">
+          § 4 Lieferung, Lagerbestand &amp; Eigentumsvorbehalt
+        </h2>
+        <p class="mt-2">
+          (1) Da es sich bei zahlreichen Originalteilen um seltene Einzelstücke aus historischem Lagerbestand (<em>New Old Stock</em>) handelt, ist die bestellbare Menge technisch auf den tatsächlich verfügbaren Bestand begrenzt.
+        </p>
+        <p class="mt-2">
+          (2) Der Versand erfolgt als versichertes Paket mit Sendungsverfolgung ab unserem Lager in Bonn. Die Ware bleibt bis zur vollständigen Bezahlung unser Eigentum.
+        </p>
+      </section>
+
+      <section aria-labelledby="agb-5" class="border-t border-border-subtle pt-6">
+        <h2 id="agb-5" class="font-display text-xl font-semibold text-ink">
+          § 5 Gesetzliches Widerrufsrecht für Verbraucher
+        </h2>
+        <p class="mt-2">
+          Verbrauchern steht bei Fernabsatzkäufen im Online-Shop das gesetzliche 14-tägige Widerrufsrecht zu. Einzelheiten und das Muster-Widerrufsformular finden Sie in unserer{' '}
+          <a href="/widerruf" class="text-gold underline">Widerrufsbelehrung</a>.
+        </p>
+      </section>
+
+      <section aria-labelledby="agb-6" class="border-t border-border-subtle pt-6">
+        <h2 id="agb-6" class="font-display text-xl font-semibold text-ink">
+          § 6 Mängelhaftung (Gewährleistung) &amp; Fachmontagehinweis
+        </h2>
+        <p class="mt-2">
+          (1) Es gelten die gesetzlichen Mängelhaftungsrechte. Bei ausdrücklich als geprüftes Gebrauchtteil gekennzeichneten Waren beträgt die Verjährungsfrist für Mängelansprüche gegenüber Verbrauchern gemäß § 476 Abs. 2 BGB ein Jahr ab Ablieferung der Ware (nach gesonderter Vereinbarung im Bestellprozess); Schadensersatzansprüche wegen Verletzung von Leben, Körper, Gesundheit oder grobem Verschulden bleiben unberührt.
+        </p>
+        <p class="mt-2">
+          (2) Sicherheitsrelevante Kraftfahrzeugteile (insbesondere Brems-, Lenkungs-, Fahrwerks- und Motorsteuergerätekomponenten) dürfen ausschließlich durch qualifiziertes Fachpersonal nach Herstellervorgaben eingebaut und angelernt werden.
+        </p>
+      </section>
+
+      <section aria-labelledby="agb-7" class="border-t border-border-subtle pt-6">
+        <h2 id="agb-7" class="font-display text-xl font-semibold text-ink">
+          § 7 Anwendbares Recht
+        </h2>
+        <p class="mt-2">
+          Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts (CISG). Gegenüber Verbrauchern gilt diese Rechtswahl nur insoweit, als dadurch nicht zwingende Verbraucherschutzvorschriften des Staates entzogen werden, in dem der Verbraucher seinen gewöhnlichen Aufenthalt hat.
+        </p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

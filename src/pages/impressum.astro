@@ -1,0 +1,114 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE_CONFIG } from '@/lib/site-config';
+---
+
+<BaseLayout
+  title="Impressum — Angaben gemäß § 5 DDG | Auto Kremer Bonn"
+  description="Impressum und gesetzliche Anbieterkennzeichnung gemäß § 5 Digitale-Dienste-Gesetz (DDG) der Auto Kremer GbR in Bonn."
+  canonicalPath="/impressum"
+>
+  <article class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
+    <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+      Rechtliche Angaben
+    </p>
+    <h1 class="mt-3 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+      Impressum
+    </h1>
+
+    <div class="mt-10 space-y-8 rounded-xl border border-border-subtle bg-surface p-6 text-sm leading-relaxed text-ink-muted sm:p-10">
+      <section aria-labelledby="ddg-heading">
+        <h2 id="ddg-heading" class="font-display text-xl font-semibold text-ink">
+          Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)
+        </h2>
+        <p class="mt-3 text-ink font-medium">{SITE_CONFIG.legalName}</p>
+        <p>
+          {SITE_CONFIG.address.street}<br />
+          {SITE_CONFIG.address.postalCode} {SITE_CONFIG.address.city} ({SITE_CONFIG.address.district})<br />
+          {SITE_CONFIG.address.countryName}
+        </p>
+      </section>
+
+      <section aria-labelledby="owners-heading" class="border-t border-border-subtle pt-6">
+        <h2 id="owners-heading" class="font-display text-xl font-semibold text-ink">
+          Vertretungsberechtigte Gesellschafter
+        </h2>
+        <p class="mt-2 text-ink">
+          {SITE_CONFIG.owners.join(' und ')}
+        </p>
+      </section>
+
+      <section aria-labelledby="contact-heading" class="border-t border-border-subtle pt-6">
+        <h2 id="contact-heading" class="font-display text-xl font-semibold text-ink">
+          Kontakt
+        </h2>
+        <dl class="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <div>
+            <dt class="font-mono text-xs uppercase">Telefon Zentrale</dt>
+            <dd class="mt-0.5 font-mono text-ink">
+              <a href={`tel:${SITE_CONFIG.contact.phonePrimary}`} class="hover:text-gold hover:underline">
+                {SITE_CONFIG.contact.phonePrimaryDisplay}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="font-mono text-xs uppercase">Telefon Werkstatt &amp; Lager</dt>
+            <dd class="mt-0.5 font-mono text-ink">
+              <a href={`tel:${SITE_CONFIG.contact.phoneSecondary}`} class="hover:text-gold hover:underline">
+                {SITE_CONFIG.contact.phoneSecondaryDisplay}
+              </a>
+            </dd>
+          </div>
+          <div class="sm:col-span-2">
+            <dt class="font-mono text-xs uppercase">E-Mail</dt>
+            <dd class="mt-0.5 font-mono text-gold">
+              <a href={`mailto:${SITE_CONFIG.contact.email}`} class="hover:underline">
+                {SITE_CONFIG.contact.email}
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="vat-heading" class="border-t border-border-subtle pt-6">
+        <h2 id="vat-heading" class="font-display text-xl font-semibold text-ink">
+          Umsatzsteuer-Identifikationsnummer
+        </h2>
+        <p class="mt-2">
+          Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz (UStG): wird auf jeder Handelsrechnung ausgewiesen und auf Anfrage unter{' '}
+          <a href={`mailto:${SITE_CONFIG.contact.email}`} class="text-gold underline">
+            {SITE_CONFIG.contact.email}
+          </a>{' '}
+          mitgeteilt.
+        </p>
+      </section>
+
+      <section aria-labelledby="editorial-heading" class="border-t border-border-subtle pt-6">
+        <h2 id="editorial-heading" class="font-display text-xl font-semibold text-ink">
+          Redaktionell verantwortlich gemäß § 18 Abs. 2 MStV
+        </h2>
+        <p class="mt-2">
+          Jason Kremer &amp; Marvin Kremer, {SITE_CONFIG.address.street}, {SITE_CONFIG.address.postalCode} {SITE_CONFIG.address.city}.
+        </p>
+      </section>
+
+      <section aria-labelledby="dispute-heading" class="border-t border-border-subtle pt-6">
+        <h2 id="dispute-heading" class="font-display text-xl font-semibold text-ink">
+          Verbraucherstreitbeilegung (§ 36 VSBG)
+        </h2>
+        <p class="mt-2">
+          Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. Unser Anspruch ist es, jedes Anliegen unserer Kundinnen und Kunden im direkten persönlichen Dialog fair und unbürokratisch zu lösen.
+        </p>
+      </section>
+
+      <section aria-labelledby="trademark-heading" class="border-t border-border-subtle pt-6">
+        <h2 id="trademark-heading" class="font-display text-xl font-semibold text-ink">
+          Markenrechtlicher Hinweis
+        </h2>
+        <p class="mt-2">
+          Auto Kremer GbR ist ein unabhängiger Kraftfahrzeug-Fachbetrieb für Verkauf, Wartung, Restauration und Ersatzteilhandel. Genannte Herstellernamen, Modellbezeichnungen und Original-Ersatzteilnummern (insbesondere Automobili Lamborghini, Porsche und Alfa Romeo) sind eingetragene Marken der jeweiligen Rechteinhaber und dienen ausschließlich der eindeutigen Zuordnung und Kompatibilitätsbeschreibung angebotener Fahrzeuge, Werkstattleistungen und Original-Ersatzteile gemäß § 23 MarkenG.
+        </p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

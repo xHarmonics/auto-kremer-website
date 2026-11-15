@@ -80,10 +80,10 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 - [x] Task 11: Fahrzeug-Kommission (`/fahrzeug-verkaufen`) mit Multi-Step-Formular, R2-Foto-Upload & Turnstile
 - [x] Task 12: Zusammengeführte Kontaktseite (`/kontakt`) & Anfrage-API für Fahrzeug-/Werkstatt-/Teileanfragen
 - [x] Task 13: Startseite (`/`), Über uns inkl. Chronik seit 1967 (`/ueber-uns`) & Werkstatt-Seite (`/werkstatt`)
-- [ ] Task 14: Rechtssichere Seiten (`/impressum` nach § 5 DDG, `/datenschutz`, `/agb`, `/widerruf`, `/versand`)
+- [x] Task 14: Rechtssichere Seiten (`/impressum` nach § 5 DDG, `/datenschutz`, `/agb`, `/widerruf`, `/versand`)
 
 ### Checkpoint 4: Content, Leads & Legal Complete
-- [ ] Alle Inhalts-, Lead- und Rechtsseiten sind vollständig verlinkt, Formulare validieren server- und clientseitig, keine toten Links oder Platzhalter vorhanden.
+- [x] Alle Inhalts-, Lead- und Rechtsseiten sind vollständig verlinkt, Formulare validieren server- und clientseitig, keine toten Links oder Platzhalter vorhanden.
 
 ### Phase 5: Admin Backoffice, SEO, 301-Migration & Launch-Gate
 - [ ] Task 15: Geschütztes `/admin`-Cockpit (Cloudflare Access JWT + CRUD für Fahrzeuge & Ersatzteile)

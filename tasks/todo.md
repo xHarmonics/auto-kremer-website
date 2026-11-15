@@ -384,14 +384,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Überarbeitet und vervollständigt sämtliche Pflichtseiten für den deutschen Markt: `/impressum` nach aktuellem **§ 5 DDG** (ohne veraltetes TMG und ohne abgeschalteten EU-OS-Link, mit Platzhalter/Feld für USt-IdNr.), `/datenschutz` (korrigierte Telefonnummer `+49 228 463322`, aktuelles **§ 25 TDDDG**, transparente Darstellung von Cloudflare Hosting/Turnstile/Analytics, Stripe Checkout & Resend) sowie gewerbliche `/agb`, 14-Tage-`/widerruf` inkl. Muster-Widerrufsformular und `/versand`.
 
 **Acceptance criteria:**
-- [ ] Kein Vorkommen mehr von `§ 5 TMG`, `TTDSG`, `ec.europa.eu/consumers/odr`, Zahlendreher `462233` oder „Privatverkauf – Rückgabe ausgeschlossen“.
-- [ ] Alle 5 Rechtsseiten nutzen saubere Typografie und semantische Überschriften (`<h1>`, `<h2>`, `<p>`) statt der bisherigen `<h6>`-Blöcke.
-- [ ] Alle Rechtsseiten sind aus Footer, Produktdetailseite und Warenkorb erreichbar.
+- [x] Kein Vorkommen mehr von `§ 5 TMG`, `TTDSG`, `ec.europa.eu/consumers/odr`, Zahlendreher `462233` oder „Privatverkauf – Rückgabe ausgeschlossen“.
+- [x] Alle 5 Rechtsseiten nutzen saubere Typografie und semantische Überschriften (`<h1>`, `<h2>`, `<p>`) statt der bisherigen `<h6>`-Blöcke.
+- [x] Alle Rechtsseiten sind aus Footer, Produktdetailseite und Warenkorb erreichbar.
 
 **Verification:**
-- [ ] Tests pass: `npm test`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Volltextsuche über `src/` bestätigt Abwesenheit veralteter Gesetzeskürzel und fehlerhafter Kontaktdaten.
+- [x] Tests pass: `npm test`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Volltextsuche über `src/` bestätigt Abwesenheit veralteter Gesetzeskürzel und fehlerhafter Kontaktdaten.
 
 **Dependencies:** Task 2
 
@@ -407,9 +407,9 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 ---
 
 ## Checkpoint: After Tasks 11-14 (Content, Leads & Legal Complete)
-- [ ] All unit tests pass and build succeeds
-- [ ] Consignment wizard (with R2 image upload) and contact forms work end-to-end
-- [ ] All brand, service, and legal pages are complete, unified in German, and linked cleanly
+- [x] All unit tests pass and build succeeds
+- [x] Consignment wizard (with R2 image upload) and contact forms work end-to-end
+- [x] All brand, service, and legal pages are complete, unified in German, and linked cleanly
 
 ---
 
