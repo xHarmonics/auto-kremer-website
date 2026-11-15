@@ -60,7 +60,7 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 
 ### Phase 2: Vertical Slice — Fahrzeug-Showroom & Referenzen
 - [x] Task 3: D1-Datenmodell, Migration & Seed-Daten für Fahrzeuge (Showroom & Verkaufte Ikonen)
-- [ ] Task 4: Showroom-Übersicht (`/fahrzeuge`) & Referenzen (`/referenzen`) inkl. Filter-Insel
+- [x] Task 4: Showroom-Übersicht (`/fahrzeuge`) & Referenzen (`/referenzen`) inkl. Filter-Insel
 - [ ] Task 5: Fahrzeug-Detailansicht (`/fahrzeuge/[slug]`) mit Lightbox-Galerie, Tech-Specs & Direkt-Anfrage
 
 ### Checkpoint 2: Showroom End-to-End

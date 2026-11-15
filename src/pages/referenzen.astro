@@ -1,0 +1,64 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import VehicleCard from '@/components/showroom/VehicleCard.astro';
+import { listSoldVehicles } from '@/db/queries/vehicles';
+
+const soldVehicles = await listSoldVehicles();
+---
+
+<BaseLayout
+  title="Referenzen & Verkaufte Klassiker — Auszug vermittelter Ikonen"
+  description="Ein Auszug durch Auto Kremer Bonn verkaufter und vermittelter Sammlerfahrzeuge: Lamborghini Diablo SE30, Lamborghini Jarama 400 GT, Murciélago V12 und weitere Raritäten."
+  canonicalPath="/referenzen"
+>
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
+    <div class="max-w-3xl">
+      <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+        Historie &amp; Sammler-Archiv
+      </p>
+      <h1 class="mt-3 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+        Verkaufte Klassiker &amp; Referenzen
+      </h1>
+      <p class="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">
+        Ein ausgewählter Einblick in außergewöhnliche Automobile aus Sant’Agata Bolognese, die unser Haus geprüft, restauriert und erfolgreich in Sammlerhände übergeben hat.
+      </p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {soldVehicles.map((vehicle, index) => (
+        <VehicleCard vehicle={vehicle} priority={index === 0} />
+      ))}
+    </div>
+
+    <!-- Consignment Transition CTA -->
+    <aside class="mt-16 rounded-xl border border-gold/30 bg-surface p-8 sm:p-10">
+      <div class="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+        <div class="max-w-2xl">
+          <p class="font-mono text-xs font-semibold tracking-wider text-gold uppercase">
+            Verkauf &amp; Vermittlung auf Augenhöhe
+          </p>
+          <h2 class="mt-2 font-display text-2xl font-semibold text-ink sm:text-3xl">
+            Vertrauen auch Sie uns Ihren Sportwagen oder Klassiker an.
+          </h2>
+          <p class="mt-2 text-sm leading-relaxed text-ink-muted sm:text-base">
+            Ob Kommissionsverkauf zum bestmöglichen Sammlerpreis oder unkomplizierter Direktankauf: Wir übernehmen technische Aufbereitung, professionelle Präsentation und die komplette Abwicklung.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="/fahrzeug-verkaufen"
+            class="inline-flex min-h-12 items-center justify-center rounded-md bg-gold px-6 py-3 text-sm font-semibold text-canvas transition-colors hover:bg-gold-hover"
+          >
+            Jetzt Fahrzeug anbieten →
+          </a>
+          <a
+            href="/fahrzeuge"
+            class="inline-flex min-h-12 items-center justify-center rounded-md border border-border-control bg-canvas px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-gold hover:text-gold"
+          >
+            Aktueller Bestand
+          </a>
+        </div>
+      </div>
+    </aside>
+  </section>
+</BaseLayout>

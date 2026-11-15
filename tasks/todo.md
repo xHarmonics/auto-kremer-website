@@ -101,14 +101,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Baut die Fahrzeugkarten (`VehicleCard.astro`) mit Monospace-Kerndatenleiste (Baujahr, KM, Leistung, Getriebe, Preis/Status) sowie die Übersichtsseiten `/fahrzeuge` (mit interaktiver Marken-/Getriebefilter-Insel) und `/referenzen` (mit Verkauft-Badge und Überleitung zur Fahrzeug-Kommission).
 
 **Acceptance criteria:**
-- [ ] `/fahrzeuge` rendert alle verfügbaren/reservierten Fahrzeuge und lässt sich ohne Seiten-Reload nach Marke (Lamborghini, Porsche, Alfa Romeo) und Getriebe filtern.
-- [ ] `/referenzen` präsentiert verkaufte Sammlerfahrzeuge mit sauberer `<h1>`-Hierarchie, Fahrzeugdaten und einem klaren CTA zu `/fahrzeug-verkaufen`.
-- [ ] Alle Karten verlinken auf eigene interne Detailseiten `/fahrzeuge/[slug]` statt Besucher sofort zu `mobile.de` wegzuschicken.
+- [x] `/fahrzeuge` rendert alle verfügbaren/reservierten Fahrzeuge und lässt sich ohne Seiten-Reload nach Marke (Lamborghini, Porsche, Alfa Romeo) und Getriebe filtern.
+- [x] `/referenzen` präsentiert verkaufte Sammlerfahrzeuge mit sauberer `<h1>`-Hierarchie, Fahrzeugdaten und einem klaren CTA zu `/fahrzeug-verkaufen`.
+- [x] Alle Karten verlinken auf eigene interne Detailseiten `/fahrzeuge/[slug]` statt Besucher sofort zu `mobile.de` wegzuschicken.
 
 **Verification:**
-- [ ] Tests pass: `npx vitest run`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Filterwechsel auf `/fahrzeuge` und Navigation zu `/referenzen` prüfen.
+- [x] Tests pass: `npx vitest run`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Filterwechsel auf `/fahrzeuge` und Navigation zu `/referenzen` prüfen.
 
 **Dependencies:** Task 2, Task 3
 
