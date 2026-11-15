@@ -216,14 +216,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Implementiert die Produkt-Detailansicht `/shop/[slug]` (inkl. Schema.org `Product`, OEM-Datenblatt, kompatiblen Modellen, echten Versand-/Widerrufshinweisen statt des bisherigen „Privatverkauf“-Fehlers) sowie den globalen Warenkorb via `Nano Stores` (`localStorage`) und `CartDrawer.tsx` mit Mengenbegrenzung auf den realen Lagerbestand.
 
 **Acceptance criteria:**
-- [ ] Artikel lassen sich von `/shop` und `/shop/[slug]` in den Warenkorb legen; die maximale Menge im Warenkorb ist strikt durch den verfügbaren Lagerbestand begrenzt.
-- [ ] Der `CartDrawer` bleibt über Seitenwechsel und Browser-Reloads erhalten, zeigt Zwischensumme, MwSt.-Anteil und geschätzte Versandkosten und ist vollständig per Tastatur (`Escape`, Focus-Trap) bedienbar.
-- [ ] Das Warenkorb-Badge im `SiteHeader` aktualisiert sich reaktiv in Echtzeit.
+- [x] Artikel lassen sich von `/shop` und `/shop/[slug]` in den Warenkorb legen; die maximale Menge im Warenkorb ist strikt durch den verfügbaren Lagerbestand begrenzt.
+- [x] Der `CartDrawer` bleibt über Seitenwechsel und Browser-Reloads erhalten, zeigt Zwischensumme, MwSt.-Anteil und geschätzte Versandkosten und ist vollständig per Tastatur (`Escape`, Focus-Trap) bedienbar.
+- [x] Das Warenkorb-Badge im `SiteHeader` aktualisiert sich reaktiv in Echtzeit.
 
 **Verification:**
-- [ ] Tests pass: `npx vitest run tests/unit/cart.test.ts`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Artikel hinzufügen, Menge ändern, Seite neu laden und `CartDrawer` prüfen.
+- [x] Tests pass: `npx vitest run tests/unit/cart.test.ts`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Artikel hinzufügen, Menge ändern, Seite neu laden und `CartDrawer` prüfen.
 
 **Dependencies:** Task 7
 

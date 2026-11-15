@@ -2,6 +2,7 @@
 import '@/styles/global.css';
 import SiteHeader from '@/components/layout/SiteHeader.astro';
 import SiteFooter from '@/components/layout/SiteFooter.astro';
+import CartDrawer from '@/components/shop/CartDrawer';
 import { SITE_CONFIG, buildAutoDealerJsonLd } from '@/lib/site-config';
 
 interface Props {
@@ -111,6 +112,7 @@ const jsonLdBlocks: Array<Record<string, unknown>> = [
 
     <SiteFooter />
 
+    <CartDrawer client:load />
     <slot name="overlays" />
   </body>
 </html>
