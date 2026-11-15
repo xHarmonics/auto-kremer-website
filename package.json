@@ -1,0 +1,50 @@
+{
+  "name": "auto-kremer-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro build && wrangler dev",
+    "cf:types": "CI=true wrangler types",
+    "typecheck": "astro check && tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "CI=true wrangler d1 migrations apply DB --local",
+    "db:seed:local": "CI=true wrangler d1 execute DB --local --file=./drizzle/seed.sql"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.4.8",
+    "@astrojs/preact": "^6.1.6",
+    "@nanostores/persistent": "^1.3.5",
+    "@nanostores/preact": "^1.1.1",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.12",
+    "drizzle-orm": "^0.45.4",
+    "nanostores": "^1.5.5",
+    "preact": "^11.2.0",
+    "tailwindcss": "^4.3.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.6",
+    "drizzle-kit": "^0.31.11",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.162.0"
+  },
+  "allowScripts": {
+    "esbuild@0.18.20": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true,
+    "workerd@1.20261110.1": true,
+    "workerd@1.20261113.1": true,
+    "fsevents@2.3.3": true
+  }
+}

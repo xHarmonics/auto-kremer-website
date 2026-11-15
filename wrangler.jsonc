@@ -1,0 +1,38 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "auto-kremer-website",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "compatibility_date": "2026-11-15",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true,
+    "traces": {
+      "enabled": true
+    }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "auto-kremer-db",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "drizzle/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA_BUCKET",
+      "bucket_name": "auto-kremer-media"
+    }
+  ],
+  "vars": {
+    "PUBLIC_SITE_URL": "https://www.auto-kremer.com",
+    "MAIL_FROM": "Auto Kremer <noreply@auto-kremer.com>",
+    "MAIL_TO": "info@auto-kremer.com",
+    "PUBLIC_TURNSTILE_SITE_KEY": "1x00000000000000000000AA"
+  }
+}

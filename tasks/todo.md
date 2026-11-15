@@ -11,14 +11,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Initialisiert das Projekt mit Astro 5 im Hybrid/Server-Modus für Cloudflare Workers (`@astrojs/cloudflare`), Preact-Integration für interaktive Inseln, Tailwind CSS v4, striktem TypeScript sowie Vitest und Playwright für automatisierte Tests.
 
 **Acceptance criteria:**
-- [ ] Astro 5 kompiliert fehlerfrei für die Cloudflare-Workers-Runtime inkl. konfigurierter D1- und R2-Bindings in `wrangler.jsonc`.
-- [ ] Skripte `npm run dev`, `npm run typecheck`, `npm test`, `npm run test:e2e` und `npm run build` sind eingerichtet und ein Health-Test unter `/api/health` besteht.
-- [ ] Keine unnötigen Abhängigkeiten oder Baukasten-Boilerplates sind enthalten.
+- [x] Astro 5 kompiliert fehlerfrei für die Cloudflare-Workers-Runtime inkl. konfigurierter D1- und R2-Bindings in `wrangler.jsonc`.
+- [x] Skripte `npm run dev`, `npm run typecheck`, `npm test`, `npm run test:e2e` und `npm run build` sind eingerichtet und ein Health-Test unter `/api/health` besteht.
+- [x] Keine unnötigen Abhängigkeiten oder Baukasten-Boilerplates sind enthalten.
 
 **Verification:**
-- [ ] Tests pass: `npm test`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: `npx wrangler dev` startet lokal und liefert HTTP 200 auf `/` und `/api/health`.
+- [x] Tests pass: `npm test`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: `npx wrangler dev` startet lokal und liefert HTTP 200 auf `/` und `/api/health`.
 
 **Dependencies:** None
 

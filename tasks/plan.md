@@ -52,7 +52,7 @@ Jede Aufgabe aus [`tasks/todo.md`](./todo.md) wird nach dem Zyklus **Implement -
 Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`tasks/todo.md`](./todo.md).
 
 ### Phase 1: Foundation & Design System Shell
-- [ ] Task 1: Projekt-Setup mit Astro 5, Cloudflare Workers, Tailwind CSS v4 & Test-Runner
+- [x] Task 1: Projekt-Setup mit Astro 5, Cloudflare Workers, Tailwind CSS v4 & Test-Runner
 - [ ] Task 2: Design-Tokens, lokale Typografie & globales Seiten-Layout (Header, Mobile-Menü, Footer)
 
 ### Checkpoint 1: Foundation & Shell
