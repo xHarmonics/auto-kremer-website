@@ -15,6 +15,13 @@
       "when": 1794702450575,
       "tag": "0001_skinny_exiles",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1794702949553,
+      "tag": "0002_quick_doctor_faustus",
+      "breakpoints": true
     }
   ]
 }

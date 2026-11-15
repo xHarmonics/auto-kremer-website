@@ -243,14 +243,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Erstellt den Server-Endpunkt `POST /api/checkout`, der Preise und Lagerbestände ausschließlich serverseitig aus D1 liest (niemals Client-Preisen vertraut!), den Bestand für 30 Minuten atomar reserviert, eine `orders`-Vorabzeile anlegt und eine Stripe Checkout Session inkl. Versandtarifen (DE / EU / International versichert) und AGB/Widerrufs-Links erzeugt.
 
 **Acceptance criteria:**
-- [ ] Manipulation von Preisen im Client wird ignoriert; `/api/checkout` berechnet alle Beträge ausschließlich anhand der D1-Datenbank.
-- [ ] Bei `availableStock < requestedQuantity` bricht der Checkout mit einer klaren deutschen Fehlermeldung (HTTP 409 inkl. betroffener Artikel) ab, bevor eine Stripe-Session entsteht.
-- [ ] Für gültige Warenkörbe wird der Bestand atomar reserviert und die Stripe-Checkout-URL zurückgegeben.
+- [x] Manipulation von Preisen im Client wird ignoriert; `/api/checkout` berechnet alle Beträge ausschließlich anhand der D1-Datenbank.
+- [x] Bei `availableStock < requestedQuantity` bricht der Checkout mit einer klaren deutschen Fehlermeldung (HTTP 409 inkl. betroffener Artikel) ab, bevor eine Stripe-Session entsteht.
+- [x] Für gültige Warenkörbe wird der Bestand atomar reserviert und die Stripe-Checkout-URL zurückgegeben.
 
 **Verification:**
-- [ ] Tests pass: `npx vitest run tests/unit/checkout.test.ts`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Parallele Checkout-Anfrage auf ein Einzelstück (`stock = 1`) lässt exakt 1 Session zu und lehnt die zweite sauber ab.
+- [x] Tests pass: `npx vitest run tests/unit/checkout.test.ts`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Parallele Checkout-Anfrage auf ein Einzelstück (`stock = 1`) lässt exakt 1 Session zu und lehnt die zweite sauber ab.
 
 **Dependencies:** Task 8
 

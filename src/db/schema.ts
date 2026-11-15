@@ -112,8 +112,67 @@ export const legacyProductRedirects = sqliteTable('legacy_product_redirects', {
   targetProductSlug: text('target_product_slug').notNull(),
 });
 
+export const orders = sqliteTable(
+  'orders',
+  {
+    id: integer('id').primaryKey({ autoIncrement: true }),
+    orderNumber: text('order_number').notNull().unique(),
+    stripeSessionId: text('stripe_session_id').unique(),
+    status: text('status', {
+      enum: ['pending', 'paid', 'expired', 'cancelled'],
+    })
+      .notNull()
+      .default('pending'),
+    shippingZone: text('shipping_zone', { enum: ['DE', 'EU', 'WORLD'] })
+      .notNull()
+      .default('DE'),
+    subtotalCents: integer('subtotal_cents').notNull(),
+    shippingCents: integer('shipping_cents').notNull(),
+    totalCents: integer('total_cents').notNull(),
+    vatCents: integer('vat_cents').notNull(),
+    customerEmail: text('customer_email'),
+    customerName: text('customer_name'),
+    stripeMode: text('stripe_mode').notNull().default('sandbox'),
+    reservedUntil: text('reserved_until').notNull(),
+    paidAt: text('paid_at'),
+    createdAt: text('created_at').notNull(),
+    updatedAt: text('updated_at').notNull(),
+  },
+  (table) => [
+    index('idx_orders_status').on(table.status),
+    index('idx_orders_reserved_until').on(table.status, table.reservedUntil),
+  ]
+);
+
+export const orderItems = sqliteTable(
+  'order_items',
+  {
+    id: integer('id').primaryKey({ autoIncrement: true }),
+    orderId: integer('order_id')
+      .notNull()
+      .references(() => orders.id, { onDelete: 'cascade' }),
+    productId: integer('product_id')
+      .notNull()
+      .references(() => products.id),
+    oemNumber: text('oem_number').notNull(),
+    title: text('title').notNull(),
+    unitPriceCents: integer('unit_price_cents').notNull(),
+    quantity: integer('quantity').notNull(),
+    lineTotalCents: integer('line_total_cents').notNull(),
+  },
+  (table) => [index('idx_order_items_order').on(table.orderId)]
+);
+
+export const stripeWebhookEvents = sqliteTable('stripe_webhook_events', {
+  eventId: text('event_id').primaryKey(),
+  eventType: text('event_type').notNull(),
+  processedAt: text('processed_at').notNull(),
+});
+
 export type VehicleRow = typeof vehicles.$inferSelect;
 export type NewVehicleRow = typeof vehicles.$inferInsert;
 export type VehicleImageRow = typeof vehicleImages.$inferSelect;
 export type ProductRow = typeof products.$inferSelect;
 export type ProductModelRow = typeof productModels.$inferSelect;
+export type OrderRow = typeof orders.$inferSelect;
+export type OrderItemRow = typeof orderItems.$inferSelect;
