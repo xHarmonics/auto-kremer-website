@@ -23,8 +23,24 @@ export default function VehicleFilterBar({
     const params = new URLSearchParams(window.location.search);
     const urlBrand = params.get('marke');
     const urlTrans = params.get('getriebe');
-    if (urlBrand && brands.includes(urlBrand)) setBrand(urlBrand);
-    if (urlTrans && transmissions.includes(urlTrans)) setTransmission(urlTrans);
+
+    const domBrand = document.getElementById('filter-brand') as HTMLSelectElement | null;
+    if (domBrand && domBrand.value !== initialBrand && (domBrand.value === 'all' || brands.includes(domBrand.value))) {
+      setBrand(domBrand.value);
+    } else if (urlBrand && brands.includes(urlBrand)) {
+      setBrand(urlBrand);
+    }
+
+    const domTrans = document.getElementById('filter-transmission') as HTMLSelectElement | null;
+    if (
+      domTrans &&
+      domTrans.value !== initialTransmission &&
+      (domTrans.value === 'all' || transmissions.includes(domTrans.value))
+    ) {
+      setTransmission(domTrans.value);
+    } else if (urlTrans && transmissions.includes(urlTrans)) {
+      setTransmission(urlTrans);
+    }
   }, [brands, transmissions]);
 
   useEffect(() => {

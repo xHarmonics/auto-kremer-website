@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { eq } from 'drizzle-orm';
 import { z } from 'zod';
 import { getDb } from '@/db/client';
 import { vehicleImages, vehicles } from '@/db/schema';
@@ -50,6 +51,11 @@ const CreateVehicleSchema = z.object({
   priceEur: z.string().trim().optional().default(''),
   status: z.enum(['available', 'reserved', 'sold']).default('available'),
   summary: z.string().trim().min(10).max(500),
+});
+
+const DeleteVehicleSchema = z.object({
+  action: z.literal('delete_vehicle'),
+  slug: z.string().trim().min(2).max(120),
 });
 
 function slugifyVehicle(input: string): string {
@@ -245,6 +251,34 @@ export const POST: APIRoute = async ({ request }) => {
       JSON.stringify({ ok: true, vehicle: inserted }),
       { status: 201, headers: { 'Content-Type': 'application/json; charset=utf-8' } }
     );
+  }
+
+  if (action === 'delete_vehicle') {
+    const parsed = DeleteVehicleSchema.safeParse(raw);
+    if (!parsed.success) {
+      return new Response(JSON.stringify({ error: 'Ungültiger Fahrzeug-Slug.' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      });
+    }
+
+    const db = await getDb();
+    const deleted = await db
+      .delete(vehicles)
+      .where(eq(vehicles.slug, parsed.data.slug))
+      .returning({ id: vehicles.id, slug: vehicles.slug });
+
+    if (deleted.length === 0) {
+      return new Response(JSON.stringify({ error: 'Fahrzeug nicht gefunden.' }), {
+        status: 404,
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      });
+    }
+
+    return new Response(JSON.stringify({ ok: true, deleted: deleted[0] }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    });
   }
 
   return new Response(JSON.stringify({ error: 'Unbekannte Aktion.' }), {

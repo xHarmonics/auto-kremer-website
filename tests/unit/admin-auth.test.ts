@@ -223,5 +223,23 @@ describe('Cloudflare Zero Trust Access Admin Auth & Inventory Backoffice', () =>
     expect(createdVehicle).toBeDefined();
     expect(createdVehicle!.mileageKm).toBe(18500);
     expect(createdVehicle!.priceCents).toBe(29500000);
+
+    // Delete newly created vehicle cleanly
+    const delRes = await adminInventoryPost({
+      request: new Request('http://localhost:4321/api/admin/inventory', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer unit-test-admin-secret',
+        },
+        body: JSON.stringify({
+          action: 'delete_vehicle',
+          slug: createdVehicle!.slug,
+        }),
+      }),
+    } as never);
+    expect(delRes.status).toBe(200);
+    const afterDeleteSold = await listSoldVehicles(db);
+    expect(afterDeleteSold.some((v) => v.slug === createdVehicle!.slug)).toBe(false);
   });
 });

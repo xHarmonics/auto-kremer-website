@@ -38,9 +38,28 @@ export default function ShopCatalogExplorer({
     const m = params.get('modell');
     const c = params.get('kategorie');
     const l = params.get('lager');
-    if (q !== null) setQuery(q);
-    if (m) setModelSlug(m);
-    if (c) setCategory(c);
+
+    const domInput = document.getElementById('oem-search-input') as HTMLInputElement | null;
+    if (domInput && domInput.value !== initialQuery) {
+      setQuery(domInput.value);
+    } else if (q !== null) {
+      setQuery(q);
+    }
+
+    const domModel = document.getElementById('shop-model-filter') as HTMLSelectElement | null;
+    if (domModel && domModel.value && domModel.value !== initialModel) {
+      setModelSlug(domModel.value);
+    } else if (m) {
+      setModelSlug(m);
+    }
+
+    const domCat = document.getElementById('shop-category-filter') as HTMLSelectElement | null;
+    if (domCat && domCat.value && domCat.value !== initialCategory) {
+      setCategory(domCat.value);
+    } else if (c) {
+      setCategory(c);
+    }
+
     if (l === '1') setInStockOnly(true);
   }, []);
 
