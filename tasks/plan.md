@@ -86,7 +86,7 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 - [x] Alle Inhalts-, Lead- und Rechtsseiten sind vollständig verlinkt, Formulare validieren server- und clientseitig, keine toten Links oder Platzhalter vorhanden.
 
 ### Phase 5: Admin Backoffice, SEO, 301-Migration & Launch-Gate
-- [ ] Task 15: Geschütztes `/admin`-Cockpit (Cloudflare Access JWT + CRUD für Fahrzeuge & Ersatzteile)
+- [x] Task 15: Geschütztes `/admin`-Cockpit (Cloudflare Access JWT + CRUD für Fahrzeuge & Ersatzteile)
 - [ ] Task 16: Vollständige Wix-301-Redirects, XML-Sitemap, Schema.org-Markup & Lighthouse/A11y-Audit
 
 ### Checkpoint 5: Production Release Gate

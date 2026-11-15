@@ -1,0 +1,57 @@
+---
+import '@/styles/global.css';
+
+interface Props {
+  title: string;
+  adminEmail?: string;
+}
+
+const { title, adminEmail = 'admin@auto-kremer.com' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title} · Auto Kremer Backoffice</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-[100svh] bg-canvas text-ink antialiased">
+    <header class="border-b border-border-subtle bg-surface">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
+        <div class="flex items-center gap-3">
+          <span class="rounded border border-gold/50 bg-canvas px-2.5 py-1 font-mono text-xs font-bold text-gold uppercase">
+            ADMIN COCKPIT
+          </span>
+          <span class="font-display text-lg font-semibold text-ink">
+            Auto Kremer Bonn
+          </span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 text-xs">
+          <span class="font-mono text-ink-muted">
+            Angemeldet: <strong class="text-ink">{adminEmail}</strong>
+          </span>
+          <a
+            href="/fahrzeuge"
+            class="rounded border border-border-control bg-canvas px-3 py-1.5 font-semibold text-ink hover:border-gold hover:text-gold"
+          >
+            Showroom öffnen ↗
+          </a>
+          <a
+            href="/shop"
+            class="rounded border border-border-control bg-canvas px-3 py-1.5 font-semibold text-ink hover:border-gold hover:text-gold"
+          >
+            Shop öffnen ↗
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 lg:py-10">
+      <slot />
+    </main>
+  </body>
+</html>

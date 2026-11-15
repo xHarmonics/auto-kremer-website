@@ -1,0 +1,382 @@
+---
+import { desc } from 'drizzle-orm';
+import AdminLayout from '@/layouts/AdminLayout.astro';
+import { getDb } from '@/db/client';
+import { inquiries, orders } from '@/db/schema';
+import { searchProducts } from '@/db/queries/products';
+import { listAllVehicles } from '@/db/queries/vehicles';
+import { formatEurCents, formatVehiclePriceDisplay } from '@/lib/format';
+
+const db = await getDb();
+const [allVehicles, topProducts, recentInquiries, recentOrders] = await Promise.all([
+  listAllVehicles(db),
+  searchProducts({ limit: 25 }, db),
+  db.select().from(inquiries).orderBy(desc(inquiries.id)).limit(15),
+  db.select().from(orders).orderBy(desc(orders.id)).limit(15),
+]);
+
+const activeCount = allVehicles.filter((v) => v.status !== 'sold').length;
+const soldCount = allVehicles.filter((v) => v.status === 'sold').length;
+const savedBanner = Astro.url.searchParams.get('saved');
+const adminEmail = Astro.locals.adminUser?.email ?? 'admin@auto-kremer.com';
+---
+
+<AdminLayout title="Bestands- & Anfrage-Verwaltung" adminEmail={adminEmail}>
+  <div class="flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="font-mono text-xs font-semibold tracking-widest text-gold uppercase">
+        Backoffice · Echtzeit-D1-Datenbank
+      </p>
+      <h1 class="mt-1 font-display text-2xl font-semibold text-ink sm:text-4xl">
+        Fahrzeugbestand, Teilelager &amp; Kundenanfragen
+      </h1>
+    </div>
+  </div>
+
+  {savedBanner && (
+    <div
+      role="status"
+      data-admin-saved-banner
+      class="mt-6 rounded-lg border border-status-available/40 bg-surface px-4 py-3 font-mono text-xs text-status-available"
+    >
+      ✓ Änderung erfolgreich in Cloudflare D1 gespeichert ({savedBanner}).
+    </div>
+  )}
+
+  <!-- KPI Cards -->
+  <dl class="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+    <div class="rounded-xl border border-border-subtle bg-surface p-5">
+      <dt class="font-mono text-xs text-ink-muted uppercase">Showroom Aktiv</dt>
+      <dd class="mt-1 font-display text-3xl font-semibold text-status-available">
+        {activeCount}
+      </dd>
+    </div>
+    <div class="rounded-xl border border-border-subtle bg-surface p-5">
+      <dt class="font-mono text-xs text-ink-muted uppercase">Referenzen (Verkauft)</dt>
+      <dd class="mt-1 font-display text-3xl font-semibold text-ink">{soldCount}</dd>
+    </div>
+    <div class="rounded-xl border border-border-subtle bg-surface p-5">
+      <dt class="font-mono text-xs text-ink-muted uppercase">Eingegangene Anfragen</dt>
+      <dd class="mt-1 font-display text-3xl font-semibold text-gold">
+        {recentInquiries.length}
+      </dd>
+    </div>
+    <div class="rounded-xl border border-border-subtle bg-surface p-5">
+      <dt class="font-mono text-xs text-ink-muted uppercase">Shop-Bestellungen</dt>
+      <dd class="mt-1 font-display text-3xl font-semibold text-ink">
+        {recentOrders.length}
+      </dd>
+    </div>
+  </dl>
+
+  <!-- 1. Vehicle Management + 1-Click "Als verkauft markieren" -->
+  <section aria-labelledby="admin-vehicles-heading" class="mt-12">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <h2 id="admin-vehicles-heading" class="font-display text-xl font-semibold text-ink">
+        1. Fahrzeugbestand &amp; 1-Klick-Statuswechsel
+      </h2>
+
+      <details class="group">
+        <summary class="cursor-pointer list-none rounded-md bg-gold px-4 py-2 text-xs font-semibold text-canvas hover:bg-gold-hover">
+          + Neues Fahrzeug anlegen
+        </summary>
+        <form
+          action="/api/admin/inventory"
+          method="POST"
+          class="mt-4 grid max-w-2xl grid-cols-1 gap-3 rounded-xl border border-gold/40 bg-surface p-5 sm:grid-cols-2"
+        >
+          <input type="hidden" name="action" value="create_vehicle" />
+          <div class="sm:col-span-2">
+            <label for="new-v-title" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Titel *
+            </label>
+            <input id="new-v-title" name="title" type="text" required class="ak-input" placeholder="Lamborghini Aventador LP 700-4" />
+          </div>
+          <div>
+            <label for="new-v-brand" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Marke *
+            </label>
+            <input id="new-v-brand" name="brand" type="text" required value="Lamborghini" class="ak-input" />
+          </div>
+          <div>
+            <label for="new-v-model" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Modell *
+            </label>
+            <input id="new-v-model" name="model" type="text" required class="ak-input" placeholder="Aventador" />
+          </div>
+          <div>
+            <label for="new-v-year" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Baujahr *
+            </label>
+            <input id="new-v-year" name="year" type="text" inputmode="numeric" required class="ak-input font-mono" placeholder="2014" />
+          </div>
+          <div>
+            <label for="new-v-km" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Laufleistung (km) *
+            </label>
+            <input id="new-v-km" name="mileageKm" type="text" inputmode="numeric" required class="ak-input font-mono" placeholder="18500" />
+          </div>
+          <div>
+            <label for="new-v-ps" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Leistung (PS) *
+            </label>
+            <input id="new-v-ps" name="powerPs" type="text" inputmode="numeric" required class="ak-input font-mono" placeholder="700" />
+          </div>
+          <div>
+            <label for="new-v-trans" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Getriebe *
+            </label>
+            <select id="new-v-trans" name="transmission" class="ak-select">
+              <option value="Handschaltung">Handschaltung</option>
+              <option value="Automatik / E-Gear">Automatik / E-Gear</option>
+            </select>
+          </div>
+          <div>
+            <label for="new-v-price" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Preis in EUR (leer = Preis auf Anfrage)
+            </label>
+            <input id="new-v-price" name="priceEur" type="text" inputmode="numeric" class="ak-input font-mono" placeholder="295000" />
+          </div>
+          <div>
+            <label for="new-v-status" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Startstatus
+            </label>
+            <select id="new-v-status" name="status" class="ak-select">
+              <option value="available">Verfügbar (Showroom)</option>
+              <option value="reserved">Reserviert</option>
+              <option value="sold">Verkauft (Referenzen)</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="new-v-summary" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Kurzbeschreibung *
+            </label>
+            <textarea id="new-v-summary" name="summary" rows={2} required class="ak-textarea" placeholder="Gepflegtes Sammlerfahrzeug mit lückenloser Historie..." />
+          </div>
+          <div class="sm:col-span-2 flex justify-end">
+            <button type="submit" class="rounded-md bg-gold px-5 py-2.5 text-xs font-semibold text-canvas hover:bg-gold-hover">
+              Fahrzeug speichern
+            </button>
+          </div>
+        </form>
+      </details>
+    </div>
+
+    <div
+      tabindex="0"
+      role="region"
+      aria-labelledby="admin-vehicles-heading"
+      class="ak-table-region mt-4 rounded-xl border border-border-subtle bg-surface"
+    >
+      <table>
+        <thead>
+          <tr class="border-b border-border-subtle text-left font-mono text-xs text-ink-muted uppercase">
+            <th scope="col" class="px-4 py-3">Fahrzeug</th>
+            <th scope="col" class="px-4 py-3">Baujahr</th>
+            <th scope="col" class="px-4 py-3">Preis</th>
+            <th scope="col" class="px-4 py-3">Status</th>
+            <th scope="col" class="px-4 py-3 text-right">1-Klick-Aktion</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border-subtle text-sm">
+          {allVehicles.map((v) => {
+            const p = formatVehiclePriceDisplay(v);
+            const isSold = v.status === 'sold';
+            return (
+              <tr data-admin-vehicle-row={v.slug}>
+                <th scope="row" class="px-4 py-3.5 text-left font-medium text-ink">
+                  <a href={`/fahrzeuge/${v.slug}`} class="hover:text-gold hover:underline">
+                    {v.title}
+                  </a>
+                </th>
+                <td data-col-label="Baujahr" class="px-4 py-3.5 font-mono text-xs text-ink-muted">
+                  {v.year}
+                </td>
+                <td data-col-label="Preis" class="px-4 py-3.5 font-mono text-xs text-ink">
+                  {p.primary}
+                </td>
+                <td data-col-label="Status" class="px-4 py-3.5 font-mono text-xs">
+                  {v.status === 'available' ? (
+                    <span class="text-status-available">● Verfügbar</span>
+                  ) : v.status === 'reserved' ? (
+                    <span class="text-status-reserved">● Reserviert</span>
+                  ) : (
+                    <span class="text-ink-muted">● Verkauft (Referenz)</span>
+                  )}
+                </td>
+                <td data-col-label="Aktion" class="px-4 py-3.5 text-right">
+                  <form action="/api/admin/inventory" method="POST" class="inline">
+                    <input type="hidden" name="action" value="toggle_vehicle_status" />
+                    <input type="hidden" name="vehicleId" value={v.id} />
+                    <input
+                      type="hidden"
+                      name="status"
+                      value={isSold ? 'available' : 'sold'}
+                    />
+                    <button
+                      type="submit"
+                      data-toggle-status-btn={v.slug}
+                      class:list={[
+                        'min-h-10 rounded-md border px-3 py-1.5 font-mono text-xs font-semibold transition-colors',
+                        isSold
+                          ? 'border-border-control bg-canvas text-ink hover:border-gold hover:text-gold'
+                          : 'border-gold/50 bg-canvas text-gold hover:bg-gold hover:text-canvas',
+                      ]}
+                    >
+                      {isSold ? 'Wieder verfügbar setzen' : 'Als verkauft markieren'}
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 2. OEM Parts Quick Stock & Price Editor -->
+  <section aria-labelledby="admin-parts-heading" class="mt-12">
+    <h2 id="admin-parts-heading" class="font-display text-xl font-semibold text-ink">
+      2. Ricambi Originali — Schnellpflege Bestand &amp; Preis (Top 25)
+    </h2>
+
+    <div
+      tabindex="0"
+      role="region"
+      aria-labelledby="admin-parts-heading"
+      class="ak-table-region mt-4 rounded-xl border border-border-subtle bg-surface"
+    >
+      <table>
+        <thead>
+          <tr class="border-b border-border-subtle text-left font-mono text-xs text-ink-muted uppercase">
+            <th scope="col" class="px-4 py-3">OEM / Bezeichnung</th>
+            <th scope="col" class="px-4 py-3">Reserviert</th>
+            <th scope="col" class="px-4 py-3 text-right">Bruttopreis (€) &amp; Bestand</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-border-subtle text-sm">
+          {topProducts.map((prod) => (
+            <tr>
+              <th scope="row" class="px-4 py-3 text-left font-normal">
+                <span class="font-mono text-xs font-semibold text-gold">{prod.oemNumber}</span>
+                <span class="block text-ink">{prod.title}</span>
+              </th>
+              <td data-col-label="Reserviert" class="px-4 py-3 font-mono text-xs text-ink-muted">
+                {prod.reservedQuantity} Stk.
+              </td>
+              <td data-col-label="Pflege" class="px-4 py-3 text-right">
+                <form
+                  action="/api/admin/inventory"
+                  method="POST"
+                  class="inline-flex flex-wrap items-center justify-end gap-2"
+                >
+                  <input type="hidden" name="action" value="update_product" />
+                  <input type="hidden" name="productId" value={prod.id} />
+                  <label class="sr-only" for={`price-${prod.id}`}>
+                    Preis EUR für {prod.oemNumber}
+                  </label>
+                  <input
+                    id={`price-${prod.id}`}
+                    name="priceEur"
+                    type="text"
+                    inputmode="decimal"
+                    value={(prod.priceCents / 100).toFixed(2)}
+                    class="w-28 rounded border border-border-control bg-canvas px-2.5 py-1.5 text-right font-mono text-xs text-ink"
+                  />
+                  <label class="sr-only" for={`stock-${prod.id}`}>
+                    Bestand für {prod.oemNumber}
+                  </label>
+                  <input
+                    id={`stock-${prod.id}`}
+                    name="stockQuantity"
+                    type="text"
+                    inputmode="numeric"
+                    value={prod.stockQuantity}
+                    class="w-16 rounded border border-border-control bg-canvas px-2.5 py-1.5 text-right font-mono text-xs text-ink"
+                  />
+                  <button
+                    type="submit"
+                    class="min-h-9 rounded bg-gold px-3 py-1.5 font-mono text-xs font-semibold text-canvas hover:bg-gold-hover"
+                  >
+                    Speichern
+                  </button>
+                </form>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. Recent Inquiries & Shop Orders -->
+  <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+    <section aria-labelledby="admin-inquiries-heading" class="rounded-xl border border-border-subtle bg-surface p-6">
+      <h2 id="admin-inquiries-heading" class="font-display text-lg font-semibold text-ink">
+        3. Neueste Kundenanfragen &amp; Kommissionsangebote
+      </h2>
+      {recentInquiries.length === 0 ? (
+        <p class="mt-4 text-sm text-ink-muted">Noch keine Anfragen eingegangen.</p>
+      ) : (
+        <ul class="mt-4 divide-y divide-border-subtle text-sm">
+          {recentInquiries.map((inq) => {
+            const mediaCount = (() => {
+              try {
+                return (JSON.parse(inq.mediaKeysJson) as string[]).length;
+              } catch {
+                return 0;
+              }
+            })();
+            return (
+              <li class="py-3.5">
+                <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
+                  <span class="font-semibold text-gold">{inq.inquiryNumber}</span>
+                  <span class="text-ink-muted">{inq.type} · {inq.topic}</span>
+                </div>
+                <p class="mt-1 font-medium text-ink">{inq.subject}</p>
+                <p class="mt-0.5 text-xs text-ink-muted">
+                  {inq.senderName} ({inq.senderEmail})
+                  {mediaCount > 0 ? ` · ${mediaCount} R2-Foto(s)` : ''}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </section>
+
+    <section aria-labelledby="admin-orders-heading" class="rounded-xl border border-border-subtle bg-surface p-6">
+      <h2 id="admin-orders-heading" class="font-display text-lg font-semibold text-ink">
+        4. Neueste Online-Shop-Bestellungen (Stripe Sandbox)
+      </h2>
+      {recentOrders.length === 0 ? (
+        <p class="mt-4 text-sm text-ink-muted">Noch keine Bestellungen vorhanden.</p>
+      ) : (
+        <ul class="mt-4 divide-y divide-border-subtle text-sm">
+          {recentOrders.map((ord) => (
+            <li class="py-3.5">
+              <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
+                <span class="font-semibold text-gold">{ord.orderNumber}</span>
+                <span
+                  class:list={[
+                    'uppercase',
+                    ord.status === 'paid' ? 'text-status-available' : 'text-ink-muted',
+                  ]}
+                >
+                  {ord.status}
+                </span>
+              </div>
+              <p class="mt-1 font-mono text-sm text-ink">
+                {formatEurCents(ord.totalCents)} ({ord.shippingZone})
+              </p>
+              <p class="mt-0.5 text-xs text-ink-muted">
+                {ord.customerEmail ?? 'Vorab-Reservierung'}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  </div>
+</AdminLayout>

@@ -420,14 +420,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Implementiert die Middleware-Absicherung für `/admin/*` und `/api/admin/*` mittels kryptografischer Prüfung des `Cf-Access-Jwt-Assertion`-Headers (Cloudflare Zero Trust Access) sowie ein übersichtliches Admin-Cockpit zum Anlegen/Bearbeiten von Fahrzeugen, **1-Klick-Statuswechsel „Als verkauft markieren“**, Anpassen von Ersatzteil-Preisen/Lagerbeständen und Einsehen eingegangener Anfragen & Bestellungen.
 
 **Acceptance criteria:**
-- [ ] Jeder Aufruf von `/admin/*` oder `/api/admin/*` ohne gültiges Cloudflare-Access-JWT wird im Produktionsmodus strikt mit HTTP 401/403 abgewiesen.
-- [ ] Ein Fahrzeug lässt sich im Admin mit einem Klick von `available` auf `sold` setzen und wechselt sofort von `/fahrzeuge` nach `/referenzen`.
-- [ ] Lagerbestand und Preis eines Ersatzteils lassen sich im Admin aktualisieren und wirken sofort im Shop & Checkout.
+- [x] Jeder Aufruf von `/admin/*` oder `/api/admin/*` ohne gültiges Cloudflare-Access-JWT wird im Produktionsmodus strikt mit HTTP 401/403 abgewiesen.
+- [x] Ein Fahrzeug lässt sich im Admin mit einem Klick von `available` auf `sold` setzen und wechselt sofort von `/fahrzeuge` nach `/referenzen`.
+- [x] Lagerbestand und Preis eines Ersatzteils lassen sich im Admin aktualisieren und wirken sofort im Shop & Checkout.
 
 **Verification:**
-- [ ] Tests pass: `npx vitest run tests/unit/admin-auth.test.ts`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Unautorisierter Zugriff liefert 401; autorisierter Dev-Zugriff aktualisiert Fahrzeugstatus und Teilebestand.
+- [x] Tests pass: `npx vitest run tests/unit/admin-auth.test.ts`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Unautorisierter Zugriff liefert 401; autorisierter Dev-Zugriff aktualisiert Fahrzeugstatus und Teilebestand.
 
 **Dependencies:** Task 5, Task 10, Task 11
 
