@@ -1,0 +1,92 @@
+---
+export interface Milestone {
+  year: string;
+  badge: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  milestones?: Milestone[];
+}
+
+const DEFAULT_MILESTONES: Milestone[] = [
+  {
+    year: '1967',
+    badge: 'Gründung in Bonn',
+    title: 'Dieter & Marlene Kremer gründen Auto Kremer',
+    description:
+      'Eröffnung des Familienbetriebs in Bonn und Ernennung zur ersten offiziellen Werksniederlassung für Alfa Romeo Deutschland im Rheinland. Von Beginn an stehen italienische Ingenieurskunst, Motorsport-Leidenschaft und persönliche Handschlagqualität im Mittelpunkt.',
+  },
+  {
+    year: '1974',
+    badge: 'Sant’Agata Bolognese',
+    title: 'Erster direkter Kontakt zu Automobili Lamborghini SpA',
+    description:
+      'Angetrieben von der Faszination für Zwölfzylinder-Mittelmotorsportwagen wie Miura, Espada, Jarama und den neu vorgestellten Countach entsteht die enge Verbindung ins Werk nach Sant’Agata Bolognese.',
+  },
+  {
+    year: '1981',
+    badge: 'Vertragshändler',
+    title: 'Aufnahme in den offiziellen Verbund von Automobili Lamborghini',
+    description:
+      'Auto Kremer wird offizieller Vertragshändler von Automobili Lamborghini SpA. Über Jahrzehnte betreut das Bonner Haus Sammler und Erstbesitzer in ganz Deutschland und Europa bei Auslieferung, Wartung und Werterhalt.',
+  },
+  {
+    year: '1995',
+    badge: 'Europäische Auszeichnung',
+    title: '„Automobili Lamborghini European Dealer of the Year“',
+    description:
+      'Für herausragende technische Kompetenz, Kundenzufriedenheit und Markenrepräsentation wird Lamborghini Kremer vom Werk als bester europäischer Partner des Jahres ausgezeichnet – in der Ära des legendären Diablo SE30.',
+  },
+  {
+    year: '2017 – Heute',
+    badge: 'Nächste Generation',
+    title: 'Unabhängiger Spezialist unter Jason & Marvin Kremer',
+    description:
+      'In zweiter Familiengeneration führen Jason Kremer und Marvin Kremer die Bonner Institution weiter: kuratierter Fahrzeughandel & Kommission, herstellerkonforme Meisterwerkstatt, Vollrestauration klassischer Zwölfzylinder sowie weltweiter Versand originaler Lamborghini-Ersatzteile aus gewachsenem Altbestand.',
+  },
+];
+
+const { milestones = DEFAULT_MILESTONES } = Astro.props;
+---
+
+<section id="chronik" aria-labelledby="chronik-heading" class="scroll-mt-28">
+  <div class="max-w-3xl">
+    <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+      Chronik · Über fünf Jahrzehnte Leidenschaft
+    </p>
+    <h2
+      id="chronik-heading"
+      class="mt-3 font-display text-2xl font-semibold tracking-tight text-ink sm:text-4xl"
+    >
+      Meilensteine seit 1967.
+    </h2>
+    <p class="mt-3 text-base leading-relaxed text-ink-muted">
+      Kaum eine Adresse in Deutschland ist so eng und kontinuierlich mit der Geschichte italienischer Hochleistungssportwagen verbunden wie Auto Kremer in Bonn.
+    </p>
+  </div>
+
+  <ol class="relative mt-10 space-y-6 border-l border-gold/35 pl-6 sm:pl-10">
+    {milestones.map((item) => (
+      <li class="relative rounded-xl border border-border-subtle bg-surface p-6 transition-colors hover:border-gold/50">
+        <span
+          aria-hidden="true"
+          class="absolute top-7 -left-[31px] h-3.5 w-3.5 rounded-full border-2 border-gold bg-canvas sm:-left-[47px]"
+        />
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="font-mono text-lg font-bold text-gold">{item.year}</span>
+          <span class="rounded border border-border-subtle bg-canvas px-2.5 py-0.5 font-mono text-[11px] text-ink-muted uppercase">
+            {item.badge}
+          </span>
+        </div>
+        <h3 class="mt-2.5 font-display text-xl font-semibold text-ink">
+          {item.title}
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-muted">
+          {item.description}
+        </p>
+      </li>
+    ))}
+  </ol>
+</section>

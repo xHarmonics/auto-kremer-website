@@ -1,0 +1,151 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import TimelineSection from '@/components/ui/TimelineSection.astro';
+import { SITE_CONFIG } from '@/lib/site-config';
+
+const teamMembers = [
+  {
+    name: 'Jason Kremer',
+    role: 'Geschäftsführung · Inhaber',
+    focus: 'Fahrzeugverkauf, Sammler-Kommission, Ankauf & internationale Kundenbetreuung',
+    initials: 'JK',
+  },
+  {
+    name: 'Marvin Kremer',
+    role: 'Geschäftsführung · Inhaber',
+    focus: 'Technische Leitung, Vollrestauration, Diagnose & Ricambi Originali Teilelager',
+    initials: 'MK',
+  },
+  {
+    name: 'Barbara Kremer',
+    role: 'Serviceberatung & Administration',
+    focus: 'Terminplanung, Kundenempfang, Fahrzeughistorie & Abwicklung',
+    initials: 'BK',
+  },
+  {
+    name: 'Gena Kamin',
+    role: 'Kfz-Techniker · Sportwagen-Mechanik',
+    focus: 'Wartung, Motoren- & Fahrwerksinstandsetzung klassischer und moderner Sportwagen',
+    initials: 'GK',
+  },
+];
+---
+
+<BaseLayout
+  title="Über uns & Chronik seit 1967 — Auto Kremer Bonn"
+  description="Die Geschichte von Auto Kremer in Bonn: 1967 gegründet von Dieter & Marlene Kremer, ausgezeichnet als Automobili Lamborghini European Dealer of the Year 1995, heute geführt von Jason & Marvin Kremer."
+  canonicalPath="/ueber-uns"
+  ogImage="/media/vehicles/diablo-se30-1.avif"
+>
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
+    <!-- Editorial Brand Story Header -->
+    <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+          Familientradition in Bonn · Seit 1967
+        </p>
+        <h1 class="mt-3 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+          Aus Leidenschaft für italienische Sportwagen gewachsen.
+        </h1>
+        <p class="mt-5 text-base leading-relaxed text-ink-muted sm:text-lg">
+          Als Dieter und Marlene Kremer 1967 in Bonn den Grundstein für Auto Kremer legten, begann eine außergewöhnliche Automobilgeschichte: Von der ersten offiziellen Alfa-Romeo-Werksniederlassung über den jahrzehntelangen Status als offizieller Vertragshändler von Automobili Lamborghini SpA bis zur Auszeichnung als <em>European Dealer of the Year</em>.
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-ink-muted">
+          Heute führen Jason Kremer und Marvin Kremer das Bonner Traditionshaus als unabhängigen Spezialbetrieb weiter – mit unveränderter Hingabe für mechanische Präzision, authentische Provenienz und ehrliche Beratung auf Augenhöhe.
+        </p>
+      </div>
+
+      <div class="lg:col-span-5">
+        <figure class="overflow-hidden rounded-xl border border-gold/35 bg-surface">
+          <img
+            src="/media/vehicles/diablo-se30-1.avif"
+            alt="Lamborghini Diablo SE30 Jota aus der Referenzhistorie von Auto Kremer Bonn"
+            width={1280}
+            height={854}
+            fetchpriority="high"
+            class="aspect-[3/2] h-full w-full object-cover"
+          />
+          <figcaption class="border-t border-border-subtle px-5 py-3 font-mono text-xs text-ink-muted">
+            Meilenstein der 1990er-Jahre: Lamborghini Diablo SE30 · Ära der Auszeichnung „European Dealer of the Year 1995“.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Consolidated Heritage Timeline (merges /about-us, /news & /kontakt history) -->
+    <div class="mt-16 border-t border-border-subtle pt-16">
+      <TimelineSection />
+    </div>
+
+    <!-- Team Section -->
+    <section aria-labelledby="team-heading" class="mt-16 border-t border-border-subtle pt-16">
+      <div class="max-w-3xl">
+        <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+          Ihre Ansprechpartner in Bonn
+        </p>
+        <h2
+          id="team-heading"
+          class="mt-3 font-display text-2xl font-semibold tracking-tight text-ink sm:text-4xl"
+        >
+          Persönlich, inhabergeführt, direkt erreichbar.
+        </h2>
+        <p class="mt-3 text-base leading-relaxed text-ink-muted">
+          Bei Auto Kremer sprechen Sie nicht mit anonymen Callcentern, sondern direkt mit den Inhabern und den Technikern, die Ihr Fahrzeug betreuen.
+        </p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {teamMembers.map((member) => (
+          <article class="flex flex-col justify-between rounded-xl border border-border-subtle bg-surface p-6">
+            <div>
+              <div class="flex h-12 w-12 items-center justify-center rounded-full border border-gold/45 bg-canvas font-mono text-sm font-bold text-gold">
+                {member.initials}
+              </div>
+              <h3 class="mt-4 font-display text-lg font-semibold text-ink">
+                {member.name}
+              </h3>
+              <p class="mt-1 font-mono text-xs text-gold">{member.role}</p>
+              <p class="mt-3 text-sm leading-relaxed text-ink-muted">
+                {member.focus}
+              </p>
+            </div>
+            <div class="mt-5 border-t border-border-subtle pt-3.5 font-mono text-xs text-ink-muted">
+              <a
+                href={`mailto:${SITE_CONFIG.contact.email}`}
+                class="hover:text-gold hover:underline"
+              >
+                {SITE_CONFIG.contact.email}
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <div class="mt-16 flex flex-wrap items-center justify-between gap-6 rounded-xl border border-border-subtle bg-surface p-8">
+      <div>
+        <h2 class="font-display text-xl font-semibold text-ink sm:text-2xl">
+          Lernen Sie uns in Bonn-Oberkassel persönlich kennen.
+        </h2>
+        <p class="mt-1 text-sm text-ink-muted">
+          {SITE_CONFIG.address.street}, {SITE_CONFIG.address.postalCode} {SITE_CONFIG.address.city} · {SITE_CONFIG.openingHours.weekdays}
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="/kontakt"
+          class="inline-flex min-h-12 items-center justify-center rounded-md bg-gold px-6 py-3 text-sm font-semibold text-canvas hover:bg-gold-hover"
+        >
+          Termin vereinbaren →
+        </a>
+        <a
+          href="/referenzen"
+          class="inline-flex min-h-12 items-center justify-center rounded-md border border-border-control bg-canvas px-5 py-3 text-sm font-semibold text-ink hover:border-gold hover:text-gold"
+        >
+          Referenz-Fahrzeuge ansehen
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

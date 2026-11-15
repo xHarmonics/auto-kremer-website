@@ -358,14 +358,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Gestaltet und implementiert die repräsentative Startseite `/` (Hero-Inszenierung, Marken-Kennzahlen seit 1967, Featured Showroom-Fahrzeuge aus D1, 4 Werkstattsäulen, Ricambi-Originali-Shop-Teaser, Kommissions-CTA), die konsolidierte Markenseite `/ueber-uns` (vereint die bisher getrennten Seiten `/about-us`, `/news` und die Chronik aus `/kontakt` inkl. 1967 / 1974 / 1981 / 1995 *European Dealer of the Year* + Team-Sektion) sowie die dedizierte Leistungsseite `/werkstatt` (vereint die 4 Supercar-Kernbereiche mit dem Leistungsangebot von `/service`).
 
 **Acceptance criteria:**
-- [ ] Jede der drei Seiten besitzt exakt **ein** semantisches `<h1>`, durchgängig fehlerfreies Deutsch und individuelle SEO-Metadaten.
-- [ ] Die Startseite lädt Featured-Fahrzeuge und ausgewählte Originalteile dynamisch aus D1 und führt Besucher mit klaren CTAs in Showroom, Werkstatt, Shop und Kommission.
-- [ ] `/ueber-uns` präsentiert lückenlos die Chronik 1967–Heute und das vierköpfige Team (Jason Kremer, Marvin Kremer, Barbara Kremer, Gena Kamin).
+- [x] Jede der drei Seiten besitzt exakt **ein** semantisches `<h1>`, durchgängig fehlerfreies Deutsch und individuelle SEO-Metadaten.
+- [x] Die Startseite lädt Featured-Fahrzeuge und ausgewählte Originalteile dynamisch aus D1 und führt Besucher mit klaren CTAs in Showroom, Werkstatt, Shop und Kommission.
+- [x] `/ueber-uns` präsentiert lückenlos die Chronik 1967–Heute und das vierköpfige Team (Jason Kremer, Marvin Kremer, Barbara Kremer, Gena Kamin).
 
 **Verification:**
-- [ ] Tests pass: `npm test`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Visuelle und semantische Prüfung (`<h1>`->`<h2>`->`<h3>`) auf `/`, `/ueber-uns` und `/werkstatt`.
+- [x] Tests pass: `npm test`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Visuelle und semantische Prüfung (`<h1>`->`<h2>`->`<h3>`) auf `/`, `/ueber-uns` und `/werkstatt`.
 
 **Dependencies:** Task 4, Task 7, Task 12
 

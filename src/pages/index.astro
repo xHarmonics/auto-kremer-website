@@ -1,34 +1,307 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import VehicleCard from '@/components/showroom/VehicleCard.astro';
+import ProductCard from '@/components/shop/ProductCard.astro';
+import { listFeaturedVehicles } from '@/db/queries/vehicles';
+import { listFeaturedProducts } from '@/db/queries/products';
+import { SITE_CONFIG } from '@/lib/site-config';
+
+const [featuredVehicles, featuredProducts] = await Promise.all([
+  listFeaturedVehicles(3),
+  listFeaturedProducts(4),
+]);
+
+const workshopPillars = [
+  {
+    num: '01',
+    title: 'Inspektion & Werksdiagnose',
+    text: 'Herstellerkonforme Jahres- und Kilometerinspektionen mit originalen Diagnosesystemen für klassische Vergaser-V12 bis zu modernen E-Gear-, ISR- und LDF-Antrieben.',
+  },
+  {
+    num: '02',
+    title: 'Fachgerechte Reparatur',
+    text: 'Motor-, Getriebe-, Kupplungs- und Fahrwerksinstandsetzung ausschließlich mit geprüften Ricambi-Originali-Komponenten in unserer Bonner Meisterwerkstatt.',
+  },
+  {
+    num: '03',
+    title: 'Wartung & Werterhalt',
+    text: 'Präventive Pflege, Flüssigkeits- und Klimaservice, HU/AU-Abnahme im Haus sowie Concours-Aufbereitung für maximale Wertstabilität Ihrer Sammlung.',
+  },
+  {
+    num: '04',
+    title: 'Vollrestauration',
+    text: 'Originalgetreue Komplett- und Teilrestaurationen klassischer Lamborghinis (350GT, Miura, Espada, Jarama, Countach, Diablo) inklusive Fotodokumentation.',
+  },
+];
+
+const quickModelLinks = [
+  { label: 'Countach', href: '/shop?modell=countach' },
+  { label: 'Diablo', href: '/shop?modell=diablo' },
+  { label: 'Murciélago', href: '/shop?modell=murcielago' },
+  { label: 'Gallardo', href: '/shop?modell=gallardo' },
+  { label: 'LM002', href: '/shop?modell=lm002' },
+  { label: 'Aventador & Huracán', href: '/shop?modell=aventador' },
+];
 ---
 
 <BaseLayout
-  title="Auto Kremer Bonn — Sportwagen, Klassiker & Ricambi Originali seit 1967"
-  description="Auto Kremer in Bonn: Exklusiver Sportwagen-Showroom, Meisterwerkstatt für Lamborghini & italienische Klassiker, Vollrestauration und über 100 originale Lamborghini-Ersatzteile."
+  title="Auto Kremer Bonn — Lamborghini Spezialist, Sportwagen-Showroom & Ricambi Originali seit 1967"
+  description="Auto Kremer GbR in Bonn: Kuratierter Verkauf & Kommission von Lamborghini, Porsche & Klassikern, erfahrene Meisterwerkstatt, Vollrestauration und Online-Shop für originale Lamborghini-Ersatzteile."
+  canonicalPath="/"
+  ogImage="/media/vehicles/murcielago-v12-1.avif"
 >
-  <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:py-28">
-    <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
-      Automobilkultur in Bonn · Seit 1967
-    </p>
-    <h1 class="mt-4 max-w-4xl font-display text-4xl font-semibold tracking-tight text-ink sm:text-6xl">
-      Leidenschaft für italienische Hochleistungssportwagen &amp; zeitlose Klassiker.
-    </h1>
-    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-muted">
-      Verkauf handverlesener Sammlerfahrzeuge, diskrete Kommission, spezialisierte Meisterwerkstatt und weltweit versandfähiger Ricambi Originali Ersatzteilbestand.
-    </p>
-    <div class="mt-9 flex flex-wrap gap-4">
-      <a
-        href="/fahrzeuge"
-        class="inline-flex min-h-12 items-center justify-center rounded-md bg-gold px-6 py-3 text-sm font-semibold text-canvas transition-colors hover:bg-gold-hover"
-      >
-        Aktuellen Fahrzeugbestand entdecken
-      </a>
+  <!-- Editorial Hero Section -->
+  <section class="relative overflow-hidden border-b border-border-subtle bg-canvas">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:py-20">
+      <div class="lg:col-span-6">
+        <p class="inline-flex items-center gap-2 rounded-full border border-gold/35 bg-surface px-3.5 py-1.5 font-mono text-xs font-medium tracking-wider text-gold uppercase">
+          <span aria-hidden="true">◆</span>
+          <span>Familienbetrieb Bonn · Gegründet 1967</span>
+        </p>
+
+        <h1 class="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl lg:text-6xl lg:leading-[1.06]">
+          Italienische Ikonen. Handverlesen seit 1967.
+        </h1>
+
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-ink-muted sm:text-lg">
+          Ausgezeichnet als <em>Automobili Lamborghini European Dealer of the Year</em>: Auto Kremer vereint in Bonn kuratierten Sportwagenhandel, diskrete Sammler-Kommission, Meisterwerkstatt und eines der umfangreichsten deutschen Lager für originale Lamborghini-Ersatzteile.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3.5">
+          <a
+            href="/fahrzeuge"
+            class="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-gold px-6 py-3 text-sm font-semibold text-canvas transition-colors hover:bg-gold-hover"
+          >
+            <span>Aktuellen Fahrzeugbestand entdecken</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a
+            href="/shop"
+            class="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-border-control bg-surface px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-gold hover:text-gold"
+          >
+            <span>Ricambi Originali Teile-Shop</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- LCP Hero Visual (fetchpriority="high", zero CLS, local AVIF) -->
+      <div class="lg:col-span-6">
+        <div class="relative overflow-hidden rounded-xl border border-gold/35 bg-surface shadow-2xl">
+          <img
+            src="/media/vehicles/murcielago-v12-1.avif"
+            alt="Lamborghini Murciélago 6.2 V12 Coupé im Showroom von Auto Kremer Bonn"
+            width={1280}
+            height={854}
+            fetchpriority="high"
+            decoding="sync"
+            class="aspect-[3/2] h-full w-full object-cover"
+          />
+          <div class="flex flex-wrap items-center justify-between gap-3 border-t border-border-subtle bg-surface/95 px-5 py-3.5 text-xs">
+            <span class="font-mono font-semibold text-gold">
+              SHOWROOM BONN · V12 &amp; KLASSIKER
+            </span>
+            <a
+              href="/fahrzeuge/lamborghini-murcielago-6-2-v12"
+              class="font-mono text-ink underline-offset-4 hover:text-gold hover:underline"
+            >
+              Lamborghini Murciélago 6.2 V12 ansehen →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heritage Authority Bar -->
+    <div class="border-t border-border-subtle bg-surface/70">
+      <dl class="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-7 sm:px-6 lg:grid-cols-4">
+        <div>
+          <dt class="font-mono text-xs text-ink-muted uppercase">Tradition in Bonn</dt>
+          <dd class="mt-1 font-display text-2xl font-semibold text-gold sm:text-3xl">Seit 1967</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-xs text-ink-muted uppercase">Werks-Auszeichnung</dt>
+          <dd class="mt-1 font-display text-xl font-semibold text-ink sm:text-2xl">
+            European Dealer of the Year
+          </dd>
+        </div>
+        <div>
+          <dt class="font-mono text-xs text-ink-muted uppercase">Originalteile ab Lager</dt>
+          <dd class="mt-1 font-display text-2xl font-semibold text-ink sm:text-3xl">
+            96+ OEM-Positionen
+          </dd>
+        </div>
+        <div>
+          <dt class="font-mono text-xs text-ink-muted uppercase">Kompetenz im Haus</dt>
+          <dd class="mt-1 font-display text-xl font-semibold text-ink sm:text-2xl">
+            Verkauf · Werkstatt · Restauration
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Featured Showroom Vehicles -->
+  <section aria-labelledby="home-showroom-heading" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+    <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+      <div>
+        <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+          Kuratierter Fahrzeugbestand
+        </p>
+        <h2
+          id="home-showroom-heading"
+          class="mt-2 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
+        >
+          Ausgewählte Sportwagen im Verkaufsraum.
+        </h2>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="/fahrzeuge"
+          class="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-border-control bg-surface px-4 py-2.5 text-xs font-semibold tracking-wide text-ink uppercase transition-colors hover:border-gold hover:text-gold"
+        >
+          <span>Alle Fahrzeuge ({featuredVehicles.length}+)</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a
+          href="/referenzen"
+          class="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-border-subtle bg-canvas px-4 py-2.5 text-xs font-semibold tracking-wide text-ink-muted uppercase transition-colors hover:border-gold/60 hover:text-ink"
+        >
+          <span>Verkaufte Ikonen</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
+      {featuredVehicles.map((vehicle) => (
+        <VehicleCard vehicle={vehicle} priority={false} />
+      ))}
+    </div>
+  </section>
+
+  <!-- 4 Supercar Workshop Pillars -->
+  <section
+    aria-labelledby="home-workshop-heading"
+    class="border-y border-border-subtle bg-surface/60 py-16 lg:py-20"
+  >
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <div class="max-w-2xl">
+          <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+            Meisterwerkstatt &amp; Manufaktur Bonn
+          </p>
+          <h2
+            id="home-workshop-heading"
+            class="mt-2 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
+          >
+            Technik in Perfektion — von 350GT bis Aventador.
+          </h2>
+          <p class="mt-3 text-sm leading-relaxed text-ink-muted sm:text-base">
+            Unsere erfahrenen Sportwagen-Techniker warten, diagnostizieren und restaurieren italienische Hochleistungsfahrzeuge mit jahrzehntelanger Werkserfahrung.
+          </p>
+        </div>
+        <a
+          href="/werkstatt"
+          class="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-md bg-gold px-5 py-2.5 text-xs font-semibold tracking-wide text-canvas uppercase transition-colors hover:bg-gold-hover"
+        >
+          <span>Alle Werkstattleistungen</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {workshopPillars.map((pillar) => (
+          <div class="rounded-xl border border-border-subtle bg-canvas p-6 transition-colors hover:border-gold/50">
+            <span class="font-mono text-xs font-semibold text-gold">{pillar.num}</span>
+            <h3 class="mt-2.5 font-display text-lg font-semibold text-ink">
+              {pillar.title}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-muted">{pillar.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Ricambi Originali Online-Shop Section -->
+  <section aria-labelledby="home-shop-heading" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
+    <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+      <div class="max-w-2xl">
+        <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+          Ricambi Originali · Weltweiter Versand
+        </p>
+        <h2
+          id="home-shop-heading"
+          class="mt-2 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
+        >
+          Originale Lamborghini-Ersatzteile ab Lager Bonn.
+        </h2>
+        <p class="mt-3 text-sm leading-relaxed text-ink-muted sm:text-base">
+          Seltene New-Old-Stock-Raritäten, Steuergeräte, Vergaser-, Brems- und Karosseriekomponenten mit direkter OEM-Teilenummersuche und versichertem Versand.
+        </p>
+      </div>
       <a
         href="/shop"
-        class="inline-flex min-h-12 items-center justify-center rounded-md border border-border-control bg-surface px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-gold hover:text-gold"
+        class="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-md border border-border-control bg-surface px-5 py-2.5 text-xs font-semibold tracking-wide text-ink uppercase transition-colors hover:border-gold hover:text-gold"
       >
-        Ricambi Originali Teile-Shop
+        <span>Gesamten Teilekatalog öffnen</span>
+        <span aria-hidden="true">→</span>
       </a>
+    </div>
+
+    <!-- Quick Model Pills -->
+    <div class="mt-6 flex flex-wrap gap-2">
+      {quickModelLinks.map((m) => (
+        <a
+          href={m.href}
+          class="inline-flex min-h-10 items-center rounded-full border border-border-subtle bg-surface px-4 py-1.5 font-mono text-xs text-ink-muted transition-colors hover:border-gold hover:text-gold"
+        >
+          {m.label} →
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {featuredProducts.map((product) => (
+        <ProductCard product={product} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Collector Consignment & Direct Purchase CTA -->
+  <section
+    aria-labelledby="home-consign-heading"
+    class="mx-auto max-w-7xl px-4 pb-20 sm:px-6"
+  >
+    <div class="rounded-2xl border border-gold/40 bg-surface p-8 sm:p-12 lg:flex lg:items-center lg:justify-between lg:gap-12">
+      <div class="max-w-2xl">
+        <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+          Kommission &amp; Ankauf · Diskret &amp; International
+        </p>
+        <h2
+          id="home-consign-heading"
+          class="mt-3 font-display text-2xl font-semibold text-ink sm:text-4xl"
+        >
+          Sie möchten Ihren Sportwagen oder Klassiker verkaufen?
+        </h2>
+        <p class="mt-3 text-sm leading-relaxed text-ink-muted sm:text-base">
+          Profitieren Sie von unserem internationalen Sammlernetzwerk, technischer Aufbereitung im eigenen Haus und rechtssicherer Vertragsabwicklung – auf Wunsch auch streng diskret ohne öffentliche Börseninserate.
+        </p>
+      </div>
+
+      <div class="mt-7 flex shrink-0 flex-col gap-3 sm:flex-row lg:mt-0">
+        <a
+          href="/fahrzeug-verkaufen"
+          class="inline-flex min-h-12 items-center justify-center rounded-md bg-gold px-6 py-3 text-sm font-semibold text-canvas transition-colors hover:bg-gold-hover"
+        >
+          Fahrzeug unverbindlich anbieten →
+        </a>
+        <a
+          href={`tel:${SITE_CONFIG.contact.phonePrimary}`}
+          class="inline-flex min-h-12 items-center justify-center rounded-md border border-border-control bg-canvas px-5 py-3 font-mono text-sm font-medium text-ink transition-colors hover:border-gold hover:text-gold"
+        >
+          {SITE_CONFIG.contact.phonePrimaryDisplay}
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
