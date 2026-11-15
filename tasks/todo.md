@@ -38,14 +38,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Implementiert das *Dark Editorial Luxury*-Farb- und Typografiesystem (`#0A0A0B` Obsidian, `#C9A84C` Oro Sant’Agata, lokal gehostete `.woff2`-Schriften `Space Grotesk`, `Inter`, `JetBrains Mono` ohne externe CDN-Requests) sowie `BaseLayout.astro`, `SiteHeader.astro` (inkl. Mobile-Drawer) und `SiteFooter.astro` mit konsolidierten Bonner Kontaktdaten.
 
 **Acceptance criteria:**
-- [ ] Alle Farb-Tokens erfüllen mindestens WCAG AA (Fließtext > 16:1) und es finden keinerlei Aufrufe an `fonts.googleapis.com` oder `wixstatic.com` statt.
-- [ ] `SiteHeader` macht alle 5 Hauptsäulen (`Fahrzeuge`, `Referenzen`, `Werkstatt`, `Teile-Shop`, `Über uns`), den CTA `Fahrzeug anbieten` sowie `Kontakt` und das Warenkorb-Badge auf Mobile & Desktop direkt erreichbar.
-- [ ] `SiteFooter` zeigt die korrekte Adresse (`Buchenweg 3, 53227 Bonn`), konsistente Telefonnummern, `@auto-kremer.com` E-Mail, Öffnungszeiten und alle Rechtslinks (`/impressum`, `/datenschutz`, `/agb`, `/widerruf`, `/versand`).
+- [x] Alle Farb-Tokens erfüllen mindestens WCAG AA (Fließtext > 16:1) und es finden keinerlei Aufrufe an `fonts.googleapis.com` oder `wixstatic.com` statt.
+- [x] `SiteHeader` macht alle 5 Hauptsäulen (`Fahrzeuge`, `Referenzen`, `Werkstatt`, `Teile-Shop`, `Über uns`), den CTA `Fahrzeug anbieten` sowie `Kontakt` und das Warenkorb-Badge auf Mobile & Desktop direkt erreichbar.
+- [x] `SiteFooter` zeigt die korrekte Adresse (`Buchenweg 3, 53227 Bonn`), konsistente Telefonnummern, `@auto-kremer.com` E-Mail, Öffnungszeiten und alle Rechtslinks (`/impressum`, `/datenschutz`, `/agb`, `/widerruf`, `/versand`).
 
 **Verification:**
-- [ ] Tests pass: `npm test`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Responsive Prüfung bei 375 px (iPhone) und 1440 px (Desktop) sowie Prüfung im Netzwerk-Tab auf 0 Drittanbieter-Requests.
+- [x] Tests pass: `npm test`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Responsive Prüfung bei 375 px (iPhone) und 1440 px (Desktop) sowie Prüfung im Netzwerk-Tab auf 0 Drittanbieter-Requests.
 
 **Dependencies:** Task 1
 
@@ -61,9 +61,9 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 ---
 
 ## Checkpoint: After Tasks 1-2 (Foundation & Shell)
-- [ ] All tests pass (`npm test`)
-- [ ] Application builds without errors (`npm run typecheck && npm run build`)
-- [ ] Core layout shell & navigation work on mobile and desktop without external font/tracker requests
+- [x] All tests pass (`npm test`)
+- [x] Application builds without errors (`npm run typecheck && npm run build`)
+- [x] Core layout shell & navigation work on mobile and desktop without external font/tracker requests
 
 ---
 

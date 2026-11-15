@@ -53,10 +53,10 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 
 ### Phase 1: Foundation & Design System Shell
 - [x] Task 1: Projekt-Setup mit Astro 5, Cloudflare Workers, Tailwind CSS v4 & Test-Runner
-- [ ] Task 2: Design-Tokens, lokale Typografie & globales Seiten-Layout (Header, Mobile-Menü, Footer)
+- [x] Task 2: Design-Tokens, lokale Typografie & globales Seiten-Layout (Header, Mobile-Menü, Footer)
 
 ### Checkpoint 1: Foundation & Shell
-- [ ] `npm run typecheck`, `npm test` und `npm run build` laufen grün; lokale Wrangler-Preview rendert das Grundlayout auf Mobile & Desktop fehlerfrei.
+- [x] `npm run typecheck`, `npm test` und `npm run build` laufen grün; lokale Wrangler-Preview rendert das Grundlayout auf Mobile & Desktop fehlerfrei.
 
 ### Phase 2: Vertical Slice — Fahrzeug-Showroom & Referenzen
 - [ ] Task 3: D1-Datenmodell, Migration & Seed-Daten für Fahrzeuge (Showroom & Verkaufte Ikonen)

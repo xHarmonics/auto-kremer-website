@@ -1,0 +1,153 @@
+---
+import { SITE_CONFIG } from '@/lib/site-config';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-border-subtle bg-surface text-ink">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:py-16">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12">
+      <!-- Column 1: Brand & Heritage -->
+      <div class="lg:col-span-4">
+        <a href="/" class="inline-flex items-center gap-3">
+          <span class="flex h-9 w-9 items-center justify-center rounded border border-gold/50 bg-canvas">
+            <svg viewBox="0 0 64 64" class="h-6 w-6" fill="none" aria-hidden="true">
+              <path d="M32 4L56 14V32C56 46.5 45.8 56.4 32 60C18.2 56.4 8 46.5 8 32V14L32 4Z" stroke="#C9A84C" stroke-width="3" />
+              <path d="M23.5 41L30.2 21H33.8L40.5 41H36.7L35.2 36.2H28.8L27.3 41H23.5ZM29.8 33H34.2L32 25.8L29.8 33Z" fill="#F5F4F0" />
+            </svg>
+          </span>
+          <span class="font-display text-lg font-semibold tracking-[0.08em] uppercase">
+            Auto Kremer
+          </span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-ink-muted">
+          Familiengeführter Spezialist für italienische Sportwagen und Automobili Lamborghini in Bonn seit {SITE_CONFIG.foundedYear}. Ausgezeichnet als <em>European Dealer of the Year</em>.
+        </p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a
+            href={SITE_CONFIG.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded border border-border-subtle bg-canvas px-3 py-1.5 text-xs font-medium text-ink-muted transition-colors hover:border-gold/60 hover:text-ink"
+          >
+            <span>Instagram {SITE_CONFIG.social.instagramHandle}</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href={SITE_CONFIG.social.mobileDe}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded border border-border-subtle bg-canvas px-3 py-1.5 text-xs font-medium text-ink-muted transition-colors hover:border-gold/60 hover:text-ink"
+          >
+            <span>mobile.de Bestand</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Navigation -->
+      <div class="lg:col-span-3">
+        <h2 class="font-display text-sm font-semibold tracking-wider text-gold uppercase">
+          Navigation
+        </h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li>
+            <a href="/fahrzeuge" class="text-ink-muted transition-colors hover:text-ink">
+              Aktueller Fahrzeugbestand
+            </a>
+          </li>
+          <li>
+            <a href="/referenzen" class="text-ink-muted transition-colors hover:text-ink">
+              Verkaufte Klassiker &amp; Referenzen
+            </a>
+          </li>
+          <li>
+            <a href="/fahrzeug-verkaufen" class="text-ink-muted transition-colors hover:text-ink">
+              Fahrzeug-Kommission &amp; Ankauf
+            </a>
+          </li>
+          <li>
+            <a href="/werkstatt" class="text-ink-muted transition-colors hover:text-ink">
+              Meisterwerkstatt &amp; Restauration
+            </a>
+          </li>
+          <li>
+            <a href="/shop" class="text-ink-muted transition-colors hover:text-ink">
+              Ricambi Originali Teile-Shop
+            </a>
+          </li>
+          <li>
+            <a href="/ueber-uns" class="text-ink-muted transition-colors hover:text-ink">
+              Über uns &amp; Chronik seit 1967
+            </a>
+          </li>
+          <li>
+            <a href="/kontakt" class="text-ink-muted transition-colors hover:text-ink">
+              Kontakt &amp; Anfahrt
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Bonn Showroom & Workshop Contact -->
+      <div class="lg:col-span-3">
+        <h2 class="font-display text-sm font-semibold tracking-wider text-gold uppercase">
+          Standort Bonn
+        </h2>
+        <address class="mt-4 space-y-2 text-sm not-italic text-ink-muted">
+          <p class="font-semibold text-ink">{SITE_CONFIG.legalName}</p>
+          <p>
+            {SITE_CONFIG.address.street}<br />
+            {SITE_CONFIG.address.postalCode} {SITE_CONFIG.address.city} ({SITE_CONFIG.address.district})
+          </p>
+          <p class="pt-1 font-mono text-xs sm:text-sm">
+            Tel. 1:{' '}
+            <a href={`tel:${SITE_CONFIG.contact.phonePrimary}`} class="text-ink transition-colors hover:text-gold">
+              {SITE_CONFIG.contact.phonePrimaryDisplay}
+            </a>
+            <br />
+            Tel. 2:{' '}
+            <a href={`tel:${SITE_CONFIG.contact.phoneSecondary}`} class="text-ink transition-colors hover:text-gold">
+              {SITE_CONFIG.contact.phoneSecondaryDisplay}
+            </a>
+          </p>
+          <p>
+            E-Mail:{' '}
+            <a href={`mailto:${SITE_CONFIG.contact.email}`} class="text-ink transition-colors hover:text-gold">
+              {SITE_CONFIG.contact.email}
+            </a>
+          </p>
+          <p class="pt-1 text-xs">
+            {SITE_CONFIG.openingHours.weekdays}<br />
+            {SITE_CONFIG.openingHours.saturday}
+          </p>
+        </address>
+      </div>
+
+      <!-- Column 4: Legal & Customer Info -->
+      <div class="lg:col-span-2">
+        <h2 class="font-display text-sm font-semibold tracking-wider text-gold uppercase">
+          Rechtliches
+        </h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          {SITE_CONFIG.legalLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-ink-muted transition-colors hover:text-ink">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Legal Bar -->
+    <div class="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border-subtle pt-6 text-xs text-ink-muted sm:flex-row sm:items-center">
+      <p>
+        &copy; {currentYear} {SITE_CONFIG.legalName} · Inhaber: {SITE_CONFIG.owners.join(' & ')} · Alle Rechte vorbehalten.
+      </p>
+      <p>
+        Unabhängiger Fachbetrieb für italienische Sportwagen. Marken- und Modellbezeichnungen dienen ausschließlich der Zuordnung.
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,314 @@
+---
+import { SITE_CONFIG } from '@/lib/site-config';
+
+interface Props {
+  currentPath?: string;
+}
+
+const currentPath = Astro.props.currentPath ?? Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath.startsWith(`${href}/`);
+}
+---
+
+<header class="sticky top-0 z-40 border-b border-border-subtle bg-canvas/90 backdrop-blur-md">
+  <!-- Top Heritage Micro-Bar (Desktop) -->
+  <div class="hidden border-b border-border-subtle/70 bg-surface/60 lg:block">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-1.5 text-xs text-ink-muted">
+      <div class="flex items-center gap-4">
+        <span class="font-mono tracking-wider text-gold uppercase">EST. 1967 · BONN</span>
+        <span aria-hidden="true" class="text-border-control">·</span>
+        <span>Automobili Lamborghini Spezialist &amp; Meisterwerkstatt</span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a
+          href={`tel:${SITE_CONFIG.contact.phonePrimary}`}
+          class="font-mono transition-colors hover:text-ink"
+        >
+          {SITE_CONFIG.contact.phonePrimaryDisplay}
+        </a>
+        <a
+          href={`mailto:${SITE_CONFIG.contact.email}`}
+          class="transition-colors hover:text-ink"
+        >
+          {SITE_CONFIG.contact.email}
+        </a>
+        <a
+          href="/kontakt"
+          aria-current={isActive('/kontakt') ? 'page' : undefined}
+          class:list={[
+            'font-medium transition-colors hover:text-gold',
+            isActive('/kontakt') ? 'text-gold' : 'text-ink',
+          ]}
+        >
+          Kontakt &amp; Anfahrt
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header Bar -->
+  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
+    <!-- Brand Crest + Wordmark -->
+    <a
+      href="/"
+      class="group flex items-center gap-3.5 focus-visible:rounded-sm"
+      aria-label="Auto Kremer Bonn — Zur Startseite"
+    >
+      <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded border border-gold/50 bg-surface transition-colors group-hover:border-gold">
+        <svg viewBox="0 0 64 64" class="h-7 w-7" fill="none" aria-hidden="true">
+          <path d="M32 4L56 14V32C56 46.5 45.8 56.4 32 60C18.2 56.4 8 46.5 8 32V14L32 4Z" stroke="#C9A84C" stroke-width="3" />
+          <path d="M23.5 41L30.2 21H33.8L40.5 41H36.7L35.2 36.2H28.8L27.3 41H23.5ZM29.8 33H34.2L32 25.8L29.8 33Z" fill="#F5F4F0" />
+        </svg>
+      </span>
+      <span class="flex flex-col">
+        <span class="font-display text-lg font-semibold tracking-[0.08em] text-ink uppercase sm:text-xl">
+          Auto Kremer
+        </span>
+        <span class="font-mono text-[10px] tracking-[0.18em] text-ink-muted uppercase">
+          Sportwagen · Seit 1967
+        </span>
+      </span>
+    </a>
+
+    <!-- Desktop Primary Navigation -->
+    <nav aria-label="Hauptnavigation" class="hidden items-center gap-1 lg:flex">
+      {SITE_CONFIG.navItems.map((item) => {
+        const active = isActive(item.href);
+        return (
+          <a
+            href={item.href}
+            aria-current={active ? 'page' : undefined}
+            class:list={[
+              'relative rounded-md px-3.5 py-2 text-sm font-medium transition-colors',
+              active
+                ? 'text-gold'
+                : 'text-ink hover:bg-surface-elevated hover:text-gold',
+            ]}
+          >
+            {item.label}
+            {active && (
+              <span
+                aria-hidden="true"
+                class="absolute inset-x-3.5 bottom-0.5 h-0.5 rounded-full bg-gold"
+              />
+            )}
+          </a>
+        );
+      })}
+    </nav>
+
+    <!-- Actions: Cart Trigger, Consignment CTA, Mobile Menu Button -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Cart Button (opens CartDrawer when mounted, or navigates to /shop) -->
+      <a
+        href="/shop"
+        data-cart-open
+        aria-label="Warenkorb öffnen"
+        class="relative inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-md border border-border-subtle bg-surface px-3 py-2 text-sm font-medium text-ink transition-colors hover:border-gold/60 hover:bg-surface-elevated"
+      >
+        <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z" />
+        </svg>
+        <span class="hidden sm:inline">Warenkorb</span>
+        <span
+          data-cart-badge
+          aria-live="polite"
+          class="inline-flex min-w-5 items-center justify-center rounded-full bg-gold px-1.5 py-0.5 font-mono text-xs font-bold text-canvas"
+        >
+          0
+        </span>
+      </a>
+
+      <!-- Desktop CTA: Fahrzeug anbieten -->
+      <a
+        href="/fahrzeug-verkaufen"
+        aria-current={isActive('/fahrzeug-verkaufen') ? 'page' : undefined}
+        class="hidden min-h-11 items-center justify-center rounded-md bg-gold px-4 py-2.5 text-sm font-semibold text-canvas transition-colors hover:bg-gold-hover xl:inline-flex"
+      >
+        Fahrzeug anbieten
+      </a>
+
+      <!-- Mobile Drawer Trigger -->
+      <button
+        type="button"
+        id="mobile-menu-open"
+        aria-haspopup="dialog"
+        aria-controls="mobile-nav-drawer"
+        aria-label="Menü öffnen"
+        class="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-border-subtle bg-surface text-ink transition-colors hover:border-gold/60 lg:hidden"
+      >
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Native Modal Navigation Drawer (Mobile) -->
+<dialog
+  id="mobile-nav-drawer"
+  class="nav-drawer"
+  closedby="any"
+  aria-label="Mobile Hauptnavigation"
+>
+  <div class="nav-drawer-panel flex flex-col justify-between p-6" data-drawer-panel>
+    <div>
+      <div class="flex items-center justify-between border-b border-border-subtle pb-5">
+        <span class="font-display text-base font-semibold tracking-[0.08em] text-ink uppercase">
+          Auto Kremer
+        </span>
+        <button
+          type="button"
+          id="mobile-menu-close"
+          aria-label="Menü schließen"
+          class="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-border-subtle bg-canvas text-ink hover:border-gold"
+        >
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <nav aria-label="Mobile Navigation" class="mt-6 flex flex-col gap-1.5">
+        {SITE_CONFIG.navItems.map((item) => {
+          const active = isActive(item.href);
+          return (
+            <a
+              href={item.href}
+              aria-current={active ? 'page' : undefined}
+              class:list={[
+                'flex min-h-12 items-center justify-between rounded-md px-3.5 py-3 text-base font-medium transition-colors',
+                active
+                  ? 'border border-gold/40 bg-canvas text-gold'
+                  : 'text-ink hover:bg-surface-elevated',
+              ]}
+            >
+              <span>{item.label}</span>
+              <span aria-hidden="true" class="text-ink-muted">→</span>
+            </a>
+          );
+        })}
+        <a
+          href="/kontakt"
+          aria-current={isActive('/kontakt') ? 'page' : undefined}
+          class:list={[
+            'flex min-h-12 items-center justify-between rounded-md px-3.5 py-3 text-base font-medium transition-colors',
+            isActive('/kontakt')
+              ? 'border border-gold/40 bg-canvas text-gold'
+              : 'text-ink hover:bg-surface-elevated',
+          ]}
+        >
+          <span>Kontakt &amp; Anfahrt</span>
+          <span aria-hidden="true" class="text-ink-muted">→</span>
+        </a>
+      </nav>
+
+      <div class="mt-6 border-t border-border-subtle pt-6">
+        <a
+          href="/fahrzeug-verkaufen"
+          class="flex min-h-12 w-full items-center justify-center rounded-md bg-gold px-4 py-3 text-base font-semibold text-canvas transition-colors hover:bg-gold-hover"
+        >
+          Fahrzeug anbieten (Kommission / Ankauf)
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-8 border-t border-border-subtle pt-5 text-xs text-ink-muted">
+      <p class="font-semibold text-ink">{SITE_CONFIG.legalName}</p>
+      <p class="mt-1">{SITE_CONFIG.address.street}, {SITE_CONFIG.address.postalCode} {SITE_CONFIG.address.city}</p>
+      <p class="mt-2 font-mono">
+        <a href={`tel:${SITE_CONFIG.contact.phonePrimary}`} class="text-gold hover:underline">
+          {SITE_CONFIG.contact.phonePrimaryDisplay}
+        </a>
+      </p>
+      <p class="mt-1">
+        <a href={`mailto:${SITE_CONFIG.contact.email}`} class="hover:text-ink">
+          {SITE_CONFIG.contact.email}
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="nav-drawer-dismiss-track" data-drawer-dismiss aria-hidden="true"></div>
+</dialog>
+
+<script>
+  const openBtn = document.getElementById('mobile-menu-open');
+  const closeBtn = document.getElementById('mobile-menu-close');
+  const drawer = document.getElementById('mobile-nav-drawer') as HTMLDialogElement | null;
+  const panel = drawer?.querySelector('[data-drawer-panel]') as HTMLElement | null;
+  const dismissTrack = drawer?.querySelector('[data-drawer-dismiss]') as HTMLElement | null;
+
+  if (drawer && openBtn && closeBtn && panel && dismissTrack) {
+    openBtn.addEventListener('click', () => {
+      if (!drawer.open) {
+        drawer.scrollLeft = 0;
+        drawer.showModal();
+      }
+    });
+
+    closeBtn.addEventListener('click', () => {
+      drawer.close();
+    });
+
+    // Dismiss when user swipes drawer to the transparent dismiss snap target
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && drawer.open) {
+            drawer.close();
+          }
+        }
+      },
+      { root: drawer, threshold: 0.98 }
+    );
+    observer.observe(dismissTrack);
+
+    // Light-dismiss fallback for browsers without native closedBy support or clicks on the dismiss track
+    let pointerDownOutside = false;
+    drawer.addEventListener('pointerdown', (e) => {
+      const rect = panel.getBoundingClientRect();
+      pointerDownOutside =
+        e.clientX < rect.left ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom;
+    });
+    drawer.addEventListener('pointerup', (e) => {
+      if (!pointerDownOutside) return;
+      const rect = panel.getBoundingClientRect();
+      const upOutside =
+        e.clientX < rect.left ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom;
+      if (upOutside && drawer.open) {
+        drawer.close();
+      }
+      pointerDownOutside = false;
+    });
+  }
+
+  // Sync header cart badge from persistent storage and custom cart events
+  function syncHeaderCartBadges() {
+    try {
+      const raw = window.localStorage.getItem('ak_cart_v1');
+      const items = raw ? JSON.parse(raw) : [];
+      const totalQty = Array.isArray(items)
+        ? items.reduce((sum, item) => sum + (Number(item?.quantity) || 0), 0)
+        : 0;
+      document.querySelectorAll('[data-cart-badge]').forEach((badge) => {
+        badge.textContent = String(totalQty);
+      });
+    } catch {
+      // Ignore storage access errors in restricted modes
+    }
+  }
+
+  syncHeaderCartBadges();
+  window.addEventListener('storage', syncHeaderCartBadges);
+  window.addEventListener('ak:cart-updated', syncHeaderCartBadges);
+</script>

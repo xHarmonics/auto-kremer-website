@@ -1,0 +1,42 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Seite nicht gefunden (404)"
+  description="Die angeforderte Seite konnte nicht gefunden werden. Entdecken Sie unseren aktuellen Fahrzeugbestand, die Meisterwerkstatt oder den Ricambi Originali Teile-Shop."
+  noindex={true}
+>
+  <section class="mx-auto flex max-w-4xl flex-col items-center px-4 py-24 text-center sm:px-6 lg:py-32">
+    <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+      Fehlercode 404
+    </p>
+    <h1 class="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+      Diese Seite befindet sich nicht mehr in unserer Garage.
+    </h1>
+    <p class="mt-5 max-w-xl text-base leading-relaxed text-ink-muted sm:text-lg">
+      Möglicherweise wurde die Adresse im Zuge unseres Relaunchs aktualisiert oder das gesuchte Fahrzeug bzw. Ersatzteil ist vergriffen.
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="/fahrzeuge"
+        class="inline-flex min-h-12 items-center justify-center rounded-md bg-gold px-6 py-3 text-sm font-semibold text-canvas transition-colors hover:bg-gold-hover"
+      >
+        Zum Fahrzeugbestand
+      </a>
+      <a
+        href="/shop"
+        class="inline-flex min-h-12 items-center justify-center rounded-md border border-border-control bg-surface px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-gold hover:text-gold"
+      >
+        Ricambi Originali Shop
+      </a>
+      <a
+        href="/"
+        class="inline-flex min-h-12 items-center justify-center rounded-md px-4 py-3 text-sm font-medium text-ink-muted transition-colors hover:text-ink"
+      >
+        Zur Startseite →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

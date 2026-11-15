@@ -1,0 +1,116 @@
+---
+import '@/styles/global.css';
+import SiteHeader from '@/components/layout/SiteHeader.astro';
+import SiteFooter from '@/components/layout/SiteFooter.astro';
+import { SITE_CONFIG, buildAutoDealerJsonLd } from '@/lib/site-config';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonicalPath?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'product' | 'article';
+  noindex?: boolean;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const {
+  title,
+  description = 'Auto Kremer in Bonn — Spezialist für Automobili Lamborghini, klassische italienische Sportwagen, Meisterwerkstatt, Vollrestauration und originale Ricambi Originali Ersatzteile seit 1967.',
+  canonicalPath,
+  ogImage = '/favicon.svg',
+  ogType = 'website',
+  noindex = false,
+  structuredData,
+} = Astro.props;
+
+const siteOrigin = SITE_CONFIG.url;
+const resolvedPath = canonicalPath ?? Astro.url.pathname;
+const canonicalUrl = new URL(resolvedPath, siteOrigin).toString();
+const ogImageUrl = ogImage.startsWith('http')
+  ? ogImage
+  : new URL(ogImage, siteOrigin).toString();
+
+const fullTitle = title.includes('Auto Kremer')
+  ? title
+  : `${title} | Auto Kremer Bonn`;
+
+const jsonLdBlocks: Array<Record<string, unknown>> = [
+  buildAutoDealerJsonLd(siteOrigin),
+  ...(Array.isArray(structuredData)
+    ? structuredData
+    : structuredData
+      ? [structuredData]
+      : []),
+];
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0A0A0B" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Self-hosted Variable Font Preloads (zero Google Fonts / external CDN requests) -->
+    <link
+      rel="preload"
+      href="/fonts/space-grotesk-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- OpenGraph & Social Metadata -->
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Auto Kremer Bonn" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    {jsonLdBlocks.map((schema) => (
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={JSON.stringify(schema)}
+      />
+    ))}
+
+    <slot name="head" />
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-gold focus:px-4 focus:py-2.5 focus:font-semibold focus:text-canvas"
+    >
+      Zum Hauptinhalt springen
+    </a>
+
+    <SiteHeader currentPath={Astro.url.pathname} />
+
+    <main id="main-content" tabindex="-1" class="flex-1 focus:outline-none">
+      <slot />
+    </main>
+
+    <SiteFooter />
+
+    <slot name="overlays" />
+  </body>
+</html>
