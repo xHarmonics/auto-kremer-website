@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /shop/sandbox-checkout
+Disallow: /shop/erfolg
+Disallow: /shop/abgebrochen
+
+Sitemap: https://www.auto-kremer.com/sitemap.xml

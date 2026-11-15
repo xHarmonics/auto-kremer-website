@@ -447,14 +447,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Hinterlegt alle statischen und dynamischen `301`-Weiterleitungen der alten Wix-URLs (`public/_redirects` + Middleware-Lookup für `/product-page/:oldSlug` -> `/shop/:cleanSlug` sowie `410 Gone` für leere Altseiten `/blog`, `/event-list`, `/payment-request-page`), generiert eine dynamische `/sitemap.xml` inkl. aller Fahrzeuge und Shop-Produkte, ergänzt globales `AutoDealer` & `AutoRepair` Schema.org JSON-LD und sichert alle Kernpfade plus Accessibility (`@axe-core/playwright`) per E2E-Suite ab.
 
 **Acceptance criteria:**
-- [ ] Alle 10 bisherigen Haupt-URLs (inkl. `/verkaufsraum`, `/sold-cars`, `/consign-your-car`, `/about-us`, `/contact-us`, `/category/all-products`, `/datenschutzerkl%C3%A4rung`) sowie `/product-page/*` antworten mit korrektem `301`-Redirect auf die neue Ziel-URL.
-- [ ] `/sitemap.xml` und `/robots.txt` listen ausschließlich kanonische `200`-URLs (keine `404`/`301`/`/admin`-Pfade).
-- [ ] Die Playwright-E2E- und Axe-Accessibility-Suite läuft ohne Fehler durch (0 kritische A11y-Verstöße, 0 kaputte interne Links).
+- [x] Alle 10 bisherigen Haupt-URLs (inkl. `/verkaufsraum`, `/sold-cars`, `/consign-your-car`, `/about-us`, `/contact-us`, `/category/all-products`, `/datenschutzerkl%C3%A4rung`) sowie `/product-page/*` antworten mit korrektem `301`-Redirect auf die neue Ziel-URL.
+- [x] `/sitemap.xml` und `/robots.txt` listen ausschließlich kanonische `200`-URLs (keine `404`/`301`/`/admin`-Pfade).
+- [x] Die Playwright-E2E- und Axe-Accessibility-Suite läuft ohne Fehler durch (0 kritische A11y-Verstöße, 0 kaputte interne Links).
 
 **Verification:**
-- [ ] Tests pass: `npm test && npm run test:e2e`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Stichprobe aller 10 Alt-URLs per `curl -I` gegen die lokale Wrangler-Preview bestätigt exakte `301`-Header.
+- [x] Tests pass: `npm test && npm run test:e2e`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Stichprobe aller 10 Alt-URLs per `curl -I` gegen die lokale Wrangler-Preview bestätigt exakte `301`-Header.
 
 **Dependencies:** Task 13, Task 14, Task 15
 
@@ -470,9 +470,9 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 ---
 
 ## Checkpoint: Complete (Production Release Gate)
-- [ ] Alle 16 Aufgaben abgeschlossen und einzeln verifiziert
-- [ ] Komplette Unit- und Playwright-E2E-Testsuite grün (`npm test && npm run test:e2e`)
-- [ ] Produktions-Build für Cloudflare Workers fehlerfrei (`npm run build`)
-- [ ] 100 % der alten Wix-Seiten und Produkt-URLs leiten verlustfrei weiter
-- [ ] Bereit für Live-Deployment auf Cloudflare
+- [x] Alle 16 Aufgaben abgeschlossen und einzeln verifiziert
+- [x] Komplette Unit- und Playwright-E2E-Testsuite grün (`npm test && npm run test:e2e`)
+- [x] Produktions-Build für Cloudflare Workers fehlerfrei (`npm run build`)
+- [x] 100 % der alten Wix-Seiten und Produkt-URLs leiten verlustfrei weiter
+- [x] Bereit für Live-Deployment auf Cloudflare
 

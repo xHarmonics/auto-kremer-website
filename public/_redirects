@@ -1,0 +1,10 @@
+# Auto Kremer Bonn — Wix Legacy URL 301 Redirect Matrix (Cloudflare Static Assets)
+/verkaufsraum               /fahrzeuge              301
+/sold-cars                  /referenzen             301
+/consign-your-car           /fahrzeug-verkaufen     301
+/about-us                   /ueber-uns              301
+/news                       /ueber-uns#chronik      301
+/service                    /werkstatt              301
+/contact-us                 /kontakt                301
+/category/all-products      /shop                   301
+/wartungsarbeiten           /                       301

@@ -18,7 +18,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run build && CI=true npx wrangler dev --ip 127.0.0.1 --port 4321',
+    command:
+      'npm run build && CI=true npx wrangler dev --ip 127.0.0.1 --port 4321 --var DEV_ADMIN_TOKEN:ak-local-e2e-only-token',
     url: 'http://127.0.0.1:4321/api/health',
     reuseExistingServer: false,
     timeout: 90000,

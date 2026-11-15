@@ -14,7 +14,10 @@ const ConsignmentFieldsSchema = z.object({
     .number()
     .int()
     .min(1950, 'Baujahr muss zwischen 1950 und heute liegen.')
-    .max(new Date().getUTCFullYear() + 1),
+    .refine(
+      (y) => y <= Math.max(2027, new Date().getUTCFullYear() + 1),
+      'Bitte geben Sie ein gültiges Baujahr an.'
+    ),
   mileageKm: z.coerce
     .number()
     .int()

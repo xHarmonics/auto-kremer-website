@@ -87,10 +87,10 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 
 ### Phase 5: Admin Backoffice, SEO, 301-Migration & Launch-Gate
 - [x] Task 15: Geschütztes `/admin`-Cockpit (Cloudflare Access JWT + CRUD für Fahrzeuge & Ersatzteile)
-- [ ] Task 16: Vollständige Wix-301-Redirects, XML-Sitemap, Schema.org-Markup & Lighthouse/A11y-Audit
+- [x] Task 16: Vollständige Wix-301-Redirects, XML-Sitemap, Schema.org-Markup & Lighthouse/A11y-Audit
 
 ### Checkpoint 5: Production Release Gate
-- [ ] Alle Akzeptanzkriterien erfüllt, 100 % der alten Wix-URLs leiten sauber um, Lighthouse Performance/SEO/Accessibility/Best Practices ≥ 95, bereit für Cloudflare-Produktiv-Deployment.
+- [x] Alle Akzeptanzkriterien erfüllt, 100 % der alten Wix-URLs leiten sauber um, Lighthouse Performance/SEO/Accessibility/Best Practices ≥ 95, bereit für Cloudflare-Produktiv-Deployment.
 
 ## Risks and Mitigations
 | Risk | Impact | Mitigation |
