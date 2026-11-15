@@ -5,6 +5,7 @@ import { vehicleImages, vehicles } from '@/db/schema';
 import { updateProductInventory } from '@/db/queries/products';
 import { updateVehicleStatus } from '@/db/queries/vehicles';
 import { verifyAdminRequest } from '@/lib/admin-auth';
+import { parseGermanEuroToCents, parseGermanInt } from '@/lib/format';
 
 const ToggleVehicleStatusSchema = z.object({
   action: z.literal('toggle_vehicle_status'),
@@ -15,8 +16,18 @@ const ToggleVehicleStatusSchema = z.object({
 const UpdateProductSchema = z.object({
   action: z.literal('update_product'),
   productId: z.coerce.number().int().positive(),
-  priceEur: z.coerce.number().min(0).max(500000),
-  stockQuantity: z.coerce.number().int().min(0).max(10000),
+  priceCents: z.preprocess(
+    (val) =>
+      typeof val === 'string' || typeof val === 'number'
+        ? parseGermanEuroToCents(val)
+        : Number.NaN,
+    z.number().int().min(0).max(50000000)
+  ),
+  stockQuantity: z.preprocess(
+    (val) =>
+      typeof val === 'string' || typeof val === 'number' ? parseGermanInt(val) : Number.NaN,
+    z.number().int().min(0).max(10000)
+  ),
 });
 
 const CreateVehicleSchema = z.object({
@@ -25,8 +36,16 @@ const CreateVehicleSchema = z.object({
   brand: z.string().trim().min(2).max(60),
   model: z.string().trim().min(1).max(80),
   year: z.coerce.number().int().min(1950).max(2030),
-  mileageKm: z.coerce.number().int().min(0).max(1000000),
-  powerPs: z.coerce.number().int().min(1).max(2500),
+  mileageKm: z.preprocess(
+    (val) =>
+      typeof val === 'string' || typeof val === 'number' ? parseGermanInt(val) : Number.NaN,
+    z.number().int().min(0).max(1000000)
+  ),
+  powerPs: z.preprocess(
+    (val) =>
+      typeof val === 'string' || typeof val === 'number' ? parseGermanInt(val) : Number.NaN,
+    z.number().int().min(1).max(2500)
+  ),
   transmission: z.string().trim().min(2).max(60),
   priceEur: z.string().trim().optional().default(''),
   status: z.enum(['available', 'reserved', 'sold']).default('available'),
@@ -109,7 +128,10 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   if (action === 'update_product') {
-    const parsed = UpdateProductSchema.safeParse(raw);
+    const parsed = UpdateProductSchema.safeParse({
+      ...raw,
+      priceCents: raw.priceCents ?? raw.priceEur,
+    });
     if (!parsed.success) {
       return new Response(JSON.stringify({ error: 'Ungültige Produktdaten.' }), {
         status: 400,
@@ -117,7 +139,7 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    const priceCents = Math.round(parsed.data.priceEur * 100);
+    const priceCents = parsed.data.priceCents;
     const updated = await updateProductInventory(parsed.data.productId, {
       priceCents,
       stockQuantity: parsed.data.stockQuantity,
@@ -164,8 +186,14 @@ export const POST: APIRoute = async ({ request }) => {
     const nowIso = new Date().toISOString();
     const baseSlug = slugifyVehicle(`${d.brand}-${d.model}-${d.year}`);
     const uniqueSlug = `${baseSlug}-${Math.floor(100 + Math.random() * 900)}`;
-    const numericPrice = d.priceEur ? Number(d.priceEur) : NaN;
-    const hasPrice = Number.isFinite(numericPrice) && numericPrice > 0;
+    const parsedVehiclePriceCents = d.priceEur ? parseGermanEuroToCents(d.priceEur) : Number.NaN;
+    if (d.priceEur && (Number.isNaN(parsedVehiclePriceCents) || parsedVehiclePriceCents < 0)) {
+      return new Response(
+        JSON.stringify({ error: 'Bitte geben Sie einen gültigen Fahrzeugpreis in EUR ein.' }),
+        { status: 400, headers: { 'Content-Type': 'application/json; charset=utf-8' } }
+      );
+    }
+    const hasPrice = Number.isFinite(parsedVehiclePriceCents) && parsedVehiclePriceCents > 0;
     const powerKw = Math.round(d.powerPs * 0.7355);
 
     const [inserted] = await db
@@ -181,7 +209,7 @@ export const POST: APIRoute = async ({ request }) => {
         powerKw,
         transmission: d.transmission,
         fuelType: 'Benzin',
-        priceCents: hasPrice ? Math.round(numericPrice * 100) : null,
+        priceCents: hasPrice ? parsedVehiclePriceCents : null,
         priceOnRequest: !hasPrice,
         vatDeductible: false,
         status: d.status,

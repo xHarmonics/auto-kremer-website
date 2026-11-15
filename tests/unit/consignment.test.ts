@@ -132,4 +132,27 @@ describe('Vehicle Consignment API (/api/inquiries/consign) + R2 Photo Validation
     } as never);
     expect(badTurnstileRes.status).toBe(403);
   });
+
+  it('accepts German dot-grouped mileage (e.g. "28.500") and stores exact integer 28500', async () => {
+    const fd = buildValidFormData();
+    fd.set('mileageKm', '28.500');
+
+    const res = await consignPost({
+      request: new Request('http://localhost:4321/api/inquiries/consign', {
+        method: 'POST',
+        body: fd,
+      }),
+    } as never);
+
+    expect(res.status).toBe(201);
+    const body = (await res.json()) as { inquiryNumber: string };
+    const db = await getDb(testD1);
+    const [saved] = await db
+      .select()
+      .from(inquiries)
+      .where(eq(inquiries.inquiryNumber, body.inquiryNumber));
+    expect(saved).toBeDefined();
+    const payload = JSON.parse(saved!.payloadJson) as { mileageKm: number };
+    expect(payload.mileageKm).toBe(28500);
+  });
 });

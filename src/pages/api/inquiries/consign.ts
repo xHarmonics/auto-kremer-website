@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { getDb } from '@/db/client';
 import { inquiries } from '@/db/schema';
 import { sendInquiryNotificationEmail } from '@/lib/email';
+import { parseGermanInt } from '@/lib/format';
 import { validateAndStoreConsignmentPhotos } from '@/lib/r2';
 import { verifyTurnstileToken } from '@/lib/turnstile';
 
@@ -18,11 +19,15 @@ const ConsignmentFieldsSchema = z.object({
       (y) => y <= Math.max(2027, new Date().getUTCFullYear() + 1),
       'Bitte geben Sie ein gültiges Baujahr an.'
     ),
-  mileageKm: z.coerce
-    .number()
-    .int()
-    .min(0, 'Kilometerstand darf nicht negativ sein.')
-    .max(1000000),
+  mileageKm: z
+    .preprocess(
+      (val) => (typeof val === 'string' || typeof val === 'number' ? parseGermanInt(val) : Number.NaN),
+      z
+        .number({ error: 'Bitte geben Sie einen gültigen Kilometerstand ein.' })
+        .int()
+        .min(0, 'Kilometerstand darf nicht negativ sein.')
+        .max(1000000)
+    ),
   transmission: z.string().trim().min(2, 'Bitte wählen Sie die Getriebeart.').max(60),
   vin: z.string().trim().max(32).optional().default(''),
   askingPriceEur: z.string().trim().max(40).optional().default(''),

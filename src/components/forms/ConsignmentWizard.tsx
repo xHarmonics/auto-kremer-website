@@ -1,4 +1,5 @@
 import { useRef, useState } from 'preact/hooks';
+import { parseGermanInt } from '@/lib/format';
 
 interface Props {
   turnstileSiteKey?: string;
@@ -59,8 +60,8 @@ export default function ConsignmentWizard({ turnstileSiteKey }: Props) {
     if (!Number.isInteger(y) || y < 1950 || y > maxYear) {
       nextErrors.year = `Bitte geben Sie ein gültiges Baujahr (1950–${maxYear}) ein.`;
     }
-    const km = Number(mileageKm);
-    if (mileageKm.trim() === '' || Number.isNaN(km) || km < 0) {
+    const km = parseGermanInt(mileageKm);
+    if (Number.isNaN(km) || km < 0 || km > 1000000) {
       nextErrors.mileageKm = 'Bitte geben Sie den aktuellen Kilometerstand ein.';
     }
     setErrors(nextErrors);

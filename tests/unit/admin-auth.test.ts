@@ -172,5 +172,56 @@ describe('Cloudflare Zero Trust Access Admin Auth & Inventory Backoffice', () =>
     const partAfter = await getProductBySlug(partBefore!.slug, db);
     expect(partAfter!.priceCents).toBe(289000);
     expect(partAfter!.stockQuantity).toBe(3);
+
+    // Update OEM part with German comma decimal via form-data ("1.290,50")
+    const prodFd = new FormData();
+    prodFd.set('action', 'update_product');
+    prodFd.set('productId', String(partBefore!.id));
+    prodFd.set('priceEur', '1.290,50');
+    prodFd.set('stockQuantity', '4');
+
+    const prodFormRes = await adminInventoryPost({
+      request: new Request('http://localhost:4321/api/admin/inventory', {
+        method: 'POST',
+        headers: {
+          Authorization: 'Bearer unit-test-admin-secret',
+        },
+        body: prodFd,
+      }),
+    } as never);
+    expect(prodFormRes.status).toBe(303);
+    const partAfterComma = await getProductBySlug(partBefore!.slug, db);
+    expect(partAfterComma!.priceCents).toBe(129050);
+    expect(partAfterComma!.stockQuantity).toBe(4);
+
+    // Create vehicle with German dot-grouped mileage ("18.500") and price ("295.000")
+    const createRes = await adminInventoryPost({
+      request: new Request('http://localhost:4321/api/admin/inventory', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer unit-test-admin-secret',
+        },
+        body: JSON.stringify({
+          action: 'create_vehicle',
+          title: 'Lamborghini Aventador LP 700-4',
+          brand: 'Lamborghini',
+          model: 'Aventador',
+          year: '2014',
+          mileageKm: '18.500',
+          powerPs: '700',
+          transmission: 'Automatik / E-Gear',
+          priceEur: '295.000',
+          status: 'sold',
+          summary: 'Sammlerzustand mit vollständiger Wartungshistorie.',
+        }),
+      }),
+    } as never);
+    expect(createRes.status).toBe(201);
+    const createdSold = await listSoldVehicles(db);
+    const createdVehicle = createdSold.find((v) => v.title === 'Lamborghini Aventador LP 700-4');
+    expect(createdVehicle).toBeDefined();
+    expect(createdVehicle!.mileageKm).toBe(18500);
+    expect(createdVehicle!.priceCents).toBe(29500000);
   });
 });

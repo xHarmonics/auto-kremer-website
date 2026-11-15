@@ -70,3 +70,55 @@ export function formatDisplacementCc(cc: number | null | undefined): string {
   if (!cc) return 'k. A.';
   return `${numberFormatter.format(cc)} cm³`;
 }
+
+export function parseGermanInt(raw: string | number): number {
+  if (typeof raw === 'number') {
+    return Number.isInteger(raw) && raw >= 0 ? raw : Number.NaN;
+  }
+  const cleaned = raw.trim().replace(/[\s\u00a0\u202f]+/g, '');
+  if (cleaned === '') return Number.NaN;
+  if (/^\d+$/.test(cleaned)) {
+    return Number(cleaned);
+  }
+  if (/^\d{1,3}(?:\.\d{3})+$/.test(cleaned)) {
+    return Number(cleaned.replace(/\./g, ''));
+  }
+  return Number.NaN;
+}
+
+export function parseGermanEuroToCents(raw: string | number): number {
+  if (typeof raw === 'number') {
+    return Number.isFinite(raw) && raw >= 0 ? Math.round(raw * 100) : Number.NaN;
+  }
+  const cleaned = raw
+    .trim()
+    .replace(/(?:€|eur)\s*$/i, '')
+    .replace(/[\s\u00a0\u202f]+/g, '');
+
+  if (cleaned === '') return Number.NaN;
+
+  if (/^\d+$/.test(cleaned)) {
+    return Number(cleaned) * 100;
+  }
+
+  const commaMatch = /^(\d+|\d{1,3}(?:\.\d{3})+),(\d{1,2})$/.exec(cleaned);
+  if (commaMatch) {
+    const euros = Number(commaMatch[1]!.replace(/\./g, ''));
+    const cents = Number(commaMatch[2]!.padEnd(2, '0'));
+    return euros * 100 + cents;
+  }
+
+  if (!cleaned.includes(',')) {
+    if (/^\d{1,3}(?:\.\d{3})+$/.test(cleaned)) {
+      return Number(cleaned.replace(/\./g, '')) * 100;
+    }
+    const dotDecimalMatch = /^(\d+)\.(\d{1,2})$/.exec(cleaned);
+    if (dotDecimalMatch) {
+      const euros = Number(dotDecimalMatch[1]!);
+      const cents = Number(dotDecimalMatch[2]!.padEnd(2, '0'));
+      return euros * 100 + cents;
+    }
+  }
+
+  return Number.NaN;
+}
