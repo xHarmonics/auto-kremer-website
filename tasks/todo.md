@@ -74,14 +74,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Erstellt das Drizzle-Schema und die erste D1-Migration für `vehicles` und `vehicle_images` sowie typsichere Repository-Abfragen und einen realistischen Seed-Datensatz mit den 5 aktuellen Bestandsfahrzeugen (Murciélago, Gallardo Handschalter, Porsche 993 RS Clubsport, Gallardo Spyder, Alfa Romeo 4C) und den 3 verkauften Ikonen (Murciélago, Diablo SE30, Jarama).
 
 **Acceptance criteria:**
-- [ ] `vehicles` und `vehicle_images` bilden sowohl verfügbare/reservierte Fahrzeuge als auch verkaufte Referenzen inkl. Differenzbesteuerung (§ 25a UStG) / „Preis auf Anfrage“ typsicher ab.
-- [ ] D1-Migration und Seed laufen lokal über Wrangler fehlerfrei durch.
-- [ ] Unit-Tests verifizieren die Filterung nach Status (`available` vs. `sold`), Marke und Sortierung.
+- [x] `vehicles` und `vehicle_images` bilden sowohl verfügbare/reservierte Fahrzeuge als auch verkaufte Referenzen inkl. Differenzbesteuerung (§ 25a UStG) / „Preis auf Anfrage“ typsicher ab.
+- [x] D1-Migration und Seed laufen lokal über Wrangler fehlerfrei durch.
+- [x] Unit-Tests verifizieren die Filterung nach Status (`available` vs. `sold`), Marke und Sortierung.
 
 **Verification:**
-- [ ] Tests pass: `npx vitest run tests/unit/vehicles.test.ts`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Lokale D1-Abfrage listet 5 aktive und 3 verkaufte Fahrzeuge.
+- [x] Tests pass: `npx vitest run tests/unit/vehicles.test.ts`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Lokale D1-Abfrage listet 5 aktive und 3 verkaufte Fahrzeuge.
 
 **Dependencies:** Task 1
 

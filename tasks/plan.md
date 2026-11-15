@@ -59,7 +59,7 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 - [x] `npm run typecheck`, `npm test` und `npm run build` laufen grün; lokale Wrangler-Preview rendert das Grundlayout auf Mobile & Desktop fehlerfrei.
 
 ### Phase 2: Vertical Slice — Fahrzeug-Showroom & Referenzen
-- [ ] Task 3: D1-Datenmodell, Migration & Seed-Daten für Fahrzeuge (Showroom & Verkaufte Ikonen)
+- [x] Task 3: D1-Datenmodell, Migration & Seed-Daten für Fahrzeuge (Showroom & Verkaufte Ikonen)
 - [ ] Task 4: Showroom-Übersicht (`/fahrzeuge`) & Referenzen (`/referenzen`) inkl. Filter-Insel
 - [ ] Task 5: Fahrzeug-Detailansicht (`/fahrzeuge/[slug]`) mit Lightbox-Galerie, Tech-Specs & Direkt-Anfrage
 
