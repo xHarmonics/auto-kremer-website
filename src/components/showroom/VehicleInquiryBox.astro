@@ -1,0 +1,122 @@
+---
+import type { VehicleWithImages } from '@/db/queries/vehicles';
+import { formatVehiclePriceDisplay } from '@/lib/format';
+import { SITE_CONFIG } from '@/lib/site-config';
+
+interface Props {
+  vehicle: VehicleWithImages;
+}
+
+const { vehicle } = Astro.props;
+const priceInfo = formatVehiclePriceDisplay(vehicle);
+const isSold = vehicle.status === 'sold';
+
+const inquiryHref = `/kontakt?thema=fahrzeug&fahrzeug=${encodeURIComponent(
+  `${vehicle.title} (${vehicle.year})`
+)}`;
+
+const whatsappHref = `${SITE_CONFIG.contact.whatsappHref}?text=${encodeURIComponent(
+  `Guten Tag liebes Auto Kremer Team, ich interessiere mich für das Fahrzeug: ${vehicle.title} (${vehicle.year}).`
+)}`;
+---
+
+<aside class="sticky top-28 rounded-xl border border-gold/40 bg-surface p-6 sm:p-7">
+  <div class="flex items-center justify-between gap-3 border-b border-border-subtle pb-4">
+    <span class="font-mono text-xs tracking-wider text-gold uppercase">
+      {isSold ? 'Sammler-Archiv' : 'Verkaufspreis'}
+    </span>
+    <span class="inline-flex items-center gap-1.5 rounded border border-border-subtle bg-canvas px-2.5 py-1 font-mono text-[11px] font-semibold uppercase">
+      <span
+        aria-hidden="true"
+        class:list={[
+          'h-2 w-2 rounded-full',
+          vehicle.status === 'available'
+            ? 'bg-status-available'
+            : vehicle.status === 'reserved'
+              ? 'bg-status-reserved'
+              : 'bg-status-sold',
+        ]}
+      />
+      {vehicle.status === 'available'
+        ? 'Verfügbar'
+        : vehicle.status === 'reserved'
+          ? 'Reserviert'
+          : 'Verkauft'}
+    </span>
+  </div>
+
+  <div class="mt-4">
+    <p class="font-mono text-3xl font-semibold text-ink">{priceInfo.primary}</p>
+    <p class="mt-1 text-xs text-ink-muted">{priceInfo.taxNote}</p>
+  </div>
+
+  <div class="mt-6 space-y-3">
+    {!isSold ? (
+      <>
+        <a
+          href={inquiryHref}
+          data-vehicle-inquiry-cta
+          class="flex min-h-12 w-full items-center justify-center rounded-md bg-gold px-5 py-3 text-center text-sm font-semibold text-canvas transition-colors hover:bg-gold-hover"
+        >
+          Besichtigung &amp; Exposé anfragen
+        </a>
+        <a
+          href={`tel:${SITE_CONFIG.contact.phonePrimary}`}
+          class="flex min-h-12 w-full items-center justify-center gap-2 rounded-md border border-border-control bg-canvas px-5 py-3 font-mono text-sm font-medium text-ink transition-colors hover:border-gold hover:text-gold"
+        >
+          <span>Direktwahl: {SITE_CONFIG.contact.phonePrimaryDisplay}</span>
+        </a>
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex min-h-11 w-full items-center justify-center gap-2 rounded-md border border-border-subtle bg-canvas/60 px-4 py-2.5 text-xs font-medium text-ink-muted transition-colors hover:border-gold/60 hover:text-ink"
+        >
+          <span>Per WhatsApp Business anfragen</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </>
+    ) : (
+      <>
+        <p class="text-sm leading-relaxed text-ink-muted">
+          Dieses Fahrzeug wurde bereits in Sammlerhand übergeben. Suchen Sie ein vergleichbares Exemplar oder möchten Sie ein ähnliches Modell verkaufen?
+        </p>
+        <a
+          href="/fahrzeug-verkaufen"
+          class="flex min-h-12 w-full items-center justify-center rounded-md bg-gold px-5 py-3 text-center text-sm font-semibold text-canvas transition-colors hover:bg-gold-hover"
+        >
+          Vergleichbares Fahrzeug anbieten
+        </a>
+        <a
+          href={inquiryHref}
+          class="flex min-h-12 w-full items-center justify-center rounded-md border border-border-control bg-canvas px-5 py-3 text-center text-sm font-semibold text-ink transition-colors hover:border-gold hover:text-gold"
+        >
+          Suchauftrag hinterlegen
+        </a>
+      </>
+    )}
+  </div>
+
+  {vehicle.mobileDeUrl && !isSold && (
+    <div class="mt-5 border-t border-border-subtle pt-4">
+      <a
+        href={vehicle.mobileDeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 text-xs text-ink-muted transition-colors hover:text-gold"
+      >
+        <span>Inserat zusätzlich auf mobile.de ansehen</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  )}
+
+  <div class="mt-5 border-t border-border-subtle pt-4 text-xs leading-relaxed text-ink-muted">
+    <p class="font-semibold text-ink">Auto Kremer Qualitätsversprechen</p>
+    <ul class="mt-2 space-y-1.5">
+      <li>✓ Geprüft in unserer Bonner Meisterwerkstatt</li>
+      <li>✓ Transparente Historie &amp; Dokumentationsprüfung</li>
+      <li>✓ Weltweiter geschlossener Fahrzeugtransport möglich</li>
+    </ul>
+  </div>
+</aside>

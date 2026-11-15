@@ -128,14 +128,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Implementiert die dedizierte Fahrzeug-Detailseite mit hochauflösender Touch-/Tastatur-Lightbox-Galerie, strukturiertem technischem Datenblatt, Provenienz-/Historientext, Sticky-Anfragebox (Vorbelegung für `/kontakt?fahrzeug=...`, Telefon, WhatsApp, optionaler Zweitlink zum `mobile.de`-Inserat) sowie `Car` / `Offer` JSON-LD für Google.
 
 **Acceptance criteria:**
-- [ ] Jedes Bestands- und Referenzfahrzeug ist unter `/fahrzeuge/[slug]` aufrufbar; unbekannte Slugs liefern sauber HTTP 404.
-- [ ] Die Bildergalerie unterstützt Tastatursteuerung (`ArrowLeft`, `ArrowRight`, `Escape`), korrekte Alt-Texte und responsive Bildgrößen ohne Layout-Shift (CLS < 0.02).
-- [ ] Valides Schema.org `Car`-Markup und fahrzeugspezifische `<title>`/`<meta description>`-Tags werden im `<head>` ausgegeben.
+- [x] Jedes Bestands- und Referenzfahrzeug ist unter `/fahrzeuge/[slug]` aufrufbar; unbekannte Slugs liefern sauber HTTP 404.
+- [x] Die Bildergalerie unterstützt Tastatursteuerung (`ArrowLeft`, `ArrowRight`, `Escape`), korrekte Alt-Texte und responsive Bildgrößen ohne Layout-Shift (CLS < 0.02).
+- [x] Valides Schema.org `Car`-Markup und fahrzeugspezifische `<title>`/`<meta description>`-Tags werden im `<head>` ausgegeben.
 
 **Verification:**
-- [ ] Tests pass: `npx playwright test tests/e2e/showroom.spec.ts`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Detailseite `/fahrzeuge/porsche-993-carrera-rs-clubsport-1995` inkl. Lightbox und Anfrage-Link testen.
+- [x] Tests pass: `npx playwright test tests/e2e/showroom.spec.ts`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Detailseite `/fahrzeuge/porsche-993-carrera-rs-clubsport-1995` inkl. Lightbox und Anfrage-Link testen.
 
 **Dependencies:** Task 4
 
@@ -151,9 +151,9 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 ---
 
 ## Checkpoint: After Tasks 3-5 (Showroom End-to-End)
-- [ ] All unit and showroom E2E tests pass
-- [ ] Application builds cleanly
-- [ ] Complete user journey `/fahrzeuge` -> Filter -> `/fahrzeuge/[slug]` -> Lightbox -> Inquiry CTA works end-to-end
+- [x] All unit and showroom E2E tests pass
+- [x] Application builds cleanly
+- [x] Complete user journey `/fahrzeuge` -> Filter -> `/fahrzeuge/[slug]` -> Lightbox -> Inquiry CTA works end-to-end
 
 ---
 

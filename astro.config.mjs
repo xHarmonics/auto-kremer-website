@@ -15,8 +15,11 @@ export default defineConfig({
       headersAndRedirectsDevModeSupport: true,
     },
   }),
-  integrations: [preact()],
+  integrations: [preact({ devtools: false })],
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      dedupe: ['preact', 'preact/hooks', 'preact/jsx-runtime', 'preact-render-to-string'],
+    },
   },
 });

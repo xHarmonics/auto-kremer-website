@@ -61,10 +61,10 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 ### Phase 2: Vertical Slice — Fahrzeug-Showroom & Referenzen
 - [x] Task 3: D1-Datenmodell, Migration & Seed-Daten für Fahrzeuge (Showroom & Verkaufte Ikonen)
 - [x] Task 4: Showroom-Übersicht (`/fahrzeuge`) & Referenzen (`/referenzen`) inkl. Filter-Insel
-- [ ] Task 5: Fahrzeug-Detailansicht (`/fahrzeuge/[slug]`) mit Lightbox-Galerie, Tech-Specs & Direkt-Anfrage
+- [x] Task 5: Fahrzeug-Detailansicht (`/fahrzeuge/[slug]`) mit Lightbox-Galerie, Tech-Specs & Direkt-Anfrage
 
 ### Checkpoint 2: Showroom End-to-End
-- [ ] Alle 5 Bestandsfahrzeuge und 3 Referenzfahrzeuge sind mit echten Detailseiten, Galerie und strukturierten Daten navigierbar; Unit- und E2E-Tests grün.
+- [x] Alle 5 Bestandsfahrzeuge und 3 Referenzfahrzeuge sind mit echten Detailseiten, Galerie und strukturierten Daten navigierbar; Unit- und E2E-Tests grün.
 
 ### Phase 3: Vertical Slice — Ricambi Originali Online-Shop & Stripe Checkout
 - [ ] Task 6: D1-Shop-Schema & Bereinigungs-Importer für alle 116 Lamborghini-Ersatzteile

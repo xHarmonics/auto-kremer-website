@@ -1,0 +1,220 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import VehicleGalleryLightbox from '@/components/showroom/VehicleGalleryLightbox';
+import VehicleSpecTable from '@/components/showroom/VehicleSpecTable.astro';
+import VehicleInquiryBox from '@/components/showroom/VehicleInquiryBox.astro';
+import VehicleCard from '@/components/showroom/VehicleCard.astro';
+import { getVehicleBySlug, listShowroomVehicles } from '@/db/queries/vehicles';
+import { SITE_CONFIG } from '@/lib/site-config';
+
+const { slug } = Astro.params;
+const vehicle = slug ? await getVehicleBySlug(slug) : null;
+
+if (!vehicle) {
+  Astro.response.status = 404;
+}
+
+const relatedVehicles = vehicle
+  ? (await listShowroomVehicles())
+      .filter((v) => v.slug !== vehicle.slug)
+      .slice(0, 3)
+  : [];
+
+const siteOrigin = SITE_CONFIG.url;
+
+const carJsonLd = vehicle
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Car',
+      name: vehicle.title,
+      description: vehicle.summary,
+      brand: {
+        '@type': 'Brand',
+        name: vehicle.brand,
+      },
+      model: vehicle.model,
+      vehicleModelDate: String(vehicle.year),
+      vehicleTransmission: vehicle.transmission,
+      fuelType: vehicle.fuelType,
+      color: vehicle.exteriorColor ?? undefined,
+      mileageFromOdometer:
+        vehicle.mileageKm !== null
+          ? {
+              '@type': 'QuantitativeValue',
+              value: vehicle.mileageKm,
+              unitCode: 'KMT',
+            }
+          : undefined,
+      image: vehicle.images.map((img) => new URL(img.url, siteOrigin).toString()),
+      offers: {
+        '@type': 'Offer',
+        url: `${siteOrigin}/fahrzeuge/${vehicle.slug}`,
+        priceCurrency: 'EUR',
+        ...(vehicle.priceCents !== null && !vehicle.priceOnRequest && vehicle.status !== 'sold'
+          ? { price: (vehicle.priceCents / 100).toFixed(2) }
+          : {}),
+        availability:
+          vehicle.status === 'available'
+            ? 'https://schema.org/InStock'
+            : vehicle.status === 'reserved'
+              ? 'https://schema.org/LimitedAvailability'
+              : 'https://schema.org/SoldOut',
+        itemCondition: 'https://schema.org/UsedCondition',
+        seller: {
+          '@type': 'AutoDealer',
+          name: SITE_CONFIG.legalName,
+        },
+      },
+    }
+  : undefined;
+---
+
+{!vehicle ? (
+  <BaseLayout
+    title="Fahrzeug nicht gefunden (404)"
+    description="Das gesuchte Fahrzeug ist nicht mehr verfügbar oder die Adresse ist ungültig."
+    noindex={true}
+  >
+    <section class="mx-auto max-w-3xl px-4 py-24 text-center sm:px-6">
+      <p class="font-mono text-xs font-semibold tracking-widest text-gold uppercase">
+        404 · Fahrzeug nicht gefunden
+      </p>
+      <h1 class="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
+        Dieses Fahrzeug befindet sich nicht im aktuellen Online-Bestand.
+      </h1>
+      <p class="mt-4 text-base text-ink-muted">
+        Entdecken Sie unsere aktuell verfügbaren Sportwagen oder werfen Sie einen Blick in unser Referenz-Archiv.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/fahrzeuge"
+          class="inline-flex min-h-12 items-center justify-center rounded-md bg-gold px-6 py-3 text-sm font-semibold text-canvas hover:bg-gold-hover"
+        >
+          Zum Fahrzeugbestand
+        </a>
+        <a
+          href="/referenzen"
+          class="inline-flex min-h-12 items-center justify-center rounded-md border border-border-control bg-surface px-6 py-3 text-sm font-semibold text-ink hover:border-gold hover:text-gold"
+        >
+          Verkaufte Referenzen
+        </a>
+      </div>
+    </section>
+  </BaseLayout>
+) : (
+  <BaseLayout
+    title={`${vehicle.title} (${vehicle.year})`}
+    description={vehicle.summary}
+    canonicalPath={`/fahrzeuge/${vehicle.slug}`}
+    ogImage={vehicle.coverImage?.url}
+    ogType="product"
+    structuredData={carJsonLd}
+  >
+    <article class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14">
+      <!-- Breadcrumbs -->
+      <nav aria-label="Brotkrumen-Navigation" class="mb-6 text-xs text-ink-muted">
+        <ol class="flex flex-wrap items-center gap-2 font-mono">
+          <li>
+            <a href="/" class="transition-colors hover:text-gold">Startseite</a>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li>
+            <a
+              href={vehicle.status === 'sold' ? '/referenzen' : '/fahrzeuge'}
+              class="transition-colors hover:text-gold"
+            >
+              {vehicle.status === 'sold' ? 'Referenzen' : 'Fahrzeuge'}
+            </a>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="truncate text-ink">{vehicle.title}</li>
+        </ol>
+      </nav>
+
+      <!-- Title Header -->
+      <header class="mb-8">
+        <p class="font-mono text-xs font-semibold tracking-[0.2em] text-gold uppercase">
+          {vehicle.brand} · Baujahr {vehicle.year} · {vehicle.transmission}
+        </p>
+        <h1 class="mt-2 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+          {vehicle.title}
+        </h1>
+        <p class="mt-3 max-w-3xl text-base leading-relaxed text-ink-muted sm:text-lg">
+          {vehicle.summary}
+        </p>
+      </header>
+
+      <!-- Main Two-Column Grid -->
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
+        <!-- Left 8 Columns: Gallery, Description, Highlights, Specs -->
+        <div class="space-y-10 lg:col-span-8">
+          <VehicleGalleryLightbox
+            client:load
+            vehicleTitle={vehicle.title}
+            images={vehicle.images}
+          />
+
+          <section aria-labelledby="provenance-heading" class="rounded-xl border border-border-subtle bg-surface p-6 sm:p-8">
+            <h2 id="provenance-heading" class="font-display text-xl font-semibold text-ink sm:text-2xl">
+              Fahrzeughistorie &amp; Beschreibung
+            </h2>
+            <p class="mt-4 text-base leading-relaxed text-ink-muted">
+              {vehicle.description}
+            </p>
+
+            {vehicle.highlights.length > 0 && (
+              <div class="mt-7 border-t border-border-subtle pt-6">
+                <h3 class="font-display text-base font-semibold text-ink">
+                  Ausstattung &amp; Besonderheiten im Überblick
+                </h3>
+                <ul class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {vehicle.highlights.map((item) => (
+                    <li class="flex items-start gap-2.5 text-sm text-ink-muted">
+                      <span aria-hidden="true" class="mt-0.5 font-mono text-gold">◆</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
+
+          <VehicleSpecTable vehicle={vehicle} />
+        </div>
+
+        <!-- Right 4 Columns: Sticky Inquiry Box -->
+        <div class="lg:col-span-4">
+          <VehicleInquiryBox vehicle={vehicle} />
+        </div>
+      </div>
+
+      <!-- Further Showroom Vehicles -->
+      {relatedVehicles.length > 0 && (
+        <section aria-labelledby="related-vehicles-heading" class="mt-20 border-t border-border-subtle pt-14">
+          <div class="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p class="font-mono text-xs font-semibold tracking-wider text-gold uppercase">
+                Weitere Fahrzeuge im Showroom
+              </p>
+              <h2 id="related-vehicles-heading" class="mt-1 font-display text-2xl font-semibold text-ink sm:text-3xl">
+                Aktuell verfügbar in Bonn
+              </h2>
+            </div>
+            <a
+              href="/fahrzeuge"
+              class="font-mono text-xs font-semibold tracking-wider text-gold uppercase hover:underline"
+            >
+              Gesamten Bestand ansehen →
+            </a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {relatedVehicles.map((rel) => (
+              <VehicleCard vehicle={rel} />
+            ))}
+          </div>
+        </section>
+      )}
+    </article>
+  </BaseLayout>
+)}

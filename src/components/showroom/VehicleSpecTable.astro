@@ -1,0 +1,47 @@
+---
+import type { VehicleWithImages } from '@/db/queries/vehicles';
+import {
+  formatDisplacementCc,
+  formatMileageKm,
+  formatPower,
+} from '@/lib/format';
+
+interface Props {
+  vehicle: VehicleWithImages;
+}
+
+const { vehicle } = Astro.props;
+
+const specs = [
+  { label: 'Marke', value: vehicle.brand },
+  { label: 'Modell', value: vehicle.model },
+  { label: 'Baujahr / Erstzulassung', value: String(vehicle.year) },
+  { label: 'Laufleistung', value: formatMileageKm(vehicle.mileageKm) },
+  { label: 'Leistung', value: formatPower(vehicle.powerPs, vehicle.powerKw) },
+  { label: 'Hubraum', value: formatDisplacementCc(vehicle.displacementCc) },
+  { label: 'Motortyp', value: vehicle.engineType ?? 'k. A.' },
+  { label: 'Getriebe', value: vehicle.transmission },
+  { label: 'Antrieb', value: vehicle.drivetrain ?? 'k. A.' },
+  { label: 'Kraftstoff', value: vehicle.fuelType },
+  { label: 'Außenfarbe', value: vehicle.exteriorColor ?? 'Auf Anfrage' },
+  { label: 'Innenausstattung', value: vehicle.interiorColor ?? 'Auf Anfrage' },
+];
+---
+
+<section aria-labelledby="tech-specs-heading" class="rounded-xl border border-border-subtle bg-surface p-6 sm:p-8">
+  <h2 id="tech-specs-heading" class="font-display text-xl font-semibold text-ink sm:text-2xl">
+    Technische Daten &amp; Spezifikation
+  </h2>
+  <dl class="mt-6 divide-y divide-border-subtle">
+    {specs.map((row) => (
+      <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-12 sm:gap-4">
+        <dt class="font-mono text-xs tracking-wider text-ink-muted uppercase sm:col-span-5">
+          {row.label}
+        </dt>
+        <dd class="font-mono text-sm font-medium text-ink sm:col-span-7">
+          {row.value}
+        </dd>
+      </div>
+    ))}
+  </dl>
+</section>
