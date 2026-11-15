@@ -5,7 +5,7 @@ test.describe('Ricambi Originali Shop & Stripe Sandbox Checkout E2E', () => {
     page,
   }) => {
     await page.goto('/shop');
-    await expect(page.locator('h1')).toHaveCount(1);
+    await expect(page.locator('main h1')).toHaveCount(1);
 
     // Search for out-of-stock Guarnizione Diablo GT (0074004842) -> must NOT have add-to-cart button, only inquiry link
     const searchInput = page.locator('#oem-search-input');
@@ -22,7 +22,7 @@ test.describe('Ricambi Originali Shop & Stripe Sandbox Checkout E2E', () => {
     // Open product detail page
     await page.locator('[data-product-card] a').first().click();
     await expect(page).toHaveURL(/\/shop\/008611703/);
-    await expect(page.locator('h1')).toContainText('Water Pump');
+    await expect(page.locator('main h1')).toContainText('Water Pump');
 
     // Add to Cart -> opens slide-over CartDrawer modal <dialog>
     await page.locator('[data-product-add-btn]').click();

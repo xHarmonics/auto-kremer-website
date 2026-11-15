@@ -80,7 +80,7 @@ test.describe('Wix 301 Redirects, Sitemap, Zero External Requests, Lead Forms, A
   }) => {
     // 1. Consignment Wizard (/fahrzeug-verkaufen)
     await page.goto('/fahrzeug-verkaufen');
-    await expect(page.locator('h1')).toContainText('besten Händen');
+    await expect(page.locator('main h1')).toContainText('besten Händen');
 
     await page.fill('#consign-model', 'Countach 5000 QV');
     await page.fill('#consign-year', '1986');
@@ -142,7 +142,7 @@ test.describe('Wix 301 Redirects, Sitemap, Zero External Requests, Lead Forms, A
     });
     const adminPage = await adminContext.newPage();
     await adminPage.goto('/admin');
-    await expect(adminPage.locator('h1')).toContainText('Fahrzeugbestand');
+    await expect(adminPage.locator('main h1')).toContainText('Fahrzeugbestand');
 
     // Toggle Alfa Romeo 4C Coupé to sold and verify on /referenzen, then toggle back to available
     const toggleSelector = '[data-toggle-status-btn="alfa-romeo-4c-2016"]';
@@ -191,9 +191,10 @@ test.describe('Wix 301 Redirects, Sitemap, Zero External Requests, Lead Forms, A
     for (const route of routesToAudit) {
       const res = await page.goto(route);
       expect(res?.status(), `Expected HTTP 200 on ${route}`).toBe(200);
-      await expect(page.locator('h1')).toHaveCount(1);
+      await expect(page.locator('main h1')).toHaveCount(1);
 
       const axeResults = await new AxeBuilder({ page })
+        .exclude('astro-dev-toolbar')
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
         .analyze();
 

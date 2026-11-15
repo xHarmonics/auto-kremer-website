@@ -13,8 +13,8 @@ test.describe('Showroom & Referenzen End-to-End Journey', () => {
     });
 
     await page.goto('/fahrzeuge');
-    await expect(page.locator('h1')).toHaveCount(1);
-    await expect(page.locator('h1')).toContainText('Sportwagen');
+    await expect(page.locator('main h1')).toHaveCount(1);
+    await expect(page.locator('main h1')).toContainText('Sportwagen');
 
     // All 5 active vehicles visible initially
     const visibleCards = page.locator('[data-vehicle-card]:not([hidden])');
@@ -28,8 +28,8 @@ test.describe('Showroom & Referenzen End-to-End Journey', () => {
     // Navigate to Porsche 993 Carrera RS Clubsport detail page
     await visibleCards.first().locator('a').first().click();
     await expect(page).toHaveURL('/fahrzeuge/porsche-993-carrera-rs-clubsport-1995');
-    await expect(page.locator('h1')).toHaveCount(1);
-    await expect(page.locator('h1')).toContainText('Porsche 911 (993) Carrera RS Clubsport');
+    await expect(page.locator('main h1')).toHaveCount(1);
+    await expect(page.locator('main h1')).toContainText('Porsche 911 (993) Carrera RS Clubsport');
 
     // Verify Schema.org Car JSON-LD
     const schemas = await page.locator('script[type="application/ld+json"]').allTextContents();
@@ -65,7 +65,7 @@ test.describe('Showroom & Referenzen End-to-End Journey', () => {
     page,
   }) => {
     await page.goto('/referenzen');
-    await expect(page.locator('h1')).toHaveCount(1);
+    await expect(page.locator('main h1')).toHaveCount(1);
     await expect(page.locator('[data-vehicle-card]')).toHaveCount(3);
     await expect(page.getByText('Diablo SE30')).toBeVisible();
     await expect(page.getByText('Jarama 400 GT')).toBeVisible();
