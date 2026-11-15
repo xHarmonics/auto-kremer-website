@@ -164,14 +164,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Erweitert das D1-Schema um `products`, `product_models` und `legacy_product_redirects` und implementiert das Migrationsskript `scripts/import-wix-catalog.ts`, das die 116 bestehenden Ersatzteile strukturiert übernimmt, OEM-Teilenummern extrahiert (`086927755E`, `400945095P` etc.), die 16 doppelten `-1`-Einträge dedupliziert, Tippfehler in Titeln korrigiert und Wix-Platzhaltertexte/Demo-Varianten entfernt.
 
 **Acceptance criteria:**
-- [ ] Jedes Produkt besitzt eine bereinigte `oem_number`, zugeordnete Lamborghini-Baureihen (`product_models`), Bruttopreis in Cent (`price_cents`), MwSt.-Satz und exakten Lagerbestand (`stock_quantity`, `reserved_quantity`).
-- [ ] Alle 116 bisherigen `/product-page/...`-Slugs sind in `legacy_product_redirects` verlustfrei einem sauberen `/shop/[slug]` zugeordnet.
-- [ ] Such-Query findet Ersatzteile in < 20 ms sowohl über exakte/teilweise OEM-Teilenummer als auch über Modellname und Bauteilbezeichnung.
+- [x] Jedes Produkt besitzt eine bereinigte `oem_number`, zugeordnete Lamborghini-Baureihen (`product_models`), Bruttopreis in Cent (`price_cents`), MwSt.-Satz und exakten Lagerbestand (`stock_quantity`, `reserved_quantity`).
+- [x] Alle 116 bisherigen `/product-page/...`-Slugs sind in `legacy_product_redirects` verlustfrei einem sauberen `/shop/[slug]` zugeordnet.
+- [x] Such-Query findet Ersatzteile in < 20 ms sowohl über exakte/teilweise OEM-Teilenummer als auch über Modellname und Bauteilbezeichnung.
 
 **Verification:**
-- [ ] Tests pass: `npx vitest run tests/unit/products.test.ts`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Suche nach `086927755E` und Filter `Countach` / `Diablo` liefern exakte Treffer ohne Duplikate.
+- [x] Tests pass: `npx vitest run tests/unit/products.test.ts`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Suche nach `086927755E` und Filter `Countach` / `Diablo` liefern exakte Treffer ohne Duplikate.
 
 **Dependencies:** Task 3
 

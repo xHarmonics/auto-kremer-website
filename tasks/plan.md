@@ -67,7 +67,7 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 - [x] Alle 5 Bestandsfahrzeuge und 3 Referenzfahrzeuge sind mit echten Detailseiten, Galerie und strukturierten Daten navigierbar; Unit- und E2E-Tests grün.
 
 ### Phase 3: Vertical Slice — Ricambi Originali Online-Shop & Stripe Checkout
-- [ ] Task 6: D1-Shop-Schema & Bereinigungs-Importer für alle 116 Lamborghini-Ersatzteile
+- [x] Task 6: D1-Shop-Schema & Bereinigungs-Importer für alle 116 Lamborghini-Ersatzteile
 - [ ] Task 7: Shop-Katalogseite (`/shop`) mit Echtzeit-OEM-Teilenummersuche & Baureihen-Filter
 - [ ] Task 8: Produkt-Detailseite (`/shop/[slug]`) & persistenter Slide-Over-Warenkorb (PAngV-konform)
 - [ ] Task 9: Stripe-Checkout-Endpunkt (`/api/checkout`) mit atomarer Bestandsprüfung & Versandzonen

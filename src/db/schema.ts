@@ -1,4 +1,4 @@
-import { sqliteTable, integer, text, index } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, integer, text, index, uniqueIndex } from 'drizzle-orm/sqlite-core';
 
 export const vehicles = sqliteTable(
   'vehicles',
@@ -60,6 +60,60 @@ export const vehicleImages = sqliteTable(
   (table) => [index('idx_vehicle_images_vehicle').on(table.vehicleId, table.sortOrder)]
 );
 
+export const products = sqliteTable(
+  'products',
+  {
+    id: integer('id').primaryKey({ autoIncrement: true }),
+    slug: text('slug').notNull().unique(),
+    oemNumber: text('oem_number').notNull().unique(),
+    oemNormalized: text('oem_normalized').notNull(),
+    title: text('title').notNull(),
+    category: text('category').notNull(),
+    condition: text('condition', { enum: ['new_nos', 'used_tested'] })
+      .notNull()
+      .default('new_nos'),
+    description: text('description').notNull(),
+    priceCents: integer('price_cents').notNull(),
+    vatRatePercent: integer('vat_rate_percent').notNull().default(19),
+    stockQuantity: integer('stock_quantity').notNull().default(0),
+    reservedQuantity: integer('reserved_quantity').notNull().default(0),
+    imageUrl: text('image_url').notNull(),
+    imageAlt: text('image_alt').notNull(),
+    featured: integer('featured', { mode: 'boolean' }).notNull().default(false),
+    active: integer('active', { mode: 'boolean' }).notNull().default(true),
+    createdAt: text('created_at').notNull(),
+    updatedAt: text('updated_at').notNull(),
+  },
+  (table) => [
+    index('idx_products_oem_norm').on(table.oemNormalized),
+    index('idx_products_category').on(table.category),
+    index('idx_products_active').on(table.active, table.featured),
+  ]
+);
+
+export const productModels = sqliteTable(
+  'product_models',
+  {
+    id: integer('id').primaryKey({ autoIncrement: true }),
+    productId: integer('product_id')
+      .notNull()
+      .references(() => products.id, { onDelete: 'cascade' }),
+    modelSlug: text('model_slug').notNull(),
+    modelLabel: text('model_label').notNull(),
+  },
+  (table) => [
+    index('idx_product_models_slug').on(table.modelSlug),
+    uniqueIndex('uq_product_model').on(table.productId, table.modelSlug),
+  ]
+);
+
+export const legacyProductRedirects = sqliteTable('legacy_product_redirects', {
+  oldWixSlug: text('old_wix_slug').primaryKey(),
+  targetProductSlug: text('target_product_slug').notNull(),
+});
+
 export type VehicleRow = typeof vehicles.$inferSelect;
 export type NewVehicleRow = typeof vehicles.$inferInsert;
 export type VehicleImageRow = typeof vehicleImages.$inferSelect;
+export type ProductRow = typeof products.$inferSelect;
+export type ProductModelRow = typeof productModels.$inferSelect;

@@ -1,0 +1,2518 @@
+{
+  "products": [
+    {
+      "slug": "006037759-gfa-ecu-diablo-sv-my97",
+      "oemNumber": "006037759",
+      "oemNormalized": "006037759",
+      "title": "GFA/ECU Diablo SV MY97",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "used_tested",
+      "description": "GFA/ECU Diablo SV MY97 (OEM-Teilenummer 006037759). Passend für Automobili Lamborghini Diablo. Geprüftes Original-Gebrauchtteil aus unserer Bonner Lamborghini-Fachwerkstatt. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 821791,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/006037759.avif",
+      "imageAlt": "006037759 — GFA/ECU Diablo SV MY97 (Lamborghini Originalersatzteil)",
+      "featured": true,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "410035422n-trim-carbon-murcielago",
+      "oemNumber": "410035422N",
+      "oemNormalized": "410035422N",
+      "title": "Trim Carbon Murciélago",
+      "category": "Karosserie, Interieur & Carbon",
+      "condition": "new_nos",
+      "description": "Trim Carbon Murciélago (OEM-Teilenummer 410035422N). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 239998,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/410035422n.avif",
+      "imageAlt": "410035422N — Trim Carbon Murciélago (Lamborghini Originalersatzteil)",
+      "featured": true,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "400945095p-rueckleuchte-links-gallardo-560",
+      "oemNumber": "400945095P",
+      "oemNormalized": "400945095P",
+      "title": "Rückleuchte Links Gallardo 560",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "used_tested",
+      "description": "Rückleuchte Links Gallardo 560 (OEM-Teilenummer 400945095P). Passend für Automobili Lamborghini Gallardo. Geprüftes Original-Gebrauchtteil aus unserer Bonner Lamborghini-Fachwerkstatt. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 185470,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/400945095p.avif",
+      "imageAlt": "400945095P — Rückleuchte Links Gallardo 560 (Lamborghini Originalersatzteil)",
+      "featured": true,
+      "models": [
+        {
+          "slug": "gallardo",
+          "label": "Gallardo"
+        }
+      ]
+    },
+    {
+      "slug": "413863365a-trim-for-switch-module-carbon-closed-murcielago",
+      "oemNumber": "413863365A",
+      "oemNormalized": "413863365A",
+      "title": "Trim for Switch Module Carbon Closed Murciélago",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Trim for Switch Module Carbon Closed Murciélago (OEM-Teilenummer 413863365A). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 179830,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/413863365a.avif",
+      "imageAlt": "413863365A — Trim for Switch Module Carbon Closed Murciélago (Lamborghini Originalersatzteil)",
+      "featured": true,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "410864123a-carbon-interior-covers-padel-murcielago",
+      "oemNumber": "410864123A",
+      "oemNormalized": "410864123A",
+      "title": "Carbon Interior Covers Padel Murciélago",
+      "category": "Karosserie, Interieur & Carbon",
+      "condition": "new_nos",
+      "description": "Carbon Interior Covers Padel Murciélago (OEM-Teilenummer 410864123A). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 119263,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/410864123a.avif",
+      "imageAlt": "410864123A — Carbon Interior Covers Padel Murciélago (Lamborghini Originalersatzteil)",
+      "featured": true,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "086927755e-gearbox-ecu-murcielago",
+      "oemNumber": "086927755E",
+      "oemNormalized": "086927755E",
+      "title": "Gearbox ECU Murciélago",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Gearbox ECU Murciélago (OEM-Teilenummer 086927755E). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 113112,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/086927755e.avif",
+      "imageAlt": "086927755E — Gearbox ECU Murciélago (Lamborghini Originalersatzteil)",
+      "featured": true,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "001726334-coolant-pump-rotor-plate-lm002-countach",
+      "oemNumber": "001726334",
+      "oemNormalized": "001726334",
+      "title": "Coolant pump rotor plate LM002/Countach",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Coolant pump rotor plate LM002/Countach (OEM-Teilenummer 001726334). Passend für Automobili Lamborghini Countach, LM002. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 27271,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/001726334.avif",
+      "imageAlt": "001726334 — Coolant pump rotor plate LM002/Countach (Lamborghini Originalersatzteil)",
+      "featured": true,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        },
+        {
+          "slug": "lm002",
+          "label": "LM002"
+        }
+      ]
+    },
+    {
+      "slug": "002410655-gear-selector-badge-countach-jalpa",
+      "oemNumber": "002410655",
+      "oemNormalized": "002410655",
+      "title": "Gear Selector Badge Countach/Jalpa",
+      "category": "Karosserie, Interieur & Carbon",
+      "condition": "new_nos",
+      "description": "Gear Selector Badge Countach/Jalpa (OEM-Teilenummer 002410655). Passend für Automobili Lamborghini Countach, Jalpa. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 6870,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/002410655.avif",
+      "imageAlt": "002410655 — Gear Selector Badge Countach/Jalpa (Lamborghini Originalersatzteil)",
+      "featured": true,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        },
+        {
+          "slug": "jalpa",
+          "label": "Jalpa"
+        }
+      ]
+    },
+    {
+      "slug": "009921005-complo-carve-aper",
+      "oemNumber": "009921005",
+      "oemNormalized": "009921005",
+      "title": "Complo Carve Aper",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Complo Carve Aper (OEM-Teilenummer 009921005). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 110304,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/009921005.avif",
+      "imageAlt": "009921005 — Complo Carve Aper (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "0020002646eu-gfa-ecu-murcielago",
+      "oemNumber": "0020002646EU",
+      "oemNormalized": "0020002646EU",
+      "title": "GFA/ECU Murciélago",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "used_tested",
+      "description": "GFA/ECU Murciélago (OEM-Teilenummer 0020002646EU). Passend für Automobili Lamborghini Murciélago. Geprüftes Original-Gebrauchtteil aus unserer Bonner Lamborghini-Fachwerkstatt. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 95000,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/0020002646eu.avif",
+      "imageAlt": "0020002646EU — GFA/ECU Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "003333588-brake-wire-diablo-sc-vt",
+      "oemNumber": "003333588",
+      "oemNormalized": "003333588",
+      "title": "Brake wire Diablo SC /VT",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Brake wire Diablo SC /VT (OEM-Teilenummer 003333588). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 79190,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/003333588.avif",
+      "imageAlt": "003333588 — Brake wire Diablo SC /VT (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "11a00-omp-belt-diablo",
+      "oemNumber": "11A00",
+      "oemNormalized": "11A00",
+      "title": "OMP Belt Diablo",
+      "category": "Karosserie, Interieur & Carbon",
+      "condition": "new_nos",
+      "description": "OMP Belt Diablo (OEM-Teilenummer 11A00). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 50000,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/11a00.avif",
+      "imageAlt": "11A00 — OMP Belt Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "0086325083-tube",
+      "oemNumber": "0086325083",
+      "oemNormalized": "0086325083",
+      "title": "Tube",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Tube (OEM-Teilenummer 0086325083). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 48760,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/0086325083.avif",
+      "imageAlt": "0086325083 — Tube (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "410407338-clamp-fitting-diablo-murcielago",
+      "oemNumber": "410407338",
+      "oemNormalized": "410407338",
+      "title": "Clamp Fitting Diablo/Murciélago",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Clamp Fitting Diablo/Murciélago (OEM-Teilenummer 410407338). Passend für Automobili Lamborghini Diablo, Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 40145,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/410407338.avif",
+      "imageAlt": "410407338 — Clamp Fitting Diablo/Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        },
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "71a00-omp-belt-svr",
+      "oemNumber": "71A00",
+      "oemNormalized": "71A00",
+      "title": "OMP Belt SVR",
+      "category": "Karosserie, Interieur & Carbon",
+      "condition": "used_tested",
+      "description": "OMP Belt SVR (OEM-Teilenummer 71A00). Passend für Automobili Lamborghini Diablo. Geprüftes Original-Gebrauchtteil aus unserer Bonner Lamborghini-Fachwerkstatt. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 40000,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/71a00.avif",
+      "imageAlt": "71A00 — OMP Belt SVR (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "001726343-pump-washer-countach",
+      "oemNumber": "001726343",
+      "oemNormalized": "001726343",
+      "title": "Pump washer Countach",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Pump washer Countach (OEM-Teilenummer 001726343). Passend für Automobili Lamborghini Countach. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 37460,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/001726343.avif",
+      "imageAlt": "001726343 — Pump washer Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        }
+      ]
+    },
+    {
+      "slug": "410109403-needle-bearing-murcielago",
+      "oemNumber": "410109403",
+      "oemNormalized": "410109403",
+      "title": "Needle Bearing Murciélago",
+      "category": "Getriebe & Antriebsstrang",
+      "condition": "new_nos",
+      "description": "Needle Bearing Murciélago (OEM-Teilenummer 410109403). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 34532,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/410109403.avif",
+      "imageAlt": "410109403 — Needle Bearing Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "004332458-cujoint-diablo",
+      "oemNumber": "004332458",
+      "oemNormalized": "004332458",
+      "title": "Cujoint Diablo",
+      "category": "Getriebe & Antriebsstrang",
+      "condition": "new_nos",
+      "description": "Cujoint Diablo (OEM-Teilenummer 004332458). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 33434,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/004332458.avif",
+      "imageAlt": "004332458 — Cujoint Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "400998401-connectivity-unit-rvc-wiring",
+      "oemNumber": "400998401",
+      "oemNormalized": "400998401",
+      "title": "Connectivity Unit RVC wiring",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Connectivity Unit RVC wiring (OEM-Teilenummer 400998401). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 31617,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/400998401.avif",
+      "imageAlt": "400998401 — Connectivity Unit RVC wiring (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "086325171-tube",
+      "oemNumber": "086325171",
+      "oemNormalized": "086325171",
+      "title": "Tube",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Tube (OEM-Teilenummer 086325171). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 28827,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/086325171.avif",
+      "imageAlt": "086325171 — Tube (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "410711369-conic-spring-murcielago",
+      "oemNumber": "410711369",
+      "oemNormalized": "410711369",
+      "title": "Conic Spring Murciélago",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Conic Spring Murciélago (OEM-Teilenummer 410711369). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 28631,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/410711369.avif",
+      "imageAlt": "410711369 — Conic Spring Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "003330816-handbrake-wire-assembly-diablo-se-sc-vt",
+      "oemNumber": "003330816",
+      "oemNormalized": "003330816",
+      "title": "Handbrake wire Assembly Diablo SE/ SC /VT",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Handbrake wire Assembly Diablo SE/ SC /VT (OEM-Teilenummer 003330816). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 26235,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/003330816.avif",
+      "imageAlt": "003330816 — Handbrake wire Assembly Diablo SE/ SC /VT (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "005931299-battery-disc-flange-diablo",
+      "oemNumber": "005931299",
+      "oemNormalized": "005931299",
+      "title": "Battery disc Flange Diablo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Battery disc Flange Diablo (OEM-Teilenummer 005931299). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 22269,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/005931299.avif",
+      "imageAlt": "005931299 — Battery disc Flange Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "0711109135-distanzring-murcielago",
+      "oemNumber": "0711109135",
+      "oemNormalized": "0711109135",
+      "title": "Distanzring Murciélago",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Distanzring Murciélago (OEM-Teilenummer 0711109135). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 19096,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/0711109135.avif",
+      "imageAlt": "0711109135 — Distanzring Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "413864147-frame-murcielago",
+      "oemNumber": "413864147",
+      "oemNormalized": "413864147",
+      "title": "Frame Murciélago",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Frame Murciélago (OEM-Teilenummer 413864147). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 18791,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/413864147.avif",
+      "imageAlt": "413864147 — Frame Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "008611703-water-pump-seal-countach",
+      "oemNumber": "008611703",
+      "oemNormalized": "008611703",
+      "title": "Water Pump seal Countach",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Water Pump seal Countach (OEM-Teilenummer 008611703). Passend für Automobili Lamborghini Countach. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 17753,
+      "vatRatePercent": 19,
+      "stockQuantity": 3,
+      "imageUrl": "/media/parts/008611703.avif",
+      "imageAlt": "008611703 — Water Pump seal Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        }
+      ]
+    },
+    {
+      "slug": "009250106-rear-foglight-switch-lm002",
+      "oemNumber": "009250106",
+      "oemNormalized": "009250106",
+      "title": "Rear Foglight Switch LM002",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Rear Foglight Switch LM002 (OEM-Teilenummer 009250106). Passend für Automobili Lamborghini LM002. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 16534,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/009250106.avif",
+      "imageAlt": "009250106 — Rear Foglight Switch LM002 (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "lm002",
+          "label": "LM002"
+        }
+      ]
+    },
+    {
+      "slug": "009250106-2-front-leg-down-switch-lm002",
+      "oemNumber": "009250106_2",
+      "oemNormalized": "0092501062",
+      "title": "Front Leg Down switch LM002",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Front Leg Down switch LM002 (OEM-Teilenummer 009250106_2). Passend für Automobili Lamborghini LM002. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 16534,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/009250106_2.avif",
+      "imageAlt": "009250106_2 — Front Leg Down switch LM002 (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "lm002",
+          "label": "LM002"
+        }
+      ]
+    },
+    {
+      "slug": "004537126-drier-filter",
+      "oemNumber": "004537126",
+      "oemNormalized": "004537126",
+      "title": "Drier Filter",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Drier Filter (OEM-Teilenummer 004537126). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 15980,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/004537126.avif",
+      "imageAlt": "004537126 — Drier Filter (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "001808102-spacer-countach",
+      "oemNumber": "001808102",
+      "oemNormalized": "001808102",
+      "title": "Spacer Countach",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Spacer Countach (OEM-Teilenummer 001808102). Passend für Automobili Lamborghini Countach. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 13728,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/001808102.avif",
+      "imageAlt": "001808102 — Spacer Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        }
+      ]
+    },
+    {
+      "slug": "410807567-rear-bump-adj-murcielago",
+      "oemNumber": "410807567",
+      "oemNormalized": "410807567",
+      "title": "Rear Bump Adj Murciélago",
+      "category": "Fahrwerk, Lenkung & Bremse",
+      "condition": "new_nos",
+      "description": "Rear Bump Adj Murciélago (OEM-Teilenummer 410807567). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 13484,
+      "vatRatePercent": 19,
+      "stockQuantity": 10,
+      "imageUrl": "/media/parts/410807567.avif",
+      "imageAlt": "410807567 — Rear Bump Adj Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "009250101-interruttore-lunotto-termico",
+      "oemNumber": "009250101",
+      "oemNormalized": "009250101",
+      "title": "Interruttore Lunotto Termico",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Interruttore Lunotto Termico (OEM-Teilenummer 009250101). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 13426,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/009250101.avif",
+      "imageAlt": "009250101 — Interruttore Lunotto Termico (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "004032357-pump-flange-se-vt",
+      "oemNumber": "004032357",
+      "oemNormalized": "004032357",
+      "title": "Pump Flange SE VT",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Pump Flange SE VT (OEM-Teilenummer 004032357). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 12507,
+      "vatRatePercent": 19,
+      "stockQuantity": 3,
+      "imageUrl": "/media/parts/004032357.avif",
+      "imageAlt": "004032357 — Pump Flange SE VT (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "410919815-switch-window-murcielago",
+      "oemNumber": "410919815",
+      "oemNormalized": "410919815",
+      "title": "Switch window Murciélago",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Switch window Murciélago (OEM-Teilenummer 410919815). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 11108,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/410919815.avif",
+      "imageAlt": "410919815 — Switch window Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "001725991-pipe-green-lm002",
+      "oemNumber": "001725991",
+      "oemNormalized": "001725991",
+      "title": "Pipe Green LM002",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Pipe Green LM002 (OEM-Teilenummer 001725991). Passend für Automobili Lamborghini LM002. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 11100,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/001725991.avif",
+      "imageAlt": "001725991 — Pipe Green LM002 (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "lm002",
+          "label": "LM002"
+        }
+      ]
+    },
+    {
+      "slug": "005109748-odometer-countach",
+      "oemNumber": "005109748",
+      "oemNormalized": "005109748",
+      "title": "Odometer Countach",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Odometer Countach (OEM-Teilenummer 005109748). Passend für Automobili Lamborghini Countach. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 10726,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/005109748.avif",
+      "imageAlt": "005109748 — Odometer Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        }
+      ]
+    },
+    {
+      "slug": "005209770-torsion-bar-tie-rod-countach-diablo",
+      "oemNumber": "005209770",
+      "oemNormalized": "005209770",
+      "title": "Torsion Bar Tie-Rod Countach/Diablo",
+      "category": "Fahrwerk, Lenkung & Bremse",
+      "condition": "new_nos",
+      "description": "Torsion Bar Tie-Rod Countach/Diablo (OEM-Teilenummer 005209770). Passend für Automobili Lamborghini Countach, Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 10597,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/005209770.avif",
+      "imageAlt": "005209770 — Torsion Bar Tie-Rod Countach/Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        },
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "21a0-reifendichtmittel-fuer-lamborghini-diablo",
+      "oemNumber": "21A0",
+      "oemNormalized": "21A0",
+      "title": "Reifendichtmittel für Lamborghini Diablo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Reifendichtmittel für Lamborghini Diablo (OEM-Teilenummer 21A0). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 10000,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/21a0.avif",
+      "imageAlt": "21A0 — Reifendichtmittel für Lamborghini Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "407827550b-shock-absorber-gallardo",
+      "oemNumber": "407827550B",
+      "oemNormalized": "407827550B",
+      "title": "Shock Absorber Gallardo",
+      "category": "Fahrwerk, Lenkung & Bremse",
+      "condition": "new_nos",
+      "description": "Shock Absorber Gallardo (OEM-Teilenummer 407827550B). Passend für Automobili Lamborghini Gallardo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 9554,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/407827550b.avif",
+      "imageAlt": "407827550B — Shock Absorber Gallardo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "gallardo",
+          "label": "Gallardo"
+        }
+      ]
+    },
+    {
+      "slug": "001724142-pump-rotor-shim-countach",
+      "oemNumber": "001724142",
+      "oemNormalized": "001724142",
+      "title": "Pump Rotor Shim Countach",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Pump Rotor Shim Countach (OEM-Teilenummer 001724142). Passend für Automobili Lamborghini Countach. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 8518,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/001724142.avif",
+      "imageAlt": "001724142 — Pump Rotor Shim Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        }
+      ]
+    },
+    {
+      "slug": "1419550-chrome-plated-segment-jalpa-urraco",
+      "oemNumber": "1419550",
+      "oemNormalized": "1419550",
+      "title": "Chrome plated Segment Jalpa Urraco",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Chrome plated Segment Jalpa Urraco (OEM-Teilenummer 1419550). Passend für Automobili Lamborghini Urraco, Jalpa. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 8432,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/1419550.avif",
+      "imageAlt": "1419550 — Chrome plated Segment Jalpa Urraco (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "urraco",
+          "label": "Urraco"
+        },
+        {
+          "slug": "jalpa",
+          "label": "Jalpa"
+        }
+      ]
+    },
+    {
+      "slug": "001725413-pipe-black-lm002",
+      "oemNumber": "001725413",
+      "oemNormalized": "001725413",
+      "title": "Pipe Black LM002",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Pipe Black LM002 (OEM-Teilenummer 001725413). Passend für Automobili Lamborghini LM002. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 7346,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/001725413.avif",
+      "imageAlt": "001725413 — Pipe Black LM002 (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "lm002",
+          "label": "LM002"
+        }
+      ]
+    },
+    {
+      "slug": "1419549-taper-segment-r-b-33-jalpa-urraco",
+      "oemNumber": "1419549",
+      "oemNormalized": "1419549",
+      "title": "Taper segment r.b.33 Jalpa Urraco",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Taper segment r.b.33 Jalpa Urraco (OEM-Teilenummer 1419549). Passend für Automobili Lamborghini Urraco, Jalpa. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 7172,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/1419549.avif",
+      "imageAlt": "1419549 — Taper segment r.b.33 Jalpa Urraco (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "urraco",
+          "label": "Urraco"
+        },
+        {
+          "slug": "jalpa",
+          "label": "Jalpa"
+        }
+      ]
+    },
+    {
+      "slug": "400412409-plug-gallardo",
+      "oemNumber": "400412409",
+      "oemNormalized": "400412409",
+      "title": "Plug Gallardo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Plug Gallardo (OEM-Teilenummer 400412409). Passend für Automobili Lamborghini Gallardo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 6858,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/400412409.avif",
+      "imageAlt": "400412409 — Plug Gallardo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "gallardo",
+          "label": "Gallardo"
+        }
+      ]
+    },
+    {
+      "slug": "400412409-2-plug-gallardo",
+      "oemNumber": "400412409_2",
+      "oemNormalized": "4004124092",
+      "title": "Plug Gallardo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Plug Gallardo (OEM-Teilenummer 400412409_2). Passend für Automobili Lamborghini Gallardo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 6858,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/400412409_2.avif",
+      "imageAlt": "400412409_2 — Plug Gallardo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "gallardo",
+          "label": "Gallardo"
+        }
+      ]
+    },
+    {
+      "slug": "086325097a-egear-schrauben-murcielago",
+      "oemNumber": "086325097A",
+      "oemNormalized": "086325097A",
+      "title": "Egear Schrauben Murciélago",
+      "category": "Getriebe & Antriebsstrang",
+      "condition": "new_nos",
+      "description": "Egear Schrauben Murciélago (OEM-Teilenummer 086325097A). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 6670,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/086325097a.avif",
+      "imageAlt": "086325097A — Egear Schrauben Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "418845421-bracket-murcielago",
+      "oemNumber": "418845421",
+      "oemNormalized": "418845421",
+      "title": "Bracket Murciélago",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Bracket Murciélago (OEM-Teilenummer 418845421). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 6236,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/418845421.avif",
+      "imageAlt": "418845421 — Bracket Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "001601566-2-hole-spark-plug-grommet",
+      "oemNumber": "001601566",
+      "oemNormalized": "001601566",
+      "title": "2 Hole Spark Plug Grommet",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "2 Hole Spark Plug Grommet (OEM-Teilenummer 001601566). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 6163,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/001601566.avif",
+      "imageAlt": "001601566 — 2 Hole Spark Plug Grommet (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "007890013-rubber-front-jalpa",
+      "oemNumber": "007890013",
+      "oemNormalized": "007890013",
+      "title": "Rubber Front Jalpa",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Rubber Front Jalpa (OEM-Teilenummer 007890013). Passend für Automobili Lamborghini Jalpa. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 5668,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/007890013.avif",
+      "imageAlt": "007890013 — Rubber Front Jalpa (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "jalpa",
+          "label": "Jalpa"
+        }
+      ]
+    },
+    {
+      "slug": "004211718-starter-wire-jalpa",
+      "oemNumber": "004211718",
+      "oemNormalized": "004211718",
+      "title": "Starter wire Jalpa",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Starter wire Jalpa (OEM-Teilenummer 004211718). Passend für Automobili Lamborghini Jalpa. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 5650,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/004211718.avif",
+      "imageAlt": "004211718 — Starter wire Jalpa (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "jalpa",
+          "label": "Jalpa"
+        }
+      ]
+    },
+    {
+      "slug": "007059026-front-hood-damper-countach",
+      "oemNumber": "007059026",
+      "oemNormalized": "007059026",
+      "title": "Front Hood Damper Countach",
+      "category": "Karosserie, Interieur & Carbon",
+      "condition": "new_nos",
+      "description": "Front Hood Damper Countach (OEM-Teilenummer 007059026). Passend für Automobili Lamborghini Countach. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 5510,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/007059026.avif",
+      "imageAlt": "007059026 — Front Hood Damper Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        }
+      ]
+    },
+    {
+      "slug": "4t0823359-gas-spring-huracan",
+      "oemNumber": "4T0823359",
+      "oemNormalized": "4T0823359",
+      "title": "Gas Spring Huracán",
+      "category": "Karosserie, Interieur & Carbon",
+      "condition": "new_nos",
+      "description": "Gas Spring Huracán (OEM-Teilenummer 4T0823359). Passend für Automobili Lamborghini Huracán. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 5490,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/4t0823359.avif",
+      "imageAlt": "4T0823359 — Gas Spring Huracán (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "huracan",
+          "label": "Huracán"
+        }
+      ]
+    },
+    {
+      "slug": "0011005230-bracket-diablo",
+      "oemNumber": "0011005230",
+      "oemNormalized": "0011005230",
+      "title": "Bracket Diablo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Bracket Diablo (OEM-Teilenummer 0011005230). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 5204,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/0011005230.avif",
+      "imageAlt": "0011005230 — Bracket Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "410837801a-protective-cover-murcielago",
+      "oemNumber": "410837801A",
+      "oemNormalized": "410837801A",
+      "title": "Protective Cover Murciélago",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Protective Cover Murciélago (OEM-Teilenummer 410837801A). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 4503,
+      "vatRatePercent": 19,
+      "stockQuantity": 8,
+      "imageUrl": "/media/parts/410837801a.avif",
+      "imageAlt": "410837801A — Protective Cover Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "008300886-zinc-special-stud-8x105-diablo",
+      "oemNumber": "008300886",
+      "oemNormalized": "008300886",
+      "title": "Zinc Special stud 8x105 Diablo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Zinc Special stud 8x105 Diablo (OEM-Teilenummer 008300886). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 4247,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/008300886.avif",
+      "imageAlt": "008300886 — Zinc Special stud 8x105 Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "008835002-exhaust-pipe-clamp-diablo-countach",
+      "oemNumber": "008835002",
+      "oemNormalized": "008835002",
+      "title": "Exhaust Pipe Clamp Diablo/Countach",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Exhaust Pipe Clamp Diablo/Countach (OEM-Teilenummer 008835002). Passend für Automobili Lamborghini Countach, Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 4161,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/008835002.avif",
+      "imageAlt": "008835002 — Exhaust Pipe Clamp Diablo/Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        },
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "08800801-bushing-08x14x-25mm-jalpa-urraco",
+      "oemNumber": "08800801",
+      "oemNormalized": "08800801",
+      "title": "Bushing 08x14x 25mm Jalpa Urraco",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Bushing 08x14x 25mm Jalpa Urraco (OEM-Teilenummer 08800801). Passend für Automobili Lamborghini Urraco, Jalpa. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 3978,
+      "vatRatePercent": 19,
+      "stockQuantity": 3,
+      "imageUrl": "/media/parts/08800801.avif",
+      "imageAlt": "08800801 — Bushing 08x14x 25mm Jalpa Urraco (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "urraco",
+          "label": "Urraco"
+        },
+        {
+          "slug": "jalpa",
+          "label": "Jalpa"
+        }
+      ]
+    },
+    {
+      "slug": "410201212-steering-oil-pipe-spring-diablo-murcielago",
+      "oemNumber": "410201212",
+      "oemNormalized": "410201212",
+      "title": "Steering Oil Pipe spring Diablo/Murciélago",
+      "category": "Fahrwerk, Lenkung & Bremse",
+      "condition": "new_nos",
+      "description": "Steering Oil Pipe spring Diablo/Murciélago (OEM-Teilenummer 410201212). Passend für Automobili Lamborghini Diablo, Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 3563,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/410201212.avif",
+      "imageAlt": "410201212 — Steering Oil Pipe spring Diablo/Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        },
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "003319356-lever-button-lm002",
+      "oemNumber": "003319356",
+      "oemNormalized": "003319356",
+      "title": "Lever Button LM002",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Lever Button LM002 (OEM-Teilenummer 003319356). Passend für Automobili Lamborghini LM002. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 3375,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/003319356.avif",
+      "imageAlt": "003319356 — Lever Button LM002 (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "lm002",
+          "label": "LM002"
+        }
+      ]
+    },
+    {
+      "slug": "001710942-pipe-jalpa-urraco",
+      "oemNumber": "001710942",
+      "oemNormalized": "001710942",
+      "title": "Pipe Jalpa Urraco",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Pipe Jalpa Urraco (OEM-Teilenummer 001710942). Passend für Automobili Lamborghini Urraco, Jalpa. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 3234,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/001710942.avif",
+      "imageAlt": "001710942 — Pipe Jalpa Urraco (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "urraco",
+          "label": "Urraco"
+        },
+        {
+          "slug": "jalpa",
+          "label": "Jalpa"
+        }
+      ]
+    },
+    {
+      "slug": "07m121482-filler-cap-murcielago",
+      "oemNumber": "07M121482",
+      "oemNormalized": "07M121482",
+      "title": "Filler Cap Murciélago",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Filler Cap Murciélago (OEM-Teilenummer 07M121482). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 3082,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/07m121482.avif",
+      "imageAlt": "07M121482 — Filler Cap Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "0013004792-pipe-diablo",
+      "oemNumber": "0013004792",
+      "oemNormalized": "0013004792",
+      "title": "Pipe Diablo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Pipe Diablo (OEM-Teilenummer 0013004792). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 2984,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/0013004792.avif",
+      "imageAlt": "0013004792 — Pipe Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "003336007-hb-lever-button-diablo",
+      "oemNumber": "003336007",
+      "oemNormalized": "003336007",
+      "title": "HB Lever Button Diablo",
+      "category": "Fahrwerk, Lenkung & Bremse",
+      "condition": "new_nos",
+      "description": "HB Lever Button Diablo (OEM-Teilenummer 003336007). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 2752,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/003336007.avif",
+      "imageAlt": "003336007 — HB Lever Button Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "0031001095-shoe-pipe-diablo",
+      "oemNumber": "0031001095",
+      "oemNormalized": "0031001095",
+      "title": "Shoe pipe Diablo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Shoe pipe Diablo (OEM-Teilenummer 0031001095). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 2728,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/0031001095.avif",
+      "imageAlt": "0031001095 — Shoe pipe Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "001733714-thermostat-casing-diablo",
+      "oemNumber": "001733714",
+      "oemNormalized": "001733714",
+      "title": "Thermostat Casing Diablo",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Thermostat Casing Diablo (OEM-Teilenummer 001733714). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 2660,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/001733714.avif",
+      "imageAlt": "001733714 — Thermostat Casing Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "870810773a-attuatore-gallardo-murcielago",
+      "oemNumber": "870810773A",
+      "oemNormalized": "870810773A",
+      "title": "Attuatore Gallardo/ Murciélago",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Attuatore Gallardo/ Murciélago (OEM-Teilenummer 870810773A). Passend für Automobili Lamborghini Murciélago, Gallardo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 2599,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/870810773a.avif",
+      "imageAlt": "870810773A — Attuatore Gallardo/ Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        },
+        {
+          "slug": "gallardo",
+          "label": "Gallardo"
+        }
+      ]
+    },
+    {
+      "slug": "008860401-tab-4x4x12",
+      "oemNumber": "008860401",
+      "oemNormalized": "008860401",
+      "title": "Tab 4x4x12",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Tab 4x4x12 (OEM-Teilenummer 008860401). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 2581,
+      "vatRatePercent": 19,
+      "stockQuantity": 3,
+      "imageUrl": "/media/parts/008860401.avif",
+      "imageAlt": "008860401 — Tab 4x4x12 (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "001812768-propeller-shaft-pipe-gasket-countach",
+      "oemNumber": "001812768",
+      "oemNormalized": "001812768",
+      "title": "Propeller Shaft Pipe Gasket Countach",
+      "category": "Getriebe & Antriebsstrang",
+      "condition": "new_nos",
+      "description": "Propeller Shaft Pipe Gasket Countach (OEM-Teilenummer 001812768). Passend für Automobili Lamborghini Countach. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 2551,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/001812768.avif",
+      "imageAlt": "001812768 — Propeller Shaft Pipe Gasket Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        }
+      ]
+    },
+    {
+      "slug": "0042001192-switch-diablo",
+      "oemNumber": "0042001192",
+      "oemNormalized": "0042001192",
+      "title": "Switch Diablo",
+      "category": "Elektronik & Beleuchtung",
+      "condition": "new_nos",
+      "description": "Switch Diablo (OEM-Teilenummer 0042001192). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 2306,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/0042001192.avif",
+      "imageAlt": "0042001192 — Switch Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "003301307-pin-350gt-diablo-miura",
+      "oemNumber": "003301307",
+      "oemNormalized": "003301307",
+      "title": "PIN 350GT/Diablo/Miura",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "PIN 350GT/Diablo/Miura (OEM-Teilenummer 003301307). Passend für Automobili Lamborghini 350 GT, Miura, Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 2285,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/003301307.avif",
+      "imageAlt": "003301307 — PIN 350GT/Diablo/Miura (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "350-gt",
+          "label": "350 GT"
+        },
+        {
+          "slug": "miura",
+          "label": "Miura"
+        },
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "001320673-carb-seal-countach-lm002",
+      "oemNumber": "001320673",
+      "oemNormalized": "001320673",
+      "title": "Carb Seal Countach/LM002",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Carb Seal Countach/LM002 (OEM-Teilenummer 001320673). Passend für Automobili Lamborghini Countach, LM002. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 2100,
+      "vatRatePercent": 19,
+      "stockQuantity": 12,
+      "imageUrl": "/media/parts/001320673.avif",
+      "imageAlt": "001320673 — Carb Seal Countach/LM002 (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        },
+        {
+          "slug": "lm002",
+          "label": "LM002"
+        }
+      ]
+    },
+    {
+      "slug": "wht000915-coupling-nut-gallardo-murcielago",
+      "oemNumber": "WHT000915",
+      "oemNormalized": "WHT000915",
+      "title": "Coupling nut Gallardo/Murciélago",
+      "category": "Getriebe & Antriebsstrang",
+      "condition": "new_nos",
+      "description": "Coupling nut Gallardo/Murciélago (OEM-Teilenummer WHT000915). Passend für Automobili Lamborghini Murciélago, Gallardo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 1678,
+      "vatRatePercent": 19,
+      "stockQuantity": 2,
+      "imageUrl": "/media/parts/wht000915.avif",
+      "imageAlt": "WHT000915 — Coupling nut Gallardo/Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        },
+        {
+          "slug": "gallardo",
+          "label": "Gallardo"
+        }
+      ]
+    },
+    {
+      "slug": "003319644-brake-fairlead-rubber-lm002",
+      "oemNumber": "003319644",
+      "oemNormalized": "003319644",
+      "title": "Brake Fairlead Rubber LM002",
+      "category": "Fahrwerk, Lenkung & Bremse",
+      "condition": "new_nos",
+      "description": "Brake Fairlead Rubber LM002 (OEM-Teilenummer 003319644). Passend für Automobili Lamborghini LM002. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 1556,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/003319644.avif",
+      "imageAlt": "003319644 — Brake Fairlead Rubber LM002 (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "lm002",
+          "label": "LM002"
+        }
+      ]
+    },
+    {
+      "slug": "006229649-fuel-level-gauge-flange-seal-diablo",
+      "oemNumber": "006229649",
+      "oemNormalized": "006229649",
+      "title": "Fuel level Gauge flange seal Diablo",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Fuel level Gauge flange seal Diablo (OEM-Teilenummer 006229649). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 1422,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/006229649.avif",
+      "imageAlt": "006229649 — Fuel level Gauge flange seal Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "002402526-reverse-gear-cover-seal-400gt-espada-jarama",
+      "oemNumber": "002402526",
+      "oemNormalized": "002402526",
+      "title": "Reverse Gear Cover seal 400GT/Espada/Jarama",
+      "category": "Getriebe & Antriebsstrang",
+      "condition": "new_nos",
+      "description": "Reverse Gear Cover seal 400GT/Espada/Jarama (OEM-Teilenummer 002402526). Passend für Automobili Lamborghini 400 GT, Espada, Jarama. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 929,
+      "vatRatePercent": 19,
+      "stockQuantity": 10,
+      "imageUrl": "/media/parts/002402526.avif",
+      "imageAlt": "002402526 — Reverse Gear Cover seal 400GT/Espada/Jarama (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "400-gt",
+          "label": "400 GT"
+        },
+        {
+          "slug": "espada",
+          "label": "Espada"
+        },
+        {
+          "slug": "jarama",
+          "label": "Jarama"
+        }
+      ]
+    },
+    {
+      "slug": "400825837-grommet-gallardo-murcielago",
+      "oemNumber": "400825837",
+      "oemNormalized": "400825837",
+      "title": "Grommet Gallardo/Murciélago",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Grommet Gallardo/Murciélago (OEM-Teilenummer 400825837). Passend für Automobili Lamborghini Murciélago, Gallardo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 660,
+      "vatRatePercent": 19,
+      "stockQuantity": 3,
+      "imageUrl": "/media/parts/400825837.avif",
+      "imageAlt": "400825837 — Grommet Gallardo/Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        },
+        {
+          "slug": "gallardo",
+          "label": "Gallardo"
+        }
+      ]
+    },
+    {
+      "slug": "410827547-bushing-murcielago",
+      "oemNumber": "410827547",
+      "oemNormalized": "410827547",
+      "title": "Bushing Murciélago",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Bushing Murciélago (OEM-Teilenummer 410827547). Passend für Automobili Lamborghini Murciélago. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 660,
+      "vatRatePercent": 19,
+      "stockQuantity": 4,
+      "imageUrl": "/media/parts/410827547.avif",
+      "imageAlt": "410827547 — Bushing Murciélago (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "murcielago",
+          "label": "Murciélago"
+        }
+      ]
+    },
+    {
+      "slug": "400860349-moletta-gallardo",
+      "oemNumber": "400860349",
+      "oemNormalized": "400860349",
+      "title": "Moletta Gallardo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Moletta Gallardo (OEM-Teilenummer 400860349). Passend für Automobili Lamborghini Gallardo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 610,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/400860349.avif",
+      "imageAlt": "400860349 — Moletta Gallardo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "gallardo",
+          "label": "Gallardo"
+        }
+      ]
+    },
+    {
+      "slug": "8xa820536a-bracket-urus",
+      "oemNumber": "8XA820536A",
+      "oemNormalized": "8XA820536A",
+      "title": "Bracket Urus",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Bracket Urus (OEM-Teilenummer 8XA820536A). Passend für Automobili Lamborghini Urus. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 595,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/8xa820536a.avif",
+      "imageAlt": "8XA820536A — Bracket Urus (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "urus",
+          "label": "Urus"
+        }
+      ]
+    },
+    {
+      "slug": "009421717-door-handle-gasket-diablo",
+      "oemNumber": "009421717",
+      "oemNormalized": "009421717",
+      "title": "Door Handle Gasket Diablo",
+      "category": "Karosserie, Interieur & Carbon",
+      "condition": "new_nos",
+      "description": "Door Handle Gasket Diablo (OEM-Teilenummer 009421717). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 519,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/009421717.avif",
+      "imageAlt": "009421717 — Door Handle Gasket Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "008612002-oil-seal-countach",
+      "oemNumber": "008612002",
+      "oemNormalized": "008612002",
+      "title": "Oil Seal Countach",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Oil Seal Countach (OEM-Teilenummer 008612002). Passend für Automobili Lamborghini Countach. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 342,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/008612002.avif",
+      "imageAlt": "008612002 — Oil Seal Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        }
+      ]
+    },
+    {
+      "slug": "001613782-three-way-union-jalpa-countach",
+      "oemNumber": "001613782",
+      "oemNormalized": "001613782",
+      "title": "Three way Union Jalpa/Countach",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Three way Union Jalpa/Countach (OEM-Teilenummer 001613782). Passend für Automobili Lamborghini Countach, Jalpa. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 330,
+      "vatRatePercent": 19,
+      "stockQuantity": 6,
+      "imageUrl": "/media/parts/001613782.avif",
+      "imageAlt": "001613782 — Three way Union Jalpa/Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        },
+        {
+          "slug": "jalpa",
+          "label": "Jalpa"
+        }
+      ]
+    },
+    {
+      "slug": "0066002463-coolout-radiator-diablo",
+      "oemNumber": "0066002463",
+      "oemNormalized": "0066002463",
+      "title": "Coolout Radiator Diablo",
+      "category": "Motor, Kühlung & Kraftstoff",
+      "condition": "new_nos",
+      "description": "Coolout Radiator Diablo (OEM-Teilenummer 0066002463). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 324,
+      "vatRatePercent": 19,
+      "stockQuantity": 4,
+      "imageUrl": "/media/parts/0066002463.avif",
+      "imageAlt": "0066002463 — Coolout Radiator Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "006108346-cap-espada-jarama",
+      "oemNumber": "006108346",
+      "oemNormalized": "006108346",
+      "title": "Cap Espada/Jarama",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Cap Espada/Jarama (OEM-Teilenummer 006108346). Passend für Automobili Lamborghini Espada, Jarama. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 257,
+      "vatRatePercent": 19,
+      "stockQuantity": 5,
+      "imageUrl": "/media/parts/006108346.avif",
+      "imageAlt": "006108346 — Cap Espada/Jarama (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "espada",
+          "label": "Espada"
+        },
+        {
+          "slug": "jarama",
+          "label": "Jarama"
+        }
+      ]
+    },
+    {
+      "slug": "410a33381-y-union",
+      "oemNumber": "410A33381",
+      "oemNormalized": "410A33381",
+      "title": "Y union",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Y union (OEM-Teilenummer 410A33381). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 157,
+      "vatRatePercent": 19,
+      "stockQuantity": 3,
+      "imageUrl": "/media/parts/410a33381.avif",
+      "imageAlt": "410A33381 — Y union (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "008574501-o-ring-countach",
+      "oemNumber": "008574501",
+      "oemNormalized": "008574501",
+      "title": "O Ring Countach",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "O Ring Countach (OEM-Teilenummer 008574501). Passend für Automobili Lamborghini Countach. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 152,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/008574501.avif",
+      "imageAlt": "008574501 — O Ring Countach (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        }
+      ]
+    },
+    {
+      "slug": "n01166623-washer-aventador-centenario-countach-lpi-800-4-gallardo",
+      "oemNumber": "N01166623",
+      "oemNormalized": "N01166623",
+      "title": "Washer Aventador/Centenario/Countach LPI 800-4,Gallardo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Washer Aventador/Centenario/Countach LPI 800-4,Gallardo (OEM-Teilenummer N01166623). Passend für Automobili Lamborghini Countach, Gallardo, Aventador, Centenario. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 129,
+      "vatRatePercent": 19,
+      "stockQuantity": 14,
+      "imageUrl": "/media/parts/n01166623.avif",
+      "imageAlt": "N01166623 — Washer Aventador/Centenario/Countach LPI 800-4,Gallardo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "countach",
+          "label": "Countach"
+        },
+        {
+          "slug": "gallardo",
+          "label": "Gallardo"
+        },
+        {
+          "slug": "aventador",
+          "label": "Aventador"
+        },
+        {
+          "slug": "centenario",
+          "label": "Centenario"
+        }
+      ]
+    },
+    {
+      "slug": "wht002941-set-screw",
+      "oemNumber": "WHT002941",
+      "oemNormalized": "WHT002941",
+      "title": "Set screw",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Set screw (OEM-Teilenummer WHT002941). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 86,
+      "vatRatePercent": 19,
+      "stockQuantity": 18,
+      "imageUrl": "/media/parts/wht002941.avif",
+      "imageAlt": "WHT002941 — Set screw (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "400863119-plug-aventador",
+      "oemNumber": "400863119",
+      "oemNormalized": "400863119",
+      "title": "Plug Aventador",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Plug Aventador (OEM-Teilenummer 400863119). Passend für Automobili Lamborghini Aventador. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 65,
+      "vatRatePercent": 19,
+      "stockQuantity": 12,
+      "imageUrl": "/media/parts/400863119.avif",
+      "imageAlt": "400863119 — Plug Aventador (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "aventador",
+          "label": "Aventador"
+        }
+      ]
+    },
+    {
+      "slug": "n90807405-hexalobular-socket-m5x18-aventador",
+      "oemNumber": "N90807405",
+      "oemNormalized": "N90807405",
+      "title": "Hexalobular socket m5x18 Aventador",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Hexalobular socket m5x18 Aventador (OEM-Teilenummer N90807405). Passend für Automobili Lamborghini Aventador. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 65,
+      "vatRatePercent": 19,
+      "stockQuantity": 10,
+      "imageUrl": "/media/parts/n90807405.avif",
+      "imageAlt": "N90807405 — Hexalobular socket m5x18 Aventador (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "aventador",
+          "label": "Aventador"
+        }
+      ]
+    },
+    {
+      "slug": "008200805-m8x1x8-espada",
+      "oemNumber": "008200805",
+      "oemNormalized": "008200805",
+      "title": "M8x1x8 Espada",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "M8x1x8 Espada (OEM-Teilenummer 008200805). Passend für Automobili Lamborghini Espada. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 65,
+      "vatRatePercent": 19,
+      "stockQuantity": 1,
+      "imageUrl": "/media/parts/008200805.avif",
+      "imageAlt": "008200805 — M8x1x8 Espada (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "espada",
+          "label": "Espada"
+        }
+      ]
+    },
+    {
+      "slug": "n91136801-flange-tapping",
+      "oemNumber": "N91136801",
+      "oemNormalized": "N91136801",
+      "title": "Flange tapping",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Flange tapping (OEM-Teilenummer N91136801). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 65,
+      "vatRatePercent": 19,
+      "stockQuantity": 6,
+      "imageUrl": "/media/parts/n91136801.avif",
+      "imageAlt": "N91136801 — Flange tapping (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "4b9945289-cover-gallardo",
+      "oemNumber": "4B9945289",
+      "oemNormalized": "4B9945289",
+      "title": "Cover Gallardo",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Cover Gallardo (OEM-Teilenummer 4B9945289). Passend für Automobili Lamborghini Gallardo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 65,
+      "vatRatePercent": 19,
+      "stockQuantity": 15,
+      "imageUrl": "/media/parts/4b9945289.avif",
+      "imageAlt": "4B9945289 — Cover Gallardo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "gallardo",
+          "label": "Gallardo"
+        }
+      ]
+    },
+    {
+      "slug": "0074004842-guarnizione-diablo-gt",
+      "oemNumber": "0074004842",
+      "oemNormalized": "0074004842",
+      "title": "Guarnizione Diablo GT",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Guarnizione Diablo GT (OEM-Teilenummer 0074004842). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 623,
+      "vatRatePercent": 19,
+      "stockQuantity": 0,
+      "imageUrl": "/media/parts/0074004842.avif",
+      "imageAlt": "0074004842 — Guarnizione Diablo GT (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    },
+    {
+      "slug": "0013008905-gasket",
+      "oemNumber": "0013008905",
+      "oemNormalized": "0013008905",
+      "title": "Gasket",
+      "category": "Dichtungen, Buchsen & Befestigung",
+      "condition": "new_nos",
+      "description": "Gasket (OEM-Teilenummer 0013008905). Originales Automobili Lamborghini Werksersatzteil (Ricambi Originali) aus unserem Bonner Fachlager. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 0,
+      "vatRatePercent": 19,
+      "stockQuantity": 0,
+      "imageUrl": "/media/parts/0013008905.avif",
+      "imageAlt": "0013008905 — Gasket (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": []
+    },
+    {
+      "slug": "009415102-window-spacer-diablo",
+      "oemNumber": "009415102",
+      "oemNormalized": "009415102",
+      "title": "Window spacer Diablo",
+      "category": "Karosserie, Interieur & Carbon",
+      "condition": "new_nos",
+      "description": "Window spacer Diablo (OEM-Teilenummer 009415102). Passend für Automobili Lamborghini Diablo. Unbenutzter Originalbestand (New Old Stock / Ricambi Originali) ab Lager Bonn. Weltweiter versicherter Paketversand inklusive Sendungsverfolgung.",
+      "priceCents": 0,
+      "vatRatePercent": 19,
+      "stockQuantity": 0,
+      "imageUrl": "/media/parts/009415102.avif",
+      "imageAlt": "009415102 — Window spacer Diablo (Lamborghini Originalersatzteil)",
+      "featured": false,
+      "models": [
+        {
+          "slug": "diablo",
+          "label": "Diablo"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "oldWixSlug": "trim-for-switch-modul-carbon-closed-murcielago",
+      "targetProductSlug": "413863365a-trim-for-switch-module-carbon-closed-murcielago"
+    },
+    {
+      "oldWixSlug": "gas-spring-huracan",
+      "targetProductSlug": "4t0823359-gas-spring-huracan"
+    },
+    {
+      "oldWixSlug": "gas-spring-hurracan",
+      "targetProductSlug": "4t0823359-gas-spring-huracan"
+    },
+    {
+      "oldWixSlug": "connectivity-unit-rvc-wiring",
+      "targetProductSlug": "400998401-connectivity-unit-rvc-wiring"
+    },
+    {
+      "oldWixSlug": "filler-cap-murcielago",
+      "targetProductSlug": "07m121482-filler-cap-murcielago"
+    },
+    {
+      "oldWixSlug": "gear-selector-badge-countach-jalpa-1",
+      "targetProductSlug": "002410655-gear-selector-badge-countach-jalpa"
+    },
+    {
+      "oldWixSlug": "gear-selector-badge-countach-jalpa",
+      "targetProductSlug": "002410655-gear-selector-badge-countach-jalpa"
+    },
+    {
+      "oldWixSlug": "zinc-special-stud-8x105-diablo",
+      "targetProductSlug": "008300886-zinc-special-stud-8x105-diablo"
+    },
+    {
+      "oldWixSlug": "gearbox-ecu-murcielago-1",
+      "targetProductSlug": "086927755e-gearbox-ecu-murcielago"
+    },
+    {
+      "oldWixSlug": "gearbox-ecu-murcielago",
+      "targetProductSlug": "086927755e-gearbox-ecu-murcielago"
+    },
+    {
+      "oldWixSlug": "cujoint-diablo",
+      "targetProductSlug": "004332458-cujoint-diablo"
+    },
+    {
+      "oldWixSlug": "lever-button-lm002",
+      "targetProductSlug": "003319356-lever-button-lm002"
+    },
+    {
+      "oldWixSlug": "starter-wire-jalpa",
+      "targetProductSlug": "004211718-starter-wire-jalpa"
+    },
+    {
+      "oldWixSlug": "water-pump-seal-countach",
+      "targetProductSlug": "008611703-water-pump-seal-countach"
+    },
+    {
+      "oldWixSlug": "rückleuchte-links-gallardo-560",
+      "targetProductSlug": "400945095p-rueckleuchte-links-gallardo-560"
+    },
+    {
+      "oldWixSlug": "rear-light-left-for-gallardo-lp560",
+      "targetProductSlug": "400945095p-rueckleuchte-links-gallardo-560"
+    },
+    {
+      "oldWixSlug": "interr-luntotto-termico",
+      "targetProductSlug": "009250101-interruttore-lunotto-termico"
+    },
+    {
+      "oldWixSlug": "frame-murcielago",
+      "targetProductSlug": "413864147-frame-murcielago"
+    },
+    {
+      "oldWixSlug": "guarnzione-diablogt",
+      "targetProductSlug": "0074004842-guarnizione-diablo-gt"
+    },
+    {
+      "oldWixSlug": "y-union",
+      "targetProductSlug": "410a33381-y-union"
+    },
+    {
+      "oldWixSlug": "needle-bearing-murcielago",
+      "targetProductSlug": "410109403-needle-bearing-murcielago"
+    },
+    {
+      "oldWixSlug": "plug-aventador",
+      "targetProductSlug": "400863119-plug-aventador"
+    },
+    {
+      "oldWixSlug": "2-hole-spark-rlug-gromet",
+      "targetProductSlug": "001601566-2-hole-spark-plug-grommet"
+    },
+    {
+      "oldWixSlug": "couic-spring-murcielago-1",
+      "targetProductSlug": "410711369-conic-spring-murcielago"
+    },
+    {
+      "oldWixSlug": "couic-spring-murcielago",
+      "targetProductSlug": "410711369-conic-spring-murcielago"
+    },
+    {
+      "oldWixSlug": "plug-gallardo-1",
+      "targetProductSlug": "400412409-plug-gallardo"
+    },
+    {
+      "oldWixSlug": "codant-pump-rotor-plate-lm002-countach",
+      "targetProductSlug": "001726334-coolant-pump-rotor-plate-lm002-countach"
+    },
+    {
+      "oldWixSlug": "bracket-urus",
+      "targetProductSlug": "8xa820536a-bracket-urus"
+    },
+    {
+      "oldWixSlug": "torision-bear-tiersot-countach-diablo",
+      "targetProductSlug": "005209770-torsion-bar-tie-rod-countach-diablo"
+    },
+    {
+      "oldWixSlug": "distanzring-murcielago",
+      "targetProductSlug": "0711109135-distanzring-murcielago"
+    },
+    {
+      "oldWixSlug": "set-screw",
+      "targetProductSlug": "wht002941-set-screw"
+    },
+    {
+      "oldWixSlug": "rubber-front-jalpa-1",
+      "targetProductSlug": "007890013-rubber-front-jalpa"
+    },
+    {
+      "oldWixSlug": "rubber-front-jalpa",
+      "targetProductSlug": "007890013-rubber-front-jalpa"
+    },
+    {
+      "oldWixSlug": "coupling-nut-gallardo-murcielago",
+      "targetProductSlug": "wht000915-coupling-nut-gallardo-murcielago"
+    },
+    {
+      "oldWixSlug": "egear-schrauben-murcielago",
+      "targetProductSlug": "086325097a-egear-schrauben-murcielago"
+    },
+    {
+      "oldWixSlug": "exhaust-pipe-clap-diablo-countach",
+      "targetProductSlug": "008835002-exhaust-pipe-clamp-diablo-countach"
+    },
+    {
+      "oldWixSlug": "trim-carbon-murcielago",
+      "targetProductSlug": "410035422n-trim-carbon-murcielago"
+    },
+    {
+      "oldWixSlug": "complo-carve-aper-1",
+      "targetProductSlug": "009921005-complo-carve-aper"
+    },
+    {
+      "oldWixSlug": "complo-carve-aper",
+      "targetProductSlug": "009921005-complo-carve-aper"
+    },
+    {
+      "oldWixSlug": "clamp-fitting-diablo-muricelago",
+      "targetProductSlug": "410407338-clamp-fitting-diablo-murcielago"
+    },
+    {
+      "oldWixSlug": "helaxobular-socket-m5x18-aventador",
+      "targetProductSlug": "n90807405-hexalobular-socket-m5x18-aventador"
+    },
+    {
+      "oldWixSlug": "plug-gallardo",
+      "targetProductSlug": "400412409-2-plug-gallardo"
+    },
+    {
+      "oldWixSlug": "brake-fairled-rubber-lm002",
+      "targetProductSlug": "003319644-brake-fairlead-rubber-lm002"
+    },
+    {
+      "oldWixSlug": "tube-1",
+      "targetProductSlug": "086325171-tube"
+    },
+    {
+      "oldWixSlug": "gfa-ecu-murcielago-1",
+      "targetProductSlug": "0020002646eu-gfa-ecu-murcielago"
+    },
+    {
+      "oldWixSlug": "gfa-ecu-murcielago",
+      "targetProductSlug": "0020002646eu-gfa-ecu-murcielago"
+    },
+    {
+      "oldWixSlug": "reverse-gear-cover-seal-400gt-espada-jarama",
+      "targetProductSlug": "002402526-reverse-gear-cover-seal-400gt-espada-jarama"
+    },
+    {
+      "oldWixSlug": "m8x1x8-espada",
+      "targetProductSlug": "008200805-m8x1x8-espada"
+    },
+    {
+      "oldWixSlug": "bracket-murcielago",
+      "targetProductSlug": "418845421-bracket-murcielago"
+    },
+    {
+      "oldWixSlug": "rear-foglight-switch-lm002",
+      "targetProductSlug": "009250106-rear-foglight-switch-lm002"
+    },
+    {
+      "oldWixSlug": "propellor-shaft-pipegasket-countach",
+      "targetProductSlug": "001812768-propeller-shaft-pipe-gasket-countach"
+    },
+    {
+      "oldWixSlug": "gfa-ecu-diablo-sv-my97",
+      "targetProductSlug": "006037759-gfa-ecu-diablo-sv-my97"
+    },
+    {
+      "oldWixSlug": "gfa-ecu-diablo",
+      "targetProductSlug": "006037759-gfa-ecu-diablo-sv-my97"
+    },
+    {
+      "oldWixSlug": "three-way-union-jalpa-countach",
+      "targetProductSlug": "001613782-three-way-union-jalpa-countach"
+    },
+    {
+      "oldWixSlug": "pump-flunge-se-vt",
+      "targetProductSlug": "004032357-pump-flange-se-vt"
+    },
+    {
+      "oldWixSlug": "carbon-interior-covers-padel-murcielago",
+      "targetProductSlug": "410864123a-carbon-interior-covers-padel-murcielago"
+    },
+    {
+      "oldWixSlug": "stering-oil-pipe-spring-diablo-muricelago",
+      "targetProductSlug": "410201212-steering-oil-pipe-spring-diablo-murcielago"
+    },
+    {
+      "oldWixSlug": "pump-rotor-shim-countach",
+      "targetProductSlug": "001724142-pump-rotor-shim-countach"
+    },
+    {
+      "oldWixSlug": "cap-espada-jarama-1",
+      "targetProductSlug": "006108346-cap-espada-jarama"
+    },
+    {
+      "oldWixSlug": "cap-espada-jarama",
+      "targetProductSlug": "006108346-cap-espada-jarama"
+    },
+    {
+      "oldWixSlug": "pipe-black-lm002-1",
+      "targetProductSlug": "001725413-pipe-black-lm002"
+    },
+    {
+      "oldWixSlug": "pipe-black-lm002",
+      "targetProductSlug": "001725413-pipe-black-lm002"
+    },
+    {
+      "oldWixSlug": "taper-segment-r-b-33-jalpa-urraco-1",
+      "targetProductSlug": "1419549-taper-segment-r-b-33-jalpa-urraco"
+    },
+    {
+      "oldWixSlug": "taper-segment-r-b-33-jalpa-urraco",
+      "targetProductSlug": "1419549-taper-segment-r-b-33-jalpa-urraco"
+    },
+    {
+      "oldWixSlug": "gasket",
+      "targetProductSlug": "0013008905-gasket"
+    },
+    {
+      "oldWixSlug": "drier-filter-filtering",
+      "targetProductSlug": "004537126-drier-filter"
+    },
+    {
+      "oldWixSlug": "rear-bump-adj-murcielago",
+      "targetProductSlug": "410807567-rear-bump-adj-murcielago"
+    },
+    {
+      "oldWixSlug": "flange-tapping",
+      "targetProductSlug": "n91136801-flange-tapping"
+    },
+    {
+      "oldWixSlug": "carb-seal-countach-lm002",
+      "targetProductSlug": "001320673-carb-seal-countach-lm002"
+    },
+    {
+      "oldWixSlug": "odometer-countach",
+      "targetProductSlug": "005109748-odometer-countach"
+    },
+    {
+      "oldWixSlug": "tube",
+      "targetProductSlug": "0086325083-tube"
+    },
+    {
+      "oldWixSlug": "front-hood-damper-countach",
+      "targetProductSlug": "007059026-front-hood-damper-countach"
+    },
+    {
+      "oldWixSlug": "pipe-jalpa-urraco",
+      "targetProductSlug": "001710942-pipe-jalpa-urraco"
+    },
+    {
+      "oldWixSlug": "termostat-casing-diablo",
+      "targetProductSlug": "001733714-thermostat-casing-diablo"
+    },
+    {
+      "oldWixSlug": "sitch-window-murcielago",
+      "targetProductSlug": "410919815-switch-window-murcielago"
+    },
+    {
+      "oldWixSlug": "shook-absorber-gallardo",
+      "targetProductSlug": "407827550b-shock-absorber-gallardo"
+    },
+    {
+      "oldWixSlug": "front-leg-down-switch-lm002",
+      "targetProductSlug": "009250106-2-front-leg-down-switch-lm002"
+    },
+    {
+      "oldWixSlug": "battery-disc-falnge-diablo",
+      "targetProductSlug": "005931299-battery-disc-flange-diablo"
+    },
+    {
+      "oldWixSlug": "tab-4x4x12",
+      "targetProductSlug": "008860401-tab-4x4x12"
+    },
+    {
+      "oldWixSlug": "moletta-gallardo-1",
+      "targetProductSlug": "400860349-moletta-gallardo"
+    },
+    {
+      "oldWixSlug": "moletta-gallardo",
+      "targetProductSlug": "400860349-moletta-gallardo"
+    },
+    {
+      "oldWixSlug": "hb-lever-button-diablo",
+      "targetProductSlug": "003336007-hb-lever-button-diablo"
+    },
+    {
+      "oldWixSlug": "pin-350gt-diablo-miura",
+      "targetProductSlug": "003301307-pin-350gt-diablo-miura"
+    },
+    {
+      "oldWixSlug": "cover-gallardo",
+      "targetProductSlug": "4b9945289-cover-gallardo"
+    },
+    {
+      "oldWixSlug": "handbrake-wire-assembly-diablo-se-sc-vt-1",
+      "targetProductSlug": "003330816-handbrake-wire-assembly-diablo-se-sc-vt"
+    },
+    {
+      "oldWixSlug": "handbrake-wire-assembly-diablo-se-sc-vt",
+      "targetProductSlug": "003330816-handbrake-wire-assembly-diablo-se-sc-vt"
+    },
+    {
+      "oldWixSlug": "window-spacer-diablo",
+      "targetProductSlug": "009415102-window-spacer-diablo"
+    },
+    {
+      "oldWixSlug": "groumet-gallardo-murcielago",
+      "targetProductSlug": "400825837-grommet-gallardo-murcielago"
+    },
+    {
+      "oldWixSlug": "switch-diablo",
+      "targetProductSlug": "0042001192-switch-diablo"
+    },
+    {
+      "oldWixSlug": "washer-aventador-centenario-countachnew-gallardo",
+      "targetProductSlug": "n01166623-washer-aventador-centenario-countach-lpi-800-4-gallardo"
+    },
+    {
+      "oldWixSlug": "washer-aventador-centenario-countach-new-gallardo",
+      "targetProductSlug": "n01166623-washer-aventador-centenario-countach-lpi-800-4-gallardo"
+    },
+    {
+      "oldWixSlug": "oil-seal-countach",
+      "targetProductSlug": "008612002-oil-seal-countach"
+    },
+    {
+      "oldWixSlug": "brake-wire-diablo-sc-vt-1",
+      "targetProductSlug": "003333588-brake-wire-diablo-sc-vt"
+    },
+    {
+      "oldWixSlug": "brake-wire-diablo-sc-vt",
+      "targetProductSlug": "003333588-brake-wire-diablo-sc-vt"
+    },
+    {
+      "oldWixSlug": "pump-washer-countach",
+      "targetProductSlug": "001726343-pump-washer-countach"
+    },
+    {
+      "oldWixSlug": "coolout-radiator-diablo",
+      "targetProductSlug": "0066002463-coolout-radiator-diablo"
+    },
+    {
+      "oldWixSlug": "protektiv-cover-murcielago",
+      "targetProductSlug": "410837801a-protective-cover-murcielago"
+    },
+    {
+      "oldWixSlug": "pipe-green-lm002-1",
+      "targetProductSlug": "001725991-pipe-green-lm002"
+    },
+    {
+      "oldWixSlug": "pipe-green-lm002",
+      "targetProductSlug": "001725991-pipe-green-lm002"
+    },
+    {
+      "oldWixSlug": "bushing-08x14x-25mm-jalpa-urraco",
+      "targetProductSlug": "08800801-bushing-08x14x-25mm-jalpa-urraco"
+    },
+    {
+      "oldWixSlug": "bushing-08x14x25mm-jalpa-urraco",
+      "targetProductSlug": "08800801-bushing-08x14x-25mm-jalpa-urraco"
+    },
+    {
+      "oldWixSlug": "feuel-level-gauge-flange-seal-diablo",
+      "targetProductSlug": "006229649-fuel-level-gauge-flange-seal-diablo"
+    },
+    {
+      "oldWixSlug": "spacer-countach",
+      "targetProductSlug": "001808102-spacer-countach"
+    },
+    {
+      "oldWixSlug": "chrome-plated-segment-jalpa-urraco",
+      "targetProductSlug": "1419550-chrome-plated-segment-jalpa-urraco"
+    },
+    {
+      "oldWixSlug": "chrome-plated-segment-jalpa-uraco",
+      "targetProductSlug": "1419550-chrome-plated-segment-jalpa-urraco"
+    },
+    {
+      "oldWixSlug": "bushing-murcielago",
+      "targetProductSlug": "410827547-bushing-murcielago"
+    },
+    {
+      "oldWixSlug": "door-handle-casket-diablo",
+      "targetProductSlug": "009421717-door-handle-gasket-diablo"
+    },
+    {
+      "oldWixSlug": "shoe-pipe-diablo",
+      "targetProductSlug": "0031001095-shoe-pipe-diablo"
+    },
+    {
+      "oldWixSlug": "o-ring-countach",
+      "targetProductSlug": "008574501-o-ring-countach"
+    },
+    {
+      "oldWixSlug": "pipe-diablo",
+      "targetProductSlug": "0013004792-pipe-diablo"
+    },
+    {
+      "oldWixSlug": "bracket-diablo",
+      "targetProductSlug": "0011005230-bracket-diablo"
+    },
+    {
+      "oldWixSlug": "attuatore-gallardo-murcielago-1",
+      "targetProductSlug": "870810773a-attuatore-gallardo-murcielago"
+    },
+    {
+      "oldWixSlug": "attuatore-gallardo-murcielago",
+      "targetProductSlug": "870810773a-attuatore-gallardo-murcielago"
+    },
+    {
+      "oldWixSlug": "omp-gurt-svr",
+      "targetProductSlug": "71a00-omp-belt-svr"
+    },
+    {
+      "oldWixSlug": "omp-gurt-diablo",
+      "targetProductSlug": "11a00-omp-belt-diablo"
+    },
+    {
+      "oldWixSlug": "reifendichtmittel-für-lamborghini-diablo",
+      "targetProductSlug": "21a0-reifendichtmittel-fuer-lamborghini-diablo"
+    }
+  ]
+}
