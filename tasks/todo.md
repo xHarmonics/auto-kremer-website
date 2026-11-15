@@ -269,14 +269,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Implementiert `POST /api/webhooks/stripe` mit kryptografischer Signaturprüfung für `checkout.session.completed` (markiert Bestellung als `paid`, bucht `stock_quantity` final ab, sendet Bestellbestätigung via Resend an Kunde & Auto Kremer) und `checkout.session.expired` (gibt reservierten Bestand wieder frei) sowie die Seiten `/shop/erfolg` (leert lokalen Warenkorb) und `/shop/abgebrochen`.
 
 **Acceptance criteria:**
-- [ ] Ungültig signierte Webhook-Aufrufe werden mit HTTP 400 abgewiesen; doppelte Zustellung desselben Stripe-Events wird idempotent verarbeitet (kein doppelter Bestandsabzug).
-- [ ] Nach `checkout.session.completed` sinkt `stock_quantity` korrekt, der Bestellstatus wechselt auf `paid` und das E-Mail-Modul wird mit Bestellnummer `AK-...` ausgelöst.
-- [ ] `/shop/erfolg` bestätigt den Kauf und leert den Client-Warenkorb; `/shop/abgebrochen` erhält den Warenkorb für einen erneuten Versuch.
+- [x] Ungültig signierte Webhook-Aufrufe werden mit HTTP 400 abgewiesen; doppelte Zustellung desselben Stripe-Events wird idempotent verarbeitet (kein doppelter Bestandsabzug).
+- [x] Nach `checkout.session.completed` sinkt `stock_quantity` korrekt, der Bestellstatus wechselt auf `paid` und das E-Mail-Modul wird mit Bestellnummer `AK-...` ausgelöst.
+- [x] `/shop/erfolg` bestätigt den Kauf und leert den Client-Warenkorb; `/shop/abgebrochen` erhält den Warenkorb für einen erneuten Versuch.
 
 **Verification:**
-- [ ] Tests pass: `npx vitest run tests/unit/webhook-stripe.test.ts && npx playwright test tests/e2e/shop.spec.ts`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Simulierter Stripe-Webhook-Durchlauf verifiziert Bestandsabzug und Statuswechsel in D1.
+- [x] Tests pass: `npx vitest run tests/unit/webhook-stripe.test.ts && npx playwright test tests/e2e/shop.spec.ts`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Simulierter Stripe-Webhook-Durchlauf verifiziert Bestandsabzug und Statuswechsel in D1.
 
 **Dependencies:** Task 9
 
@@ -292,9 +292,9 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 ---
 
 ## Checkpoint: After Tasks 6-10 (E-Commerce End-to-End)
-- [ ] All unit and shop E2E tests pass
-- [ ] Build & typecheck succeed with zero warnings
-- [ ] Complete shop flow (OEM search -> filter -> product detail -> cart drawer -> stock reservation -> webhook stock decrement) verified end-to-end
+- [x] All unit and shop E2E tests pass
+- [x] Build & typecheck succeed with zero warnings
+- [x] Complete shop flow (OEM search -> filter -> product detail -> cart drawer -> stock reservation -> webhook stock decrement) verified end-to-end
 
 ---
 

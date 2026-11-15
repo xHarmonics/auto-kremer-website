@@ -71,10 +71,10 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 - [x] Task 7: Shop-Katalogseite (`/shop`) mit Echtzeit-OEM-Teilenummersuche & Baureihen-Filter
 - [x] Task 8: Produkt-Detailseite (`/shop/[slug]`) & persistenter Slide-Over-Warenkorb (PAngV-konform)
 - [x] Task 9: Stripe-Checkout-Endpunkt (`/api/checkout`) mit atomarer Bestandsprüfung & Versandzonen
-- [ ] Task 10: Stripe-Webhook (`/api/webhooks/stripe`), Bestandsabbuchung, Resend-Bestellmail & Statusseiten
+- [x] Task 10: Stripe-Webhook (`/api/webhooks/stripe`), Bestandsabbuchung, Resend-Bestellmail & Statusseiten
 
 ### Checkpoint 3: E-Commerce End-to-End
-- [ ] Kompletter Kaufprozess vom OEM-Filter über den Warenkorb bis zum Stripe-Test-Checkout und Webhook-Bestandsabzug (inkl. Schutz vor Überverkauf bei `stock = 1`) funktioniert End-to-End.
+- [x] Kompletter Kaufprozess vom OEM-Filter über den Warenkorb bis zum Stripe-Test-Checkout und Webhook-Bestandsabzug (inkl. Schutz vor Überverkauf bei `stock = 1`) funktioniert End-to-End.
 
 ### Phase 4: Vertical Slice — Lead-Generierung, Markenwelt & Rechtliches
 - [ ] Task 11: Fahrzeug-Kommission (`/fahrzeug-verkaufen`) mit Multi-Step-Formular, R2-Foto-Upload & Turnstile

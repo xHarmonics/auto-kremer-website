@@ -1,0 +1,149 @@
+---
+import { eq } from 'drizzle-orm';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getDb } from '@/db/client';
+import { orderItems, orders } from '@/db/schema';
+import { formatEurCents } from '@/lib/format';
+
+const orderNumber = Astro.url.searchParams.get('order') ?? '';
+const sessionId = Astro.url.searchParams.get('session_id') ?? '';
+
+const db = await getDb();
+const foundOrders = orderNumber
+  ? await db.select().from(orders).where(eq(orders.orderNumber, orderNumber)).limit(1)
+  : [];
+
+const order = foundOrders[0] ?? null;
+const items = order
+  ? await db.select().from(orderItems).where(eq(orderItems.orderId, order.id))
+  : [];
+
+if (!order || order.stripeSessionId !== sessionId) {
+  Astro.response.status = 404;
+}
+---
+
+<BaseLayout
+  title="Stripe Sandbox Test-Checkout"
+  description="Lokale Stripe-Sandbox-Testkasse (keine Produktivzahlung)."
+  noindex={true}
+>
+  <section class="mx-auto max-w-2xl px-4 py-14 sm:px-6">
+    <div class="mb-6 rounded-lg border border-status-reserved/50 bg-status-reserved/10 px-4 py-3 font-mono text-xs text-status-reserved">
+      ◆ STRIPE SANDBOX TESTMODUS — Es werden ausschließlich Testzahlungen simuliert (keine Live-Keys aktiv).
+    </div>
+
+    {!order || order.stripeSessionId !== sessionId ? (
+      <div class="rounded-xl border border-border-subtle bg-surface p-8 text-center">
+        <h1 class="font-display text-2xl font-semibold text-ink">
+          Ungültige oder abgelaufene Checkout-Sitzung
+        </h1>
+        <a
+          href="/shop"
+          class="mt-6 inline-flex min-h-11 items-center rounded-md bg-gold px-5 py-2.5 text-xs font-semibold text-canvas"
+        >
+          Zurück zum Shop
+        </a>
+      </div>
+    ) : (
+      <div class="rounded-xl border border-border-subtle bg-surface p-6 sm:p-8">
+        <p class="font-mono text-xs text-gold uppercase">
+          Bestellung {order.orderNumber}
+        </p>
+        <h1 class="mt-2 font-display text-2xl font-semibold text-ink sm:text-3xl">
+          Testzahlung abschließen (Sandbox)
+        </h1>
+
+        <ul class="mt-6 divide-y divide-border-subtle border-y border-border-subtle">
+          {items.map((item) => (
+            <li class="flex items-center justify-between gap-4 py-3 text-sm">
+              <div>
+                <span class="font-mono text-xs text-gold">OEM {item.oemNumber}</span>
+                <p class="font-medium text-ink">
+                  {item.quantity} × {item.title}
+                </p>
+              </div>
+              <span class="font-mono text-ink">
+                {formatEurCents(item.lineTotalCents)}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <dl class="mt-4 space-y-1.5 text-sm">
+          <div class="flex justify-between text-ink-muted">
+            <dt>Zwischensumme</dt>
+            <dd class="font-mono text-ink">{formatEurCents(order.subtotalCents)}</dd>
+          </div>
+          <div class="flex justify-between text-ink-muted">
+            <dt>Versand ({order.shippingZone})</dt>
+            <dd class="font-mono text-ink">{formatEurCents(order.shippingCents)}</dd>
+          </div>
+          <div class="flex justify-between border-t border-border-subtle pt-2 font-semibold text-ink">
+            <dt>Gesamtbetrag inkl. 19 % MwSt.</dt>
+            <dd class="font-mono text-lg text-gold">
+              {formatEurCents(order.totalCents)}
+            </dd>
+          </div>
+        </dl>
+
+        <form method="POST" action="/api/checkout/sandbox-complete" class="mt-7 space-y-4">
+          <input type="hidden" name="order" value={order.orderNumber} />
+          <input type="hidden" name="session_id" value={sessionId} />
+
+          <div>
+            <label for="sandbox-name" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Test-Kundenname
+            </label>
+            <input
+              id="sandbox-name"
+              name="customer_name"
+              type="text"
+              value="Max Mustermann (Sandbox)"
+              required
+              class="ak-input"
+            />
+          </div>
+
+          <div>
+            <label for="sandbox-email" class="mb-1 block font-mono text-xs text-ink-muted uppercase">
+              Test-E-Mail-Adresse
+            </label>
+            <input
+              id="sandbox-email"
+              name="customer_email"
+              type="email"
+              value={order.customerEmail ?? 'sandbox@auto-kremer.com'}
+              required
+              autocorrect="off"
+              autocapitalize="none"
+              spellcheck="false"
+              class="ak-input"
+            />
+          </div>
+
+          <div class="flex flex-col gap-3 pt-2 sm:flex-row">
+            <button
+              type="submit"
+              name="action"
+              value="complete"
+              data-sandbox-pay-btn
+              class="flex min-h-12 flex-1 items-center justify-center rounded-md bg-gold px-6 py-3 text-sm font-semibold text-canvas transition-colors hover:bg-gold-hover"
+            >
+              ✓ Testzahlung autorisieren (Sandbox)
+            </button>
+            <button
+              type="submit"
+              name="action"
+              value="cancel"
+              data-sandbox-cancel-btn
+              class="inline-flex min-h-12 items-center justify-center rounded-md border border-border-control bg-canvas px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-danger-border hover:text-danger"
+            >
+              Abbrechen
+            </button>
+          </div>
+        </form>
+      </div>
+    )}
+  </section>
+</BaseLayout>

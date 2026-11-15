@@ -1,0 +1,81 @@
+---
+import { eq } from 'drizzle-orm';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getDb } from '@/db/client';
+import { orders } from '@/db/schema';
+import { formatEurCents } from '@/lib/format';
+import { SITE_CONFIG } from '@/lib/site-config';
+
+const orderNumber = Astro.url.searchParams.get('order') ?? '';
+const db = await getDb();
+const found = orderNumber
+  ? await db.select().from(orders).where(eq(orders.orderNumber, orderNumber)).limit(1)
+  : [];
+const order = found[0] ?? null;
+---
+
+<BaseLayout
+  title="Vielen Dank für Ihre Bestellung"
+  description="Ihre Ersatzteil-Bestellung bei Auto Kremer Bonn ist eingegangen."
+  noindex={true}
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:py-24">
+    <div class="rounded-xl border border-status-available/40 bg-surface p-8 text-center sm:p-12">
+      <p class="font-mono text-xs font-semibold tracking-widest text-status-available uppercase">
+        ✓ Bestellung eingegangen · Stripe Sandbox
+      </p>
+      <h1 class="mt-3 font-display text-3xl font-semibold text-ink sm:text-4xl">
+        Vielen Dank für Ihr Vertrauen.
+      </h1>
+
+      {order ? (
+        <div class="mx-auto mt-6 max-w-md rounded-lg border border-border-subtle bg-canvas p-5 text-left font-mono text-xs">
+          <p class="text-ink-muted">
+            Bestellnummer: <strong class="text-gold" data-order-number>{order.orderNumber}</strong>
+          </p>
+          <p class="mt-1.5 text-ink-muted">
+            Zahlungsstatus:{' '}
+            <strong class="text-status-available">
+              {order.status === 'paid' ? 'Bezahlt (Sandbox)' : 'In Bearbeitung'}
+            </strong>
+          </p>
+          <p class="mt-1.5 text-ink-muted">
+            Gesamtbetrag: <strong class="text-ink">{formatEurCents(order.totalCents)}</strong>
+          </p>
+        </div>
+      ) : (
+        <p class="mt-4 text-sm text-ink-muted">
+          Ihre Bestellung wurde erfasst und wird durch unser Bonner Teilelager geprüft.
+        </p>
+      )}
+
+      <p class="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-ink-muted">
+        Unser Ersatzteil-Team in Bonn kommissioniert Ihre Ricambi-Originali-Positionen sorgfältig und übermittelt Ihnen die Sendungsnummer unmittelbar nach Übergabe an den Paketdienst. Bei Rückfragen erreichen Sie uns unter{' '}
+        <a href={`tel:${SITE_CONFIG.contact.phonePrimary}`} class="text-gold hover:underline">
+          {SITE_CONFIG.contact.phonePrimaryDisplay}
+        </a>.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/shop"
+          class="inline-flex min-h-12 items-center justify-center rounded-md bg-gold px-6 py-3 text-sm font-semibold text-canvas hover:bg-gold-hover"
+        >
+          Weiter im Teile-Shop stöbern
+        </a>
+        <a
+          href="/fahrzeuge"
+          class="inline-flex min-h-12 items-center justify-center rounded-md border border-border-control bg-canvas px-6 py-3 text-sm font-semibold text-ink hover:border-gold hover:text-gold"
+        >
+          Fahrzeugbestand entdecken
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clear local persistent cart upon reaching order confirmation -->
+  <script>
+    import { clearCart } from '@/lib/cart.store';
+    clearCart();
+  </script>
+</BaseLayout>
