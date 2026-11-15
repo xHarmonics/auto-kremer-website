@@ -77,7 +77,7 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 - [x] Kompletter Kaufprozess vom OEM-Filter über den Warenkorb bis zum Stripe-Test-Checkout und Webhook-Bestandsabzug (inkl. Schutz vor Überverkauf bei `stock = 1`) funktioniert End-to-End.
 
 ### Phase 4: Vertical Slice — Lead-Generierung, Markenwelt & Rechtliches
-- [ ] Task 11: Fahrzeug-Kommission (`/fahrzeug-verkaufen`) mit Multi-Step-Formular, R2-Foto-Upload & Turnstile
+- [x] Task 11: Fahrzeug-Kommission (`/fahrzeug-verkaufen`) mit Multi-Step-Formular, R2-Foto-Upload & Turnstile
 - [ ] Task 12: Zusammengeführte Kontaktseite (`/kontakt`) & Anfrage-API für Fahrzeug-/Werkstatt-/Teileanfragen
 - [ ] Task 13: Startseite (`/`), Über uns inkl. Chronik seit 1967 (`/ueber-uns`) & Werkstatt-Seite (`/werkstatt`)
 - [ ] Task 14: Rechtssichere Seiten (`/impressum` nach § 5 DDG, `/datenschutz`, `/agb`, `/widerruf`, `/versand`)

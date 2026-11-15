@@ -20,6 +20,7 @@ function sqlBool(val: boolean): string {
 const nowIso = '2026-11-15T00:00:00.000Z';
 const lines: string[] = [
   '-- Auto Kremer Bonn — Deterministic D1 Seed SQL (Vehicles + Ricambi Originali Shop)',
+  'DELETE FROM inquiries;',
   'DELETE FROM stripe_webhook_events;',
   'DELETE FROM order_items;',
   'DELETE FROM orders;',

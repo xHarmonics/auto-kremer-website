@@ -305,14 +305,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Ersetzt die bisher formularlose Seite `/consign-your-car` durch eine überzeugende Landingpage `/fahrzeug-verkaufen` (4-Schritte-Ablauf, Vorteile der Vermarktung über Auto Kremer seit 1967) inklusive 3-stufigem Kommissions-/Ankaufsformular (`ConsignmentWizard.tsx`), Validierung mit Zod, sicherem Bildupload (bis zu 8 Fahrzeugfotos in privaten R2-Pfad), Cloudflare-Turnstile-Schutz, Speicherung in D1 (`inquiries`) und Sofort-Benachrichtigung per Resend.
 
 **Acceptance criteria:**
-- [ ] Kunden können Fahrzeugdaten (Marke, Modell, Baujahr, KM, Getriebe, Preisvorstellung, Wunsch *Kommission vs. Direktankauf*), Zustandstext, bis zu 8 Fotos (JPG/PNG/WebP/AVIF, max. 10 MB pro Bild) und Kontaktdaten absenden.
-- [ ] Ungültige Dateitypen, fehlende Pflichtfelder oder ungültige Turnstile-Tokens werden serverseitig zuverlässig abgewiesen.
-- [ ] Jede valide Anfrage wird in D1 (`inquiries`) gespeichert und löst eine strukturierte Benachrichtigungs-E-Mail an `info@auto-kremer.com` aus.
+- [x] Kunden können Fahrzeugdaten (Marke, Modell, Baujahr, KM, Getriebe, Preisvorstellung, Wunsch *Kommission vs. Direktankauf*), Zustandstext, bis zu 8 Fotos (JPG/PNG/WebP/AVIF, max. 10 MB pro Bild) und Kontaktdaten absenden.
+- [x] Ungültige Dateitypen, fehlende Pflichtfelder oder ungültige Turnstile-Tokens werden serverseitig zuverlässig abgewiesen.
+- [x] Jede valide Anfrage wird in D1 (`inquiries`) gespeichert und löst eine strukturierte Benachrichtigungs-E-Mail an `info@auto-kremer.com` aus.
 
 **Verification:**
-- [ ] Tests pass: `npx vitest run tests/unit/consignment.test.ts`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Durchlauf aller 3 Formularschritte inkl. Testbild-Upload auf `/fahrzeug-verkaufen`.
+- [x] Tests pass: `npx vitest run tests/unit/consignment.test.ts`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Durchlauf aller 3 Formularschritte inkl. Testbild-Upload auf `/fahrzeug-verkaufen`.
 
 **Dependencies:** Task 2, Task 3
 

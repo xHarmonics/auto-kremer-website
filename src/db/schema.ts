@@ -169,6 +169,31 @@ export const stripeWebhookEvents = sqliteTable('stripe_webhook_events', {
   processedAt: text('processed_at').notNull(),
 });
 
+export const inquiries = sqliteTable(
+  'inquiries',
+  {
+    id: integer('id').primaryKey({ autoIncrement: true }),
+    inquiryNumber: text('inquiry_number').notNull().unique(),
+    type: text('type', { enum: ['consignment', 'contact'] }).notNull(),
+    topic: text('topic').notNull(),
+    senderName: text('sender_name').notNull(),
+    senderEmail: text('sender_email').notNull(),
+    senderPhone: text('sender_phone'),
+    subject: text('subject').notNull(),
+    message: text('message').notNull(),
+    payloadJson: text('payload_json').notNull().default('{}'),
+    mediaKeysJson: text('media_keys_json').notNull().default('[]'),
+    status: text('status', { enum: ['new', 'in_progress', 'closed'] })
+      .notNull()
+      .default('new'),
+    createdAt: text('created_at').notNull(),
+  },
+  (table) => [
+    index('idx_inquiries_type_created').on(table.type, table.createdAt),
+    index('idx_inquiries_status').on(table.status),
+  ]
+);
+
 export type VehicleRow = typeof vehicles.$inferSelect;
 export type NewVehicleRow = typeof vehicles.$inferInsert;
 export type VehicleImageRow = typeof vehicleImages.$inferSelect;
@@ -176,3 +201,4 @@ export type ProductRow = typeof products.$inferSelect;
 export type ProductModelRow = typeof productModels.$inferSelect;
 export type OrderRow = typeof orders.$inferSelect;
 export type OrderItemRow = typeof orderItems.$inferSelect;
+export type InquiryRow = typeof inquiries.$inferSelect;

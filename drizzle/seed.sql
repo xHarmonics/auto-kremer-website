@@ -1,4 +1,5 @@
 -- Auto Kremer Bonn — Deterministic D1 Seed SQL (Vehicles + Ricambi Originali Shop)
+DELETE FROM inquiries;
 DELETE FROM stripe_webhook_events;
 DELETE FROM order_items;
 DELETE FROM orders;
