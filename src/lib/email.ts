@@ -5,6 +5,7 @@ import { SITE_CONFIG } from '@/lib/site-config';
 export interface DispatchedEmailRecord {
   to: string[];
   from: string;
+  replyTo?: string;
   subject: string;
   text: string;
   sentVia: 'resend-api' | 'local-log';
@@ -55,6 +56,7 @@ export async function sendTransactionalEmail(params: {
     const record: DispatchedEmailRecord = {
       to: recipients,
       from,
+      replyTo: params.replyTo,
       subject: params.subject,
       text: params.text,
       sentVia: 'resend-api',
@@ -67,6 +69,7 @@ export async function sendTransactionalEmail(params: {
   const record: DispatchedEmailRecord = {
     to: recipients,
     from,
+    replyTo: params.replyTo,
     subject: params.subject,
     text: params.text,
     sentVia: 'local-log',

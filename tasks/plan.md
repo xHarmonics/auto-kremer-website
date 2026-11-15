@@ -78,7 +78,7 @@ Vollständige Details, Akzeptanzkriterien und Verifikationsschritte stehen in [`
 
 ### Phase 4: Vertical Slice — Lead-Generierung, Markenwelt & Rechtliches
 - [x] Task 11: Fahrzeug-Kommission (`/fahrzeug-verkaufen`) mit Multi-Step-Formular, R2-Foto-Upload & Turnstile
-- [ ] Task 12: Zusammengeführte Kontaktseite (`/kontakt`) & Anfrage-API für Fahrzeug-/Werkstatt-/Teileanfragen
+- [x] Task 12: Zusammengeführte Kontaktseite (`/kontakt`) & Anfrage-API für Fahrzeug-/Werkstatt-/Teileanfragen
 - [ ] Task 13: Startseite (`/`), Über uns inkl. Chronik seit 1967 (`/ueber-uns`) & Werkstatt-Seite (`/werkstatt`)
 - [ ] Task 14: Rechtssichere Seiten (`/impressum` nach § 5 DDG, `/datenschutz`, `/agb`, `/widerruf`, `/versand`)
 

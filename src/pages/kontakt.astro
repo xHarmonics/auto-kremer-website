@@ -1,0 +1,253 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ContactForm, { type ContactTopic } from '@/components/forms/ContactForm';
+import { getRuntimeEnv } from '@/lib/runtime-env';
+import { SITE_CONFIG } from '@/lib/site-config';
+
+const env = await getRuntimeEnv();
+const turnstileSiteKey = env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA';
+
+const urlParams = Astro.url.searchParams;
+const rawFahrzeug = urlParams.get('fahrzeug') ?? '';
+const rawTeil = urlParams.get('teil') ?? '';
+const rawThema = urlParams.get('thema') ?? '';
+
+let initialTopic: ContactTopic = 'allgemein';
+let initialReference = '';
+
+if (rawFahrzeug) {
+  initialTopic = 'fahrzeug';
+  initialReference = rawFahrzeug;
+} else if (rawTeil) {
+  initialTopic = 'ersatzteil';
+  initialReference = rawTeil;
+} else if (['fahrzeug', 'werkstatt', 'ersatzteil', 'allgemein'].includes(rawThema)) {
+  initialTopic = rawThema as ContactTopic;
+}
+---
+
+<BaseLayout
+  title="Kontakt & Anfahrt — Auto Kremer Bonn-Oberkassel"
+  description="Kontaktieren Sie Auto Kremer in Bonn (Buchenweg 3, 53227 Bonn): Fahrzeug-Besichtigung, Lamborghini-Meisterwerkstatt, Vollrestauration & Ricambi Originali Teilelager."
+  canonicalPath="/kontakt"
+>
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
+    <div class="max-w-3xl">
+      <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+        Showroom · Meisterwerkstatt · Teilelager Bonn
+      </p>
+      <h1 class="mt-3 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+        Persönlicher Kontakt nach Bonn.
+      </h1>
+      <p class="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">
+        Ob Fahrzeugbesichtigung im Showroom, Wartungstermin für Ihren Sportwagen oder gezielte Originalteile-Anfrage: Jason Kremer, Marvin Kremer und unser Team beraten Sie direkt und persönlich.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-12">
+      <!-- Left: Validated Contact Form Island -->
+      <div class="lg:col-span-7">
+        <ContactForm
+          client:load
+          initialTopic={initialTopic}
+          initialReference={initialReference}
+          turnstileSiteKey={turnstileSiteKey}
+        />
+      </div>
+
+      <!-- Right: Unified Contact Channels + GDPR-Safe Architectural Map -->
+      <aside class="space-y-6 lg:col-span-5">
+        <div class="rounded-xl border border-border-subtle bg-surface p-6 sm:p-7">
+          <h2 class="font-display text-xl font-semibold text-ink">
+            Standort &amp; Erreichbarkeit
+          </h2>
+
+          <address class="mt-5 space-y-4 text-sm not-italic">
+            <div>
+              <p class="font-mono text-xs text-ink-muted uppercase">Anschrift</p>
+              <p class="mt-1 font-medium text-ink">{SITE_CONFIG.legalName}</p>
+              <p class="text-ink-muted">
+                {SITE_CONFIG.address.street} · {SITE_CONFIG.address.postalCode}{' '}
+                {SITE_CONFIG.address.city} ({SITE_CONFIG.address.district})
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3 border-t border-border-subtle pt-4 sm:grid-cols-2">
+              <div>
+                <p class="font-mono text-xs text-ink-muted uppercase">Zentrale &amp; Verkauf</p>
+                <a
+                  href={`tel:${SITE_CONFIG.contact.phonePrimary}`}
+                  class="mt-1 inline-block font-mono text-sm font-semibold text-gold hover:underline"
+                >
+                  {SITE_CONFIG.contact.phonePrimaryDisplay}
+                </a>
+              </div>
+              <div>
+                <p class="font-mono text-xs text-ink-muted uppercase">Werkstatt &amp; Lager</p>
+                <a
+                  href={`tel:${SITE_CONFIG.contact.phoneSecondary}`}
+                  class="mt-1 inline-block font-mono text-sm font-semibold text-ink hover:text-gold"
+                >
+                  {SITE_CONFIG.contact.phoneSecondaryDisplay}
+                </a>
+              </div>
+            </div>
+
+            <div class="border-t border-border-subtle pt-4">
+              <p class="font-mono text-xs text-ink-muted uppercase">E-Mail</p>
+              <a
+                href={`mailto:${SITE_CONFIG.contact.email}`}
+                class="mt-1 inline-block font-mono text-sm font-semibold text-gold hover:underline"
+              >
+                {SITE_CONFIG.contact.email}
+              </a>
+            </div>
+
+            <div class="border-t border-border-subtle pt-4">
+              <p class="font-mono text-xs text-ink-muted uppercase">Öffnungszeiten</p>
+              <p class="mt-1 text-ink">{SITE_CONFIG.openingHours.weekdays}</p>
+              <p class="text-ink-muted">
+                {SITE_CONFIG.openingHours.saturday} (Besichtigungen bitte vorab terminieren)
+              </p>
+            </div>
+          </address>
+        </div>
+
+        <!-- Zero-Request GDPR-Safe Architectural Location Map -->
+        <div class="overflow-hidden rounded-xl border border-border-subtle bg-surface">
+          <div class="relative aspect-[16/10] w-full bg-canvas">
+            <svg
+              viewBox="0 0 640 400"
+              role="img"
+              aria-labelledby="bonn-map-title bonn-map-desc"
+              class="h-full w-full"
+            >
+              <title id="bonn-map-title">Standortkarte Auto Kremer Bonn-Oberkassel</title>
+              <desc id="bonn-map-desc">
+                Schematische Anfahrtskarte zum Buchenweg 3 in 53227 Bonn-Oberkassel nahe Autobahnkreuz Bonn-Ost (A59 / B42) am Rhein.
+              </desc>
+              <rect width="640" height="400" fill="#0A0A0B" />
+              <!-- Subtle coordinate grid -->
+              <g stroke="#242429" stroke-width="1">
+                <line x1="0" y1="80" x2="640" y2="80" />
+                <line x1="0" y1="160" x2="640" y2="160" />
+                <line x1="0" y1="240" x2="640" y2="240" />
+                <line x1="0" y1="320" x2="640" y2="320" />
+                <line x1="128" y1="0" x2="128" y2="400" />
+                <line x1="256" y1="0" x2="256" y2="400" />
+                <line x1="384" y1="0" x2="384" y2="400" />
+                <line x1="512" y1="0" x2="512" y2="400" />
+              </g>
+              <!-- Rhine River Curve -->
+              <path
+                d="M 110,0 C 145,120 185,220 215,400 L 155,400 C 125,220 85,120 50,0 Z"
+                fill="#141820"
+                stroke="#2A3242"
+                stroke-width="1.5"
+              />
+              <text
+                x="115"
+                y="290"
+                fill="#6E788C"
+                font-family="monospace"
+                font-size="11"
+                letter-spacing="3"
+                transform="rotate(76 115 290)"
+              >
+                RHEIN
+              </text>
+              <!-- B42 / A562 Highway Arteries -->
+              <path
+                d="M 270,0 L 395,400"
+                stroke="#2E2E36"
+                stroke-width="8"
+                fill="none"
+              />
+              <path
+                d="M 0,145 L 640,95"
+                stroke="#2E2E36"
+                stroke-width="6"
+                fill="none"
+              />
+              <!-- Local street network Bonn-Oberkassel -->
+              <path
+                d="M 230,225 L 490,205 M 355,155 L 375,295"
+                stroke="#3A3A44"
+                stroke-width="2.5"
+                fill="none"
+              />
+              <!-- Highway Badges -->
+              <rect x="295" y="42" width="42" height="20" rx="3" fill="#1C1C21" stroke="#52525E" />
+              <text x="316" y="56" text-anchor="middle" fill="#A1A1AA" font-family="monospace" font-size="11">
+                B42
+              </text>
+              <rect x="470" y="96" width="50" height="20" rx="3" fill="#1C1C21" stroke="#52525E" />
+              <text x="495" y="110" text-anchor="middle" fill="#A1A1AA" font-family="monospace" font-size="11">
+                A562
+              </text>
+
+              <!-- Auto Kremer Pin (Buchenweg 3, 53227 Bonn-Oberkassel) -->
+              <circle cx="364" cy="214" r="28" fill="#C9A84C" fill-opacity="0.14" />
+              <circle cx="364" cy="214" r="9" fill="#C9A84C" stroke="#0A0A0B" stroke-width="3" />
+              <rect
+                x="384"
+                y="188"
+                width="218"
+                height="54"
+                rx="6"
+                fill="#141417"
+                stroke="#C9A84C"
+                stroke-width="1.2"
+              />
+              <text
+                x="398"
+                y="210"
+                fill="#F5F5F4"
+                font-family="sans-serif"
+                font-size="13"
+                font-weight="700"
+              >
+                AUTO KREMER BONN
+              </text>
+              <text
+                x="398"
+                y="229"
+                fill="#C9A84C"
+                font-family="monospace"
+                font-size="11"
+              >
+                Buchenweg 3 · 53227 Bonn
+              </text>
+            </svg>
+          </div>
+
+          <div class="p-5">
+            <p class="text-xs leading-relaxed text-ink-muted">
+              Direkt erreichbar über die <strong class="text-ink">A59 / B42 (Ausfahrt Bonn-Oberkassel)</strong> sowie die Südbrücke (A562). Zum Schutz Ihrer Privatsphäre laden wir keine externen Karten-Tracker beim Seitenaufruf.
+            </p>
+            <div class="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+              <a
+                href={SITE_CONFIG.maps.googleMapsDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-md border border-border-control bg-canvas px-4 py-2.5 text-xs font-semibold text-ink transition-colors hover:border-gold hover:text-gold"
+              >
+                <span>Route in Google Maps</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href={SITE_CONFIG.maps.appleMapsDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-md border border-border-control bg-canvas px-4 py-2.5 text-xs font-semibold text-ink transition-colors hover:border-gold hover:text-gold"
+              >
+                <span>Route in Apple Karten</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

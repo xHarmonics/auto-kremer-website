@@ -332,14 +332,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Führt die bisherigen Seiten `/contact-us` und `/kontakt` zu einer klaren, fehlerfreien Kontaktseite `/kontakt` zusammen – mit Themenauswahl (*Fahrzeug-Anfrage*, *Werkstatt-Termin*, *Ersatzteil-Anfrage*, *Allgemein*), automatischer Vorbelegung über Query-Parameter (`?fahrzeug=...` oder `?teil=...`), validiertem Formular (`POST /api/inquiries/contact`), korrekten `mailto:info@auto-kremer.com`- und `tel:`-Links, Öffnungszeiten und DSGVO-konformer Anfahrtskarte ohne ungefragten Drittanbieter-Iframe.
 
 **Acceptance criteria:**
-- [ ] Kein einziger Link zeigt mehr auf `mailto:info@mysite.com`, `@gmail.com` oder `@web.de`; alle Kontaktwege sind konsistent.
-- [ ] Klick auf „Anfragen“ auf einer Fahrzeug- oder Produktseite öffnet `/kontakt` mit vorausgefülltem Betreff und Referenzobjekt.
-- [ ] Die Anfahrtskarte überträgt beim Seitenaufruf keinerlei Daten an Google Server (statische Standortkarte mit explizitem externem Routenlink).
+- [x] Kein einziger Link zeigt mehr auf `mailto:info@mysite.com`, `@gmail.com` oder `@web.de`; alle Kontaktwege sind konsistent.
+- [x] Klick auf „Anfragen“ auf einer Fahrzeug- oder Produktseite öffnet `/kontakt` mit vorausgefülltem Betreff und Referenzobjekt.
+- [x] Die Anfahrtskarte überträgt beim Seitenaufruf keinerlei Daten an Google Server (statische Standortkarte mit explizitem externem Routenlink).
 
 **Verification:**
-- [ ] Tests pass: `npx vitest run tests/unit/contact.test.ts`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: `/kontakt?fahrzeug=Lamborghini+Gallardo` aufrufen, Formular absenden und D1-Eintrag prüfen.
+- [x] Tests pass: `npx vitest run tests/unit/contact.test.ts`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: `/kontakt?fahrzeug=Lamborghini+Gallardo` aufrufen, Formular absenden und D1-Eintrag prüfen.
 
 **Dependencies:** Task 2, Task 11
 
