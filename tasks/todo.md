@@ -190,14 +190,14 @@ Plan-Referenz: [`tasks/plan.md`](./plan.md) · Audit & Konzept: [`docs/ist-analy
 **Description:** Baut die Shop-Hauptseite `/shop` mit prominenter OEM-Teilenummersuche (`OemSearchBar.tsx`), Filterung nach Lamborghini-Baureihe (350GT bis Urus) und Baugruppe sowie PAngV-konformen Produktkarten (`ProductCard.astro` inkl. OEM-Badge, Modell-Tags, Bruttopreis + *„inkl. 19 % MwSt., zzgl. Versand“* und Lagerstatus).
 
 **Acceptance criteria:**
-- [ ] Kunden können Teile sofort per OEM-Nummer, Suchbegriff, Baureihe (z. B. *Diablo*, *Murciélago*, *Countach*, *LM002*) und Verfügbarkeit filtern, wobei Filter-Parameter teilbar in der URL (`?modell=diablo&q=...`) abgebildet werden.
-- [ ] Nicht verfügbare Teile (`availableStock === 0`) sind klar gekennzeichnet und erlauben keinen Klick auf „In den Warenkorb“, bieten aber einen „Verfügbarkeit anfragen“-Link.
-- [ ] Jede Preisangabe auf `/shop` enthält den gesetzlichen Pflichthinweis auf MwSt. und verlinkte Versandkosten (`/versand`).
+- [x] Kunden können Teile sofort per OEM-Nummer, Suchbegriff, Baureihe (z. B. *Diablo*, *Murciélago*, *Countach*, *LM002*) und Verfügbarkeit filtern, wobei Filter-Parameter teilbar in der URL (`?modell=diablo&q=...`) abgebildet werden.
+- [x] Nicht verfügbare Teile (`availableStock === 0`) sind klar gekennzeichnet und erlauben keinen Klick auf „In den Warenkorb“, bieten aber einen „Verfügbarkeit anfragen“-Link.
+- [x] Jede Preisangabe auf `/shop` enthält den gesetzlichen Pflichthinweis auf MwSt. und verlinkte Versandkosten (`/versand`).
 
 **Verification:**
-- [ ] Tests pass: `npm test`
-- [ ] Build succeeds: `npm run typecheck && npm run build`
-- [ ] Manual check: Filterung auf `/shop?modell=countach` und Suche nach OEM-Nummer auf Mobile & Desktop prüfen.
+- [x] Tests pass: `npm test`
+- [x] Build succeeds: `npm run typecheck && npm run build`
+- [x] Manual check: Filterung auf `/shop?modell=countach` und Suche nach OEM-Nummer auf Mobile & Desktop prüfen.
 
 **Dependencies:** Task 2, Task 6
 

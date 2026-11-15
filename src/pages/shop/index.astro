@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ShopCatalogExplorer from '@/components/shop/ShopCatalogExplorer';
+import {
+  listProductCategoryFacets,
+  listProductModelFacets,
+  searchProducts,
+} from '@/db/queries/products';
+
+const [allProducts, modelFacets, categoryFacets] = await Promise.all([
+  searchProducts(),
+  listProductModelFacets(),
+  listProductCategoryFacets(),
+]);
+
+const initialQuery = Astro.url.searchParams.get('q') ?? '';
+const initialModel = Astro.url.searchParams.get('modell') ?? 'all';
+const initialCategory = Astro.url.searchParams.get('kategorie') ?? 'all';
+const initialInStockOnly = Astro.url.searchParams.get('lager') === '1';
+---
+
+<BaseLayout
+  title="Ricambi Originali Teile-Shop — Originale Lamborghini Ersatzteile ab Lager Bonn"
+  description="Über 95 originale Automobili Lamborghini Ersatzteile (Ricambi Originali & New Old Stock) für 350 GT, Miura, Espada, Jarama, Countach, Diablo, LM002, Murciélago, Gallardo, Aventador & Huracán."
+  canonicalPath="/shop"
+>
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
+    <!-- Editorial Shop Header -->
+    <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+      <div class="max-w-3xl">
+        <p class="font-mono text-xs font-semibold tracking-[0.22em] text-gold uppercase">
+          Ricambi Originali · Weltweiter Expressversand
+        </p>
+        <h1 class="mt-3 font-display text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+          Originale Lamborghini-Ersatzteile ab Lager Bonn
+        </h1>
+        <p class="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">
+          Aus unserem über Jahrzehnte aufgebauten Ersatzteillager liefern wir geprüfte Werksersatzteile und seltene New-Old-Stock-Komponenten (NOS) vom klassischen V12 bis zu modernen Baureihen.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-border-subtle bg-surface px-4 py-3 text-xs text-ink-muted">
+        <p class="font-mono font-semibold text-ink">Versandfrei innerhalb DE ab 500,00 €</p>
+        <p class="mt-0.5">Versicherter Paketversand inkl. Sendungsverfolgung · 14 Tage Widerrufsrecht</p>
+      </div>
+    </div>
+
+    <!-- Interactive OEM Search & Filter Explorer -->
+    <div class="mt-8">
+      <ShopCatalogExplorer
+        client:load
+        initialProducts={allProducts}
+        modelFacets={modelFacets}
+        categoryFacets={categoryFacets}
+        initialQuery={initialQuery}
+        initialModel={initialModel}
+        initialCategory={initialCategory}
+        initialInStockOnly={initialInStockOnly}
+      />
+    </div>
+  </section>
+</BaseLayout>
